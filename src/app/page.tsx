@@ -6,20 +6,8 @@ import Navbar from './components/navbar/Navbar';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Navbar */}
       <Navbar />
-
-      {/* Conteúdo Principal */}
       <div className="flex flex-col items-center justify-center flex-1 px-4">
-        {/* Estrelas decorativas */}
-        {/* <div className="absolute top-10 left-10">
-          <Image src="/star.svg" alt="Star" width={50} height={50} />
-        </div>
-        <div className="absolute top-10 right-10">
-          <Image src="/star.svg" alt="Star" width={50} height={50} />
-        </div> */}
-
-        {/* Badges */}
         <div className="flex space-x-4 mb-4">
           <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">Tecnologia e Propósito</span>
           <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">98% Satisfação</span>
