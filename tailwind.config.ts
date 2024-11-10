@@ -17,6 +17,7 @@ export default {
           500: '#3649FF'
         },
         neutral: {
+          100: '#EEF4FF',
           200: '#1A202C'
         }
       },
@@ -37,6 +38,9 @@ export default {
         'medium': '1480px',
         'medium-small': '1000px',
         'xs': '440px',
+      },
+      scale: {
+        '101': '1.01',
       },
 
     },

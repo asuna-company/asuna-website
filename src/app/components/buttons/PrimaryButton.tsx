@@ -20,11 +20,11 @@ function getPrimaryButtonBackgroundClasses() {
 }
 
 function getPrimaryButtonHoverClasses() {
-  return "hover:bg-blue-700 hover:outline-primary-200";
+  return "hover:bg-blue-600 hover:outline-primary-200 hover:scale-101 hover:shadow-[0_0_5px_rgba(59,73,255,0.5)]"; 
 }
 
 function getPrimaryButtonTransitionClasses() {
-  return "transition-all duration-200 relative";
+  return "transition-all duration-200 transform-origin-center " ;
 }
 
 function getPrimaryButtonClasses() {

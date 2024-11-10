@@ -5,6 +5,7 @@ import TextBadge from "./components/badges/TextBadge";
 import PrimaryButton from "./components/buttons/PrimaryButton";
 import SecondaryButton from "./components/buttons/SecondaryButton";
 import Navbar from "./components/navbar/Navbar";
+import CheckText from "./components/check_text/CheckText";
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
         <Stars />
         <PrimarySection />
         <SecondarySection />
-        <ThirdSection />
       </main>
+
+      <ThirdSection />
     </div>
   );
 }
@@ -85,7 +87,7 @@ function PrimarySection() {
 
 function SecondarySection() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 pl-0 xs:pl-16">
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 pl-0 xs:pl-16 pb-32">
       <div className="flex flex-col items-start max-w-[700px]">
         <TextBadge title="Resultados" />
         <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
@@ -126,48 +128,46 @@ function SecondarySection() {
 
 function ThirdSection() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 bg-primary-50">
-      <div className="flex flex-col items-start max-w-[800px]">
-        <TextBadge title="Resultados" />
-        <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
-          Seja qual for o seu setor <br />
-          <span className="text-primary-500">
-            nós temos a solução perfeita,
-          </span>
-        </h2>
-        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
-          a <span className="font-semibold">Asuna</span> pode ajudar a
-          desenvolver produtos de de alto impacto para a sua empresa.
-          <span className="font-semibold">
-            {" "}
-            Nós oferecemos um serviço especializado que potencializa sua marca
-            por meio de aplicativos, sites, consultoria e UI/UX:
-          </span>
-          .
-        </p>
-        {/* ta foda fazer esse grid, tem o widget de check ja */}
-        <div className="grid grid-cols-2 gap-4 w-full mt-4">
-          <div className="p-4 bg-red-200">Item 1</div>
-          <div className="p-4 bg-red-200">Item 2</div>
-          <div className="p-4 bg-red-200">Item 3</div>
-          <div className="p-4 bg-red-200">Item 4</div>
-          <div className="p-4 bg-red-200">Item 5</div>
-          <div className="p-4 bg-red-200">Item 6</div>
-        </div>
-      </div>
+    <section className="w-full bg-neutral-100 py-12">
+      <div className="max-w-[1440px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
 
-      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8">
-        <Image
-          src="/svg/details_section.svg"
-          alt="Pessoas Sorrindo"
-          width={640}
-          height={380}
-          className="rounded-lg"
-        />
+        <div className="flex flex-col items-start pl-0 ms:pl-16">
+          <TextBadge title="Resultados" />
+          <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4 pb-2">
+            Seja qual for o seu setor <br />
+            <span className="text-primary-500">nós temos a solução perfeita,</span>
+          </h2>
+          <p className="text-p1 text-gray-600 text-start mt-4 max-w-[600px] opacity-90 pb-6">
+            a <span className="font-semibold">Asuna</span> pode ajudar a
+            desenvolver produtos de alto impacto para a sua empresa. Nós oferecemos um serviço especializado que potencializa sua marca
+            por meio de <span className="font-semibold">aplicativos, sites, consultoria e UI/UX.</span>
+          </p>
+
+          <div className="grid grid-cols-2 gap-6 w-full mt-4 items-start justify-start">
+            <CheckText title="Desenvolvimento Mobile" />
+            <CheckText title="Integração de Inteligência Artificial" />
+            <CheckText title="Desenvolvimento Web" />
+            <CheckText title="Soluções diretas para SaaS" />
+            <CheckText title="UI/UX Design" />
+            <CheckText title="Consultoria de Software" />
+          </div>
+        </div>
+
+        <div className="flex justify-center md:justify-center mt-8 md:mt-0 w-full md:w-auto pt-16">
+          <Image
+            src="/svg/details_section.svg"
+            alt="Etapas de Desenvolvimento da Asuna"
+            width={640}
+            height={380}
+            className="rounded-lg"
+          />
+        </div>
       </div>
     </section>
   );
 }
+
+
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
