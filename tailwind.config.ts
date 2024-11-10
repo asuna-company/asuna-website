@@ -35,7 +35,8 @@ export default {
       },
       screens: {
         'medium': '1480px',
-        'medium-small': '1000px'
+        'medium-small': '1000px',
+        'xs': '440px',
       },
 
     },

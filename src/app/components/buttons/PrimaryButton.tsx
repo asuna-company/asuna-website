@@ -1,10 +1,13 @@
+import { isMobile } from "@/app/core/constants/mediaQueryConstants";
+
 interface PrimaryButtonProps {
     title: string;
+    mobileTitle?: string;
     onClick: () => void;
     paddingY?: string;
 }
 
-export default function PrimaryButton({ title, onClick, paddingY = '12.5px' }: PrimaryButtonProps) {
+export default function PrimaryButton({ title, mobileTitle = title, onClick, paddingY = '12.5px' }: PrimaryButtonProps) {
     return (
         <button
             className="
@@ -30,7 +33,7 @@ export default function PrimaryButton({ title, onClick, paddingY = '12.5px' }: P
             style={{ paddingTop: paddingY, paddingBottom: paddingY }}
             onClick={onClick}
         >
-            {title}
+            {isMobile() ? mobileTitle : title}
         </button>
     );
 }

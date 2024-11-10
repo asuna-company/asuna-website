@@ -1,7 +1,7 @@
 import { AppRouterProvider } from "./AppRouter";
 import "./globals.css";
 
-import { metadata } from "./configs/metadata";
+import { metadata } from "./core/configs/metadata";
 
 export { metadata };
 

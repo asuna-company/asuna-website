@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex flex-col w-full max-w-[1340px] mx-auto px-4 space-y-16">
+      <main className="flex flex-col w-full max-w-[1320px] mx-auto px-4 space-y-16">
         <Stars />
         <PrimarySection />
         <SecondarySection />
@@ -22,7 +22,7 @@ export default function Home() {
 
 function Stars() {
   return (
-    <div className="relative">
+    <div className="relative hidden md:block">
       <Image
         src="/svg/figma-4-stars.svg"
         alt="Star"
@@ -47,7 +47,7 @@ function Stars() {
 function PrimarySection() {
   return (
     <section
-      className="flex flex-col items-center justify-center w-full pb-56 pt-24 bg-cover bg-no-repeat bg-center"
+      className="flex flex-col items-center justify-center w-full pb-48 pt-24 bg-cover bg-no-repeat bg-center"
       style={getBackgroundStyle()}
     >
       <div className="flex space-x-3 mb-4">
@@ -65,7 +65,7 @@ function PrimarySection() {
       </p>
 
       <div className="flex space-x-4 mt-8">
-        <PrimaryButton title="Solicite um Orçamento" onClick={() => alert('Button clicked!')} />
+        <PrimaryButton title="Solicite um Orçamento" mobileTitle="Falar com a Asuna" onClick={() => alert('Button clicked!')} />
         <SecondaryButton title="Nossos Serviços" onClick={() => alert('Button clicked!')} />
       </div>
     </section>
@@ -79,13 +79,18 @@ function SecondarySection() {
       <div className="flex flex-col items-start max-w-[700px]">
         <TextBadge title="Resultados" />
         <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
-          Resultados concretos que <span className="text-primary-500">transformam o seu dia a dia</span>
+          Resultados concretos que <span className="text-primary-500">transformam a sua empresa</span>
         </h2>
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
           A <span className="font-semibold">Asuna</span> é uma software house comprometida em criar soluções que geram impacto.
           No último ano, entregamos projetos que fizeram a diferença para nossos clientes,
           <span className="font-semibold"> aumentando a eficiência, reduzindo custos e fortalecendo sua presença digital</span>.
         </p>
+        <div className='pt-8'>
+          <PrimaryButton title="Solicitar Orçamento" onClick={() => alert('Button clicked!')} />
+        </div>
+
+
       </div>
 
       <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8">
