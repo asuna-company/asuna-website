@@ -1,10 +1,9 @@
-
-import "./globals.css";
 import { AppRouterProvider } from "./AppRouter";
+import "./globals.css";
 
 import { metadata } from "./configs/metadata";
 
-export { metadata }
+export { metadata };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
