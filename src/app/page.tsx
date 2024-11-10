@@ -6,8 +6,6 @@ import SecondaryButton from './components/buttons/SecondaryButton';
 import Navbar from './components/navbar/Navbar';
 import Image from 'next/image'
 
-
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -46,11 +44,10 @@ function Stars() {
   );
 }
 
-
 function PrimarySection() {
   return (
     <div
-      className="flex flex-col items-center justify-center flex-1 px-4 pb-16 relative bg-cover bg-no-repeat bg-center"
+      className="flex flex-col items-center justify-center flex-1 px-4 pb-16 relative bg-cover bg-no-repeat bg-center z-20"
       style={getBackgroundStyle()}
     >
       <div className="flex space-x-3 mb-4">
@@ -90,5 +87,4 @@ const getBackgroundStyle = () => ({
   backgroundSize: "80rem",
   backgroundPosition: "top",
   backgroundRepeat: "no-repeat",
-  zIndex: -1
 });
