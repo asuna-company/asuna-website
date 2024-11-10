@@ -5,7 +5,13 @@ import DesktopNavbar from './internals/DesktopNavbar';
 
 const Navbar = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  return isMobile ? <MobileNavbar /> : <DesktopNavbar />;
+
+  return (
+    <div className='border-b border-gray-300'>
+      {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+    </div>
+  )
+
 };
 
 export default Navbar;
