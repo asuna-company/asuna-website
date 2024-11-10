@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex flex-col w-full max-w-[1320px] mx-auto px-4 space-y-16">
+      <main className="flex flex-col w-full max-w-[1440px] mx-auto px-4 space-y-16">
         <Stars />
         <PrimarySection />
         <SecondarySection />
@@ -75,7 +75,7 @@ function PrimarySection() {
 
 function SecondarySection() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4">
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 pl-0 xs:pl-16">
       <div className="flex flex-col items-start max-w-[700px]">
         <TextBadge title="Resultados" />
         <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
