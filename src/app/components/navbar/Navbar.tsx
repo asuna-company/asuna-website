@@ -7,7 +7,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <div className='border-b border-gray-300'>
+    <div className='border-b border-gray-300 sticky top-0 z-20'>
       {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
     </div>
   )
