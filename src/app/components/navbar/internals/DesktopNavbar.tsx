@@ -8,7 +8,7 @@ const getLinkClasses = () => {
 
 export default function DesktopNavbar() {
   return (
-    <nav className="">
+    <nav className="bg-[var(--foreground)]">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold text-blue-600">
           <Link href="#about" className="text-gray-700 hover:text-blue-600 font-inter flex items-center">

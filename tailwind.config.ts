@@ -16,7 +16,9 @@ export default {
           100: 'rgba(54, 73, 255, 0.15)',
           500: '#3649FF'
         },
-
+        neutral: {
+          200: '#1A202C'
+        }
       },
       fontSize: {
         h0: ['52px', '64px'],

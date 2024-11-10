@@ -4,18 +4,18 @@ import TextBadge from './components/badges/TextBadge';
 import PrimaryButton from './components/buttons/PrimaryButton';
 import SecondaryButton from './components/buttons/SecondaryButton';
 import Navbar from './components/navbar/Navbar';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <div className="flex flex-col flex-1 max-w-[1280px] mx-auto w-full">
+      <main className="flex flex-col w-full max-w-[1340px] mx-auto px-4 space-y-16">
         <Stars />
         <PrimarySection />
         <SecondarySection />
-      </div>
+      </main>
     </div>
   );
 }
@@ -46,8 +46,8 @@ function Stars() {
 
 function PrimarySection() {
   return (
-    <div
-      className="flex flex-col items-center justify-center flex-1 px-4 pb-16 relative bg-cover bg-no-repeat bg-center z-20"
+    <section
+      className="flex flex-col items-center justify-center w-full pb-56 pt-24 bg-cover bg-no-repeat bg-center"
       style={getBackgroundStyle()}
     >
       <div className="flex space-x-3 mb-4">
@@ -55,8 +55,8 @@ function PrimarySection() {
         <TextBadge title="98% Satisfação" />
       </div>
 
-      <h1 className="font-heading text-h0 font-bold text-gray-800 text-center max-w-[700px] mx-auto">
-        Softwares que aceleram <br></br> o futuro do <span className="text-primary-500">seu negócio!</span>
+      <h1 className="font-heading text-h0 font-bold text-neutral-200 text-center max-w-[700px] mx-auto pb-4 pt-4">
+        Softwares que aceleram <br /> o futuro do <span className="text-primary-500">seu negócio!</span>
       </h1>
 
       <p className="text-p1 text-gray-600 text-center mt-4 max-w-[600px] mx-auto opacity-90">
@@ -65,26 +65,47 @@ function PrimarySection() {
       </p>
 
       <div className="flex space-x-4 mt-8">
-        <PrimaryButton title='Solicite um Orçamento' onClick={() => alert('Button clicked!')} />
-        <SecondaryButton title='Nossos Serviços' onClick={() => alert('Button clicked!')} />
+        <PrimaryButton title="Solicite um Orçamento" onClick={() => alert('Button clicked!')} />
+        <SecondaryButton title="Nossos Serviços" onClick={() => alert('Button clicked!')} />
       </div>
-    </div>
+    </section>
   );
 }
 
 
 function SecondarySection() {
   return (
-    <div>
-      <TextBadge title="Resultados" />
-    </div>
-  )
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4">
+      <div className="flex flex-col items-start max-w-[700px]">
+        <TextBadge title="Resultados" />
+        <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
+          Resultados concretos que <span className="text-primary-500">transformam o seu dia a dia</span>
+        </h2>
+        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
+          A <span className="font-semibold">Asuna</span> é uma software house comprometida em criar soluções que geram impacto.
+          No último ano, entregamos projetos que fizeram a diferença para nossos clientes,
+          <span className="font-semibold"> aumentando a eficiência, reduzindo custos e fortalecendo sua presença digital</span>.
+        </p>
+      </div>
+
+      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8">
+        <Image
+          src="/images/creative-001.png"
+          alt="Pessoas Sorrindo"
+          width={460}
+          height={460}
+          className="rounded-lg"
+        />
+      </div>
+    </section>
+  );
 }
 
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
   backgroundSize: "80rem",
-  backgroundPosition: "top",
+  backgroundPosition: "top -80px left 0",
   backgroundRepeat: "no-repeat",
 });
+
