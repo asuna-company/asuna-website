@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext, ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { createContext, ReactNode, useContext } from 'react';
 
 interface AppRouterContextType {
   navigateToHome: () => void;

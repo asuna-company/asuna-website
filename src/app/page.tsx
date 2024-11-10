@@ -1,7 +1,9 @@
 "use client";
 
-import Navbar from './components/navbar/Navbar';
 import TextBadge from './components/badges/TextBadge';
+import PrimaryButton from './components/buttons/PrimaryButton';
+import SecondaryButton from './components/buttons/SecondaryButton';
+import Navbar from './components/navbar/Navbar';
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
@@ -45,12 +47,8 @@ export default function Home() {
         </p>
 
         <div className="flex space-x-4 mt-8">
-          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
-            Solicite um Orçamento
-          </button>
-          <button className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-100">
-            Nossos Serviços
-          </button>
+          <PrimaryButton title='Solicite um Orçamento' onClick={() => alert('Button clicked!')} />
+          <SecondaryButton title='Nossos Serviços' onClick={() => alert('Button clicked!')} />
         </div>
       </div>
     </div>
