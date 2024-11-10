@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const DesktopNavbar = () => {
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold text-blue-600">
           <Link href="/">Asuna</Link>

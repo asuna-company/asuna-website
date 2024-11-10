@@ -1,19 +1,20 @@
 "use client";
 
 import Navbar from './components/navbar/Navbar';
+import TextBadge from './components/badges/TextBadge';
 
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex flex-col items-center justify-center flex-1 px-4">
-        <div className="flex space-x-4 mb-4">
-          <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">Tecnologia e Propósito</span>
-          <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">98% Satisfação</span>
+        <div className="flex space-x-3 mb-4">
+          <TextBadge title='Tecnologia e Inovação' />
+          <TextBadge title='98% Satisfação' />
         </div>
 
-        {/* Título */}
+
         <h1 className="text-4xl font-bold text-gray-800 text-center">
           Softwares que aceleram o futuro do <span className="text-blue-600">seu negócio!</span>
         </h1>
