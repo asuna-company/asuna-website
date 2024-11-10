@@ -1,15 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white">
       <div className="flex items-center justify-between p-4">
-        <div className="text-2xl font-bold text-blue-600">
-          <Link href="/">Asuna</Link>
-        </div>
+          <Link href="/">
+            <Image src="svg/logo_with_text.svg" alt="Asuna" width={130} height={45} />
+          </Link>
         <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
           <svg
             className="w-6 h-6"

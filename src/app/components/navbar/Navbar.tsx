@@ -2,12 +2,25 @@ import { isMobile } from "@/app/core/constants/mediaQueryConstants";
 import DesktopNavbar from "./internals/DesktopNavbar";
 import MobileNavbar from "./internals/MobileNavbar";
 
-const Navbar = () => {
+export default function Navbar() {
+  let hasScrolled = false;
+
+  const handleScroll = () => {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    hasScrolled = scrollPosition > 100;
+    navbar.classList.toggle('border-b', hasScrolled);
+  };
+
+  if (typeof window !== 'undefined') {
+    window.onscroll = handleScroll;
+  }
+
   return (
-    <div className="border-b border-gray-300 sticky top-0 z-20">
+    <div className="navbar border-gray-300 sticky top-0 z-20">
       {isMobile() ? <MobileNavbar /> : <DesktopNavbar />}
     </div>
   );
-};
-
-export default Navbar;
+}
