@@ -20,7 +20,11 @@ export default function Home() {
         <SecondarySection />
       </main>
 
-      <ThirdSection />
+      <div className="pb-16"><ThirdSection /></div>
+
+      <main className="flex flex-col w-full max-w-[1440px] mx-auto px-4 space-y-16">
+        <FeedbackSection/>
+      </main>
     </div>
   );
 }
@@ -86,13 +90,13 @@ function PrimarySection() {
 
 function SecondarySection() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 pl-0 xs:pl-16 pb-32">
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 pl-0 xs:pl-8 pb-32">
       <div className="flex flex-col items-start max-w-[700px]">
-        <TextBadge title="Resultados" />
+        <div className="pb-6"><TextBadge title="Resultados" /></div>
         <SecondaryTitle firstPart="Resultados concretos que" secondPart="transformam a sua empresa" />
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
-          A <span className="font-semibold">Asuna</span> é uma software house
-          comprometida em criar soluções que geram impacto. No último ano,
+          A <span className="font-semibold">Asuna</span> é uma <span className="font-semibold">software house </span>
+          comprometida em criar soluções que geram impacto na rotina da sua empresa. No último ano,
           entregamos projetos que fizeram a diferença para nossos clientes,
           <span className="font-semibold">
             {" "}
@@ -125,15 +129,15 @@ function SecondarySection() {
 function ThirdSection() {
   return (
     <section className="w-full bg-neutral-100 py-12">
-      <div className="max-w-[1500px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div className="max-w-[1380px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
 
-        <div className="flex flex-col items-start pl-0 xs:pl-16">
+        <div className="flex flex-col items-start">
           <TextBadge title="Resultados" />
-          <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4 pb-2">
-            Seja qual for o seu setor <br />
-            <span className="text-primary-500">nós temos a solução perfeita,</span>
-          </h2>
-          <p className="text-p1 text-gray-600 text-start mt-4 max-w-[600px] opacity-90 pb-6">
+          <div className="max-w-[600px] mx-auto pt-2">
+            <SecondaryTitle firstPart="Seja qual for a sua empresa" secondPart="nós temos a solução perfeita" />
+          </div>
+
+          <p className="text-p1 text-gray-600 text-start mt-4 max-w-[620px] opacity-90 pb-6">
             a <span className="font-semibold">Asuna</span> pode ajudar a
             desenvolver produtos de alto impacto para a sua empresa. Nós oferecemos um serviço especializado que potencializa sua marca
             por meio de <span className="font-semibold">aplicativos, sites, consultoria e UI/UX.</span>
@@ -141,7 +145,7 @@ function ThirdSection() {
 
           <div className="grid grid-cols-2 gap-6 w-full mt-4 items-start justify-start">
             <CheckText title="Desenvolvimento Mobile" />
-            <CheckText title="Integração de Inteligência Artificial" />
+            <CheckText title="Integração de IA" />
             <CheckText title="Desenvolvimento Web" />
             <CheckText title="Soluções diretas para SaaS" />
             <CheckText title="UI/UX Design" />
@@ -164,6 +168,32 @@ function ThirdSection() {
 }
 
 
+function FeedbackSection() {
+  return (
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 pb-32">
+       <div className="px-4 flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col items-start">
+          <TextBadge title="Feedbacks" />
+          <div className="max-w-[600px] mx-auto pt-2">
+            <SecondaryTitle firstPart="Veja o que nossos clientes" secondPart="têm a dizer sobre a Asuna" />
+
+            <p className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-6">
+              O <span className="font-semibold">feedback dos nossos clientes</span> é muito importante para nós. É através dessas parcerias que ajustamos o rumo e <span className="font-semibold">garantimos entregas cada vez melhores</span>. Veja a seguir alguns feedbacks!
+            </p>
+          </div>
+        </div>
+       </div>
+
+      <TestimonialCard/>
+       
+    </section>
+
+
+
+  )
+}
+
+
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
@@ -171,3 +201,42 @@ const getBackgroundStyle = () => ({
   backgroundPosition: "top -80px left 0",
   backgroundRepeat: "no-repeat",
 });
+
+
+
+const TestimonialCard = () => {
+  return (
+    <div className="max-w-xl mx-auto p-6">
+      <div className="mb-4">
+        <Image
+          src="/svg/quote.svg"
+          alt="Citação"
+          width={35}
+          height={35}
+          className="text-blue-500"
+        />
+      </div>
+
+      <div>
+        <p className="text-lg text-gray-800">
+          O time da <span className="text-blue-600 font-semibold">Asuna</span> trouxe a{" "}
+          <span className="text-blue-600 font-semibold">agilidade</span> e{" "}
+          <span className="text-blue-600 font-semibold">clareza</span> que faltavam nos nossos projetos.
+          Eles entenderam nossas necessidades e entregaram com muita{" "}
+          <span className="text-blue-600 font-semibold">precisão</span> e{" "}
+          <span className="text-blue-600 font-semibold">rapidez</span>, sem enrolação.
+        </p>
+
+  
+        <div className="border-t border-gray-300 mt-6"></div>
+
+       
+        <div className="mt-4 text-gray-600">
+          <span className="font-medium">José Formiga</span> @ Nasajon
+        </div>
+      </div>
+    </div>
+  );
+};
+
+

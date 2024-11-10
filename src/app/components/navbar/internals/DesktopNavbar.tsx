@@ -17,11 +17,11 @@ const NavbarLink = ({ href, children }: { href: string; children: React.ReactNod
 export default function DesktopNavbar() {
   return (
     <div className="bg-[var(--foreground)]">
-      <nav className="max-w-[1320px] mx-auto">
+      <nav className="max-w-[1380px] mx-auto">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
        
           <Link href="/">
-            <Image src="svg/logo_with_text.svg" alt="Asuna" width={160} height={45} />
+            <Image src="svg/logo_with_text.svg" alt="Asuna" width={175} height={45} />
           </Link>
 
           <ul className="flex space-x-8 items-center pt-1">
