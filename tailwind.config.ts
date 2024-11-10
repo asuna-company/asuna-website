@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
+          100: 'rgba(54, 73, 255, 0.15)',
           500: '#3649FF'
         },
 
