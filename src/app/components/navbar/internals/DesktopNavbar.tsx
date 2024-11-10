@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const DesktopNavbar = () => {
+export default function DesktopNavbar() {
   return (
     <nav className="">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -8,14 +8,12 @@ const DesktopNavbar = () => {
           <Link href="/">Asuna</Link>
         </div>
         <ul className="flex space-x-6">
-          <li><Link href="#home" className="text-gray-700 hover:text-blue-600">Home</Link></li>
-          <li><Link href="#services" className="text-gray-700 hover:text-blue-600">Serviços</Link></li>
-          <li><Link href="#about" className="text-gray-700 hover:text-blue-600">Sobre Nós</Link></li>
-          <li><Link href="#contact" className="text-gray-700 hover:text-blue-600">Contato</Link></li>
+          <li><Link href="#home" className="text-gray-700 hover:text-blue-600 font-inter">Home</Link></li>
+          <li><Link href="#services" className="text-gray-700 hover:text-blue-600 font-inter">Nossos Serviços</Link></li>
+          <li><Link href="#about" className="text-gray-700 hover:text-blue-600 font-inter">Sobre a Asuna</Link></li>
         </ul>
       </div>
     </nav>
   );
 };
 
-export default DesktopNavbar;
