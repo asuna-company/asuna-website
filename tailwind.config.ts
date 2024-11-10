@@ -31,6 +31,11 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      screens: {
+        'medium': '1480px',
+        'medium-small': '1000px'
+      },
+
     },
   },
   plugins: [],

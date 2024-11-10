@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '../assets/metadata-banner.jpg',
+        url: 'images/metadata-banner.jpg',
         width: 1200,
         height: 675,
         alt: 'Asuna | Software House'
