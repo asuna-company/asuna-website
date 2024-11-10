@@ -58,11 +58,11 @@ function PrimarySection() {
         <TextBadge title="98% Satisfação" />
       </div>
 
-      <h1 className="text-[54px] font-bold text-gray-800 text-center max-w-[700px] mx-auto">
-        Softwares que aceleram o futuro do <span className="text-primary-500">seu negócio!</span>
+      <h1 className="font-heading text-h0 font-bold text-gray-800 text-center max-w-[700px] mx-auto">
+        Softwares que aceleram <br></br> o futuro do <span className="text-primary-500">seu negócio!</span>
       </h1>
 
-      <p className="text-[16px] text-gray-600 text-center mt-4 max-w-[600px] mx-auto opacity-90">
+      <p className="text-p1 text-gray-600 text-center mt-4 max-w-[600px] mx-auto opacity-90">
         Somos uma <span className="font-semibold">software house B2B</span> para pequenas e médias empresas,
         simplificando processos e <span className="font-semibold">impulsionando resultados</span> no seu negócio 💙
       </p>

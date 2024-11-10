@@ -2,6 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PrimaryButton from '../../buttons/PrimaryButton';
 
+const getLinkClasses = () => {
+  return "text-gray-700 hover:text-blue-600 text-p2 font-poppins font-medium";
+};
+
 export default function DesktopNavbar() {
   return (
     <nav className="">
@@ -12,9 +16,9 @@ export default function DesktopNavbar() {
           </Link>
         </div>
         <ul className="flex space-x-6 items-center">
-          <li><Link href="#home" className="text-gray-700 hover:text-blue-600 font-inter">Home</Link></li>
-          <li><Link href="#services" className="text-gray-700 hover:text-blue-600 font-inter">Nossos Serviços</Link></li>
-          <li><Link href="#about" className="text-gray-700 hover:text-blue-600 font-inter">Sobre a Asuna</Link></li>
+          <li><Link href="#home" className={getLinkClasses()}>Home</Link></li>
+          <li><Link href="#services" className={getLinkClasses()}>Nossos Serviços</Link></li>
+          <li><Link href="#about" className={getLinkClasses()}>Sobre a Asuna</Link></li>
           <PrimaryButton title='Entre em Contato' onClick={() => alert('Button clicked!')} paddingY="10px" />
         </ul>
       </div>

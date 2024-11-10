@@ -12,12 +12,23 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
+          50: 'rgba(54, 73, 255, 0.1)',
           100: 'rgba(54, 73, 255, 0.15)',
           500: '#3649FF'
         },
 
       },
+      fontSize: {
+        h0: ['52px', '64px'],
+        h1: ['40px', '48px'],
+        h2: ['32px', '40px'],
+        h3: ['24px', '32px'],
+        p0: ['24px', '40px'],
+        p1: ['16px', '28px'],
+        p2: ['14px', '28px'],
+      },
       fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
       screens: {
