@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Navbar from "./core/components/navbar/Navbar";
 import Faq from "./core/sections/faq_section";
+import FeedbackSection from "./home/sections/home_feedback_section";
 import HomeLandSection from "./home/sections/home_land_section";
 import HomeResultsSection from "./home/sections/home_results_section";
 import HomeServicesSection from "./home/sections/home_services_section";
@@ -18,9 +19,14 @@ export default function Home() {
         <HomeResultsSection />
       </main>
 
-      <HomeServicesSection />
+      <div className="pb-16">
+        <HomeServicesSection />
+      </div>
 
-      <Faq />
+      <main className="flex flex-col w-full max-w-[1440px] mx-auto px-4 space-y-16">
+        <FeedbackSection />
+        <Faq />
+      </main>
     </div>
   );
 }
