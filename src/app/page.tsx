@@ -109,7 +109,7 @@ function SecondarySection() {
         </div>
       </div>
 
-      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8">
+      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8 pr-0 xs:pr-4">
         <Image
           src="/images/creative-001.png"
           alt="Pessoas Sorrindo"
@@ -125,7 +125,7 @@ function SecondarySection() {
 function ThirdSection() {
   return (
     <section className="w-full bg-neutral-100 py-12">
-      <div className="max-w-[1440px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div className="max-w-[1500px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
 
         <div className="flex flex-col items-start pl-0 xs:pl-16">
           <TextBadge title="Resultados" />
@@ -149,7 +149,7 @@ function ThirdSection() {
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-center mt-8 md:mt-0 w-full md:w-auto pt-16">
+        <div className="flex justify-center md:justify-center mt-8 md:mt-0 w-full md:w-auto pt-16 pl-0 xs:pl-32">
           <Image
             src="/svg/details_section.svg"
             alt="Etapas de Desenvolvimento da Asuna"
