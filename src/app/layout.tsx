@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { AppRouterProvider } from "./AppRouter";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -13,22 +13,17 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Asuna",
-  description: "Asuna | Software House | Consultoria",
-};
+import { metadata } from "./configs/metadata";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export { metadata };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="pt_BR">
+      <body>
+        <AppRouterProvider>
+          {children}
+        </AppRouterProvider>
       </body>
     </html>
   );
