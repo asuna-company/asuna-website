@@ -1,10 +1,10 @@
 "use client";
 
-import TextBadge from './components/badges/TextBadge';
-import PrimaryButton from './components/buttons/PrimaryButton';
-import SecondaryButton from './components/buttons/SecondaryButton';
-import Navbar from './components/navbar/Navbar';
-import Image from 'next/image';
+import Image from "next/image";
+import TextBadge from "./components/badges/TextBadge";
+import PrimaryButton from "./components/buttons/PrimaryButton";
+import SecondaryButton from "./components/buttons/SecondaryButton";
+import Navbar from "./components/navbar/Navbar";
 
 export default function Home() {
   return (
@@ -15,6 +15,7 @@ export default function Home() {
         <Stars />
         <PrimarySection />
         <SecondarySection />
+        <ThirdSection />
       </main>
     </div>
   );
@@ -56,22 +57,31 @@ function PrimarySection() {
       </div>
 
       <h1 className="font-heading text-h0 font-bold text-neutral-200 text-center max-w-[700px] mx-auto pb-4 pt-4">
-        Softwares que aceleram <br /> o futuro do <span className="text-primary-500">seu negócio!</span>
+        Softwares que aceleram <br /> o futuro do{" "}
+        <span className="text-primary-500">seu negócio!</span>
       </h1>
 
       <p className="text-p1 text-gray-600 text-center mt-4 max-w-[600px] mx-auto opacity-90">
-        Somos uma <span className="font-semibold">software house B2B</span> para pequenas e médias empresas,
-        simplificando processos e <span className="font-semibold">impulsionando resultados</span> no seu negócio 💙
+        Somos uma <span className="font-semibold">software house B2B</span> para
+        pequenas e médias empresas, simplificando processos e{" "}
+        <span className="font-semibold">impulsionando resultados</span> no seu
+        negócio 💙
       </p>
 
       <div className="flex space-x-4 mt-8">
-        <PrimaryButton title="Solicite um Orçamento" mobileTitle="Falar com a Asuna" onClick={() => alert('Button clicked!')} />
-        <SecondaryButton title="Nossos Serviços" onClick={() => alert('Button clicked!')} />
+        <PrimaryButton
+          title="Solicite um Orçamento"
+          mobileTitle="Falar com a Asuna"
+          onClick={() => alert("Button clicked!")}
+        />
+        <SecondaryButton
+          title="Nossos Serviços"
+          onClick={() => alert("Button clicked!")}
+        />
       </div>
     </section>
   );
 }
-
 
 function SecondarySection() {
   return (
@@ -79,18 +89,26 @@ function SecondarySection() {
       <div className="flex flex-col items-start max-w-[700px]">
         <TextBadge title="Resultados" />
         <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
-          Resultados concretos que <span className="text-primary-500">transformam a sua empresa</span>
+          Resultados concretos que{" "}
+          <span className="text-primary-500">transformam a sua empresa</span>
         </h2>
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
-          A <span className="font-semibold">Asuna</span> é uma software house comprometida em criar soluções que geram impacto.
-          No último ano, entregamos projetos que fizeram a diferença para nossos clientes,
-          <span className="font-semibold"> aumentando a eficiência, reduzindo custos e fortalecendo sua presença digital</span>.
+          A <span className="font-semibold">Asuna</span> é uma software house
+          comprometida em criar soluções que geram impacto. No último ano,
+          entregamos projetos que fizeram a diferença para nossos clientes,
+          <span className="font-semibold">
+            {" "}
+            aumentando a eficiência, reduzindo custos e fortalecendo sua
+            presença digital
+          </span>
+          .
         </p>
-        <div className='pt-8'>
-          <PrimaryButton title="Solicitar Orçamento" onClick={() => alert('Button clicked!')} />
+        <div className="pt-8">
+          <PrimaryButton
+            title="Solicitar Orçamento"
+            onClick={() => alert("Button clicked!")}
+          />
         </div>
-
-
       </div>
 
       <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8">
@@ -106,6 +124,50 @@ function SecondarySection() {
   );
 }
 
+function ThirdSection() {
+  return (
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 bg-primary-50">
+      <div className="flex flex-col items-start max-w-[800px]">
+        <TextBadge title="Resultados" />
+        <h2 className="text-h1 font-heading font-bold text-neutral-200 text-start mt-4">
+          Seja qual for o seu setor <br />
+          <span className="text-primary-500">
+            nós temos a solução perfeita,
+          </span>
+        </h2>
+        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
+          a <span className="font-semibold">Asuna</span> pode ajudar a
+          desenvolver produtos de de alto impacto para a sua empresa.
+          <span className="font-semibold">
+            {" "}
+            Nós oferecemos um serviço especializado que potencializa sua marca
+            por meio de aplicativos, sites, consultoria e UI/UX:
+          </span>
+          .
+        </p>
+        {/* ta foda fazer esse grid, tem o widget de check ja */}
+        <div className="grid grid-cols-2 gap-4 w-full mt-4">
+          <div className="p-4 bg-red-200">Item 1</div>
+          <div className="p-4 bg-red-200">Item 2</div>
+          <div className="p-4 bg-red-200">Item 3</div>
+          <div className="p-4 bg-red-200">Item 4</div>
+          <div className="p-4 bg-red-200">Item 5</div>
+          <div className="p-4 bg-red-200">Item 6</div>
+        </div>
+      </div>
+
+      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8">
+        <Image
+          src="/svg/details_section.svg"
+          alt="Pessoas Sorrindo"
+          width={640}
+          height={380}
+          className="rounded-lg"
+        />
+      </div>
+    </section>
+  );
+}
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
@@ -113,4 +175,3 @@ const getBackgroundStyle = () => ({
   backgroundPosition: "top -80px left 0",
   backgroundRepeat: "no-repeat",
 });
-
