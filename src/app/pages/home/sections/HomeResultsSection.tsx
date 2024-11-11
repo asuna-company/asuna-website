@@ -7,8 +7,8 @@ import Image from "next/image";
 
 export default function HomeResultsSection() {
   return (
-    <AbstractSection>
-      <div className="flex flex-col items-start max-w-[700px]">
+    <AbstractSection align="items-start">
+      <div className="flex flex-col items-start max-w-[700px] justify-start">
         <div className="pb-6">
           <TextBadge title="Resultados" />
         </div>
