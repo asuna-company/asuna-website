@@ -4,7 +4,7 @@ import TestimonialCard from "../components/tiles/TestimonialCard";
 
 export default function FeedbackSection() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between mt-16 pb-32">
+    <section className="flex flex-col md:flex-row items-start justify-between mt-16 pb-32 max-w-[1400px] mx-auto">
       <div className="px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="flex flex-col items-start">
           <div className="flex gap-2">

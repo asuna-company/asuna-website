@@ -1,11 +1,13 @@
+
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
+import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
 
 export default function HomeResultsSection() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between mt-16 px-4 pl-0 xs:pl-8 pb-32">
+    <AbstractSection>
       <div className="flex flex-col items-start max-w-[700px]">
         <div className="pb-6">
           <TextBadge title="Resultados" />
@@ -44,6 +46,6 @@ export default function HomeResultsSection() {
           className="rounded-lg"
         />
       </div>
-    </section>
+    </AbstractSection>
   );
 }
