@@ -1,6 +1,6 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import AbstractSection from "@/app/core/sections/abstract_section";
+import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
 
 export default function FeedbackSection() {

@@ -2,7 +2,7 @@ import TextBadge from "@/app/core/components/badges/TextBadge";
 import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
 import SecondaryButton from "@/app/core/components/buttons/SecondaryButton";
 import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
-import AbstractSection from "@/app/core/sections/abstract_section";
+import AbstractSection from "@/app/core/sections/AbstractSection";
 
 import Image from "next/image";
 

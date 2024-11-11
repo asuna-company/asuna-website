@@ -1,8 +1,8 @@
 import TextBadge from "../components/badges/TextBadge";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SecondaryTitle from "../components/texts/SecondaryTitle";
-import ExpansionTile from "../components/tiles/expansion_tile";
-import AbstractSection from "./abstract_section";
+import ExpansionTile from "../components/tiles/ExpansionTile";
+import AbstractSection from "./AbstractSection";
 
 export default function FaqSection() {
   return (
