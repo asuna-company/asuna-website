@@ -4,17 +4,15 @@ import SecondaryTitle from "../components/texts/SecondaryTitle";
 import ExpansionTile from "../components/tiles/expansion_tile";
 import AbstractSection from "./abstract_section";
 
-export default function Faq() {
+export default function FaqSection() {
   return (
     <AbstractSection>
       <div className="flex flex-col items-start">
         <TextBadge title="FAQ" />
-        <div className="max-w-[600px] mx-auto mt-4 pb-2">
-          <SecondaryTitle
-            firstPart="Perguntas e respostas"
-            secondPart="mais frequentes"
-          />
-        </div>
+        <SecondaryTitle
+          firstPart="Perguntas e respostas"
+          secondPart="mais frequentes"
+        />
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[600px] opacity-90 pb-6">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. 

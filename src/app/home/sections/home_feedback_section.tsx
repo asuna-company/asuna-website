@@ -8,12 +8,11 @@ export default function FeedbackSection() {
     <AbstractSection>
       <div className="flex flex-col items-start">
         <TextBadge title="Feedbacks" />
+        <SecondaryTitle
+          firstPart="Veja o que nossos clientes"
+          secondPart="têm a dizer sobre a Asuna"
+        />
         <div className="max-w-[600px] mx-auto pt-2">
-          <SecondaryTitle
-            firstPart="Veja o que nossos clientes"
-            secondPart="têm a dizer sobre a Asuna"
-          />
-
           <p className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-6">
             O{" "}
             <span className="font-semibold">feedback dos nossos clientes</span>{" "}

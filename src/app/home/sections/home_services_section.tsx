@@ -9,12 +9,10 @@ const HomeServicesSection = () => {
     <AbstractSection bgColor="bg-neutral-100">
       <div className="flex flex-col items-start">
         <TextBadge title="Serviços" />
-        <div className="max-w-[600px] mx-auto pt-2">
-          <SecondaryTitle
-            firstPart="Seja qual for a sua empresa"
-            secondPart="nós temos a solução perfeita"
-          />
-        </div>
+        <SecondaryTitle
+          firstPart="Seja qual for a sua empresa"
+          secondPart="nós temos a solução perfeita"
+        />
 
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[620px] opacity-90 pb-6">
           a <span className="font-semibold">Asuna</span> pode ajudar a
