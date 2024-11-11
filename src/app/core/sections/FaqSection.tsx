@@ -6,7 +6,7 @@ import AbstractSection from "./AbstractSection";
 
 export default function FaqSection() {
   return (
-    <AbstractSection>
+    <AbstractSection align="items-start">
       <div className="flex flex-col items-start">
         <TextBadge title="FAQ" />
         <SecondaryTitle

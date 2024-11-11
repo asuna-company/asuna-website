@@ -17,7 +17,7 @@ const NavbarLink = ({ href, children }: { href: string; children: React.ReactNod
 export default function DesktopNavbar() {
   return (
     <div className="bg-[var(--foreground)]">
-      <nav className="max-w-[1380px] mx-auto">
+      <nav className="max-w-[1380px] mx-auto"> 
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
        
           <Link href="/">

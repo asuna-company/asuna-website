@@ -5,7 +5,7 @@ import AbstractSection from "./AbstractSection";
 
 export default function FeedbackSection() {
   return (
-    <AbstractSection>
+    <AbstractSection align="items-start">
       <div className="flex flex-col items-start">
         <div className="flex gap-2">
           <TextBadge title="Feedbacks" />
@@ -28,7 +28,7 @@ export default function FeedbackSection() {
         </div>
       </div>
 
-      <TestimonialCard />
+      <div><TestimonialCard /></div>
     </AbstractSection>
   );
 }
