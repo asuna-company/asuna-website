@@ -25,9 +25,9 @@ export default function FaqSection() {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-8">
+      <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-8 pt-0 xs:pt-12">
         <ExpansionTile
-          title="Lorem Ipsum goes here"
+          title="Qual valor tenho que investir?"
           content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
         />
         <ExpansionTile

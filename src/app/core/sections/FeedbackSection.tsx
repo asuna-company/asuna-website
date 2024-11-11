@@ -23,7 +23,7 @@ export default function FeedbackSection() {
           </p>
 
           <p className="text-p1 text-gray-600 text-start max-w-[590px] opacity-90 pt-1">
-            Quem sabe o próximo depoimento não é o seu? Queremos te ver por aqui sendo o <span className="font-semibold">nosso próximo case de sucesso</span> 💙
+            Queremos te ver por aqui sendo o <span className="font-semibold">nosso próximo case de sucesso</span> 💙
           </p>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function HomeLandSection() {
             onClick={() => alert("Button clicked!")}
           />
           <SecondaryButton
-            title="Nossos Serviços"
+            title="Conheça nossos Serviços"
             onClick={() => alert("Button clicked!")}
           />
         </div>
