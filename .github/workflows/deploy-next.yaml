@@ -26,11 +26,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Hostinger Deploy
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@v5.1.0
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rlgoDzvc -S --delete"
+          ARGS: "-rlgoDzvc -i --delete"
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.FTP_SERVER }}
           REMOTE_USER: ${{ secrets.FTP_USERNAME }}
           REMOTE_PORT: ${{ secrets.FTP_PORT }}
+          EXCLUDE: "/node_modules/"
