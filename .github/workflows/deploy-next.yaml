@@ -18,20 +18,31 @@ jobs:
       - name: Build Application
         run: npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Hostinger Deploy
         uses: easingthemes/ssh-deploy@v5.1.0
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
+          ARGS: "-rlgoDzvc --delete"
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.FTP_SERVER }}
           REMOTE_USER: ${{ secrets.FTP_USERNAME }}
           REMOTE_PORT: ${{ secrets.FTP_PORT }}
           EXCLUDE: "/node_modules/"
+
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
+
+  #     - name: Hostinger Deploy
+  #       uses: easingthemes/ssh-deploy@v5.1.0
+  #       with:
+  #         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+  #         ARGS: "-rlgoDzvc --delete"
+  #         SOURCE: "build/"
+  #         REMOTE_HOST: ${{ secrets.FTP_SERVER }}
+  #         REMOTE_USER: ${{ secrets.FTP_USERNAME }}
+  #         REMOTE_PORT: ${{ secrets.FTP_PORT }}
+  #         EXCLUDE: "/node_modules/"
