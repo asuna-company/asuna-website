@@ -28,12 +28,12 @@ export default function HomeLandSection() {
 
         <PrimaryText
           maxWidth={700}
-          titleFirstPart="Softwares que aceleram o futuro do"
+          titleFirstPart="aaaaaaaaaaaaaa que aceleram o futuro do"
           titleSecondPart="seu negócio!"
         />
 
         <p className="text-p1 text-gray-600 text-center mt-4 max-w-[600px] mx-auto opacity-90">
-         Teste <span className="font-semibold">software house B2B</span>{" "}
+         Somos uma <span className="font-semibold">software house B2B</span>{" "}
           para pequenas e médias empresas, simplificando processos e{" "}
           <span className="font-semibold">impulsionando resultados</span> no seu
           negócio 💙
