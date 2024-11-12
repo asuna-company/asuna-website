@@ -28,7 +28,7 @@ export default function HomeLandSection() {
 
         <PrimaryText
           maxWidth={700}
-          titleFirstPart="aaaaaaaaaaaaaa que aceleram o futuro do"
+          titleFirstPart="Softwares que aceleram o futuro do"
           titleSecondPart="seu negócio!"
         />
 
