@@ -1,4 +1,4 @@
-import { isMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import DesktopNavbar from "./internals/DesktopNavbar";
 import MobileNavbar from "./internals/MobileNavbar";
 
@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar border-gray-300 sticky top-0 z-20">
-      {isMobile() ? <MobileNavbar /> : <DesktopNavbar />}
+      {useIsMobile() ? <MobileNavbar /> : <DesktopNavbar />}
     </div>
   );
 }
