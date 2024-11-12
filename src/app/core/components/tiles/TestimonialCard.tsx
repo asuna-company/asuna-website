@@ -2,6 +2,8 @@ import { useState } from "react";
 import testimonials from "../../../../../public/data/testimonals.json";
 import { isMobile } from "../../constants/mediaQueryConstants";
 
+import Image from 'next/image'
+
 export default function TestimonialCard() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
@@ -21,13 +23,13 @@ export default function TestimonialCard() {
 
   return (
     <div className="max-w-[680px] mx-auto p-0 xs:p-6 pt-12 xs:pt-0">
-      <div className="mb-4">
-        <img
+      <div className="mb-4 bg-primary-50 p-2 rounded-md max-w-max">
+        <Image
           src="/svg/quote.svg"
           alt="Citação"
-          width={isMobile() ? 28:  35}
-          height={isMobile() ? 28:  35}
-          className="text-blue-500"
+          width={isMobile() ? 28 : 32}
+          height={isMobile() ? 28 : 32}
+          className="text-primary-500/90"
         />
       </div>
 

@@ -21,8 +21,8 @@ export default function SecondaryTitle({
 }: SecondaryTitleProps) {
   return (
     <div className={getSecondaryTitleClasses()}>
-      <h2 className="text-neutral-200">{firstPart}</h2>
-      <h2 className="text-primary-500">{secondPart}</h2>
+      <h2 className="text-neutral-200 font-semibold text-[38px]">{firstPart}</h2>
+      <h2 className="text-primary-500 font-bold ">{secondPart}</h2>
     </div>
   );
 }

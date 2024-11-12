@@ -18,7 +18,8 @@ export default {
         },
         neutral: {
           100: '#EEF4FF',
-          200: '#1A202C'
+          200: '#1A202C',
+          300: '#2C2F35',
         }
       },
       fontSize: {

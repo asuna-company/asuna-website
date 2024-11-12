@@ -1,6 +1,7 @@
 
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
+import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
@@ -24,11 +25,17 @@ export default function HomeResultsSection() {
           para nossos clientes,
           <span className="font-semibold">
             {" "}
-            aumentando a eficiência, reduzindo custos e fortalecendo sua
-            presença digital
+            aumentando a eficiência e reduzindo custos
           </span>
           .
         </p>
+
+        <div className="flex pt-4">
+          <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas"/>
+          <NumberInfoCard numberInfo="35+" tile="Projetos entregues"/>
+          <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>
+        </div>
+
         <div className="pt-8">
           <PrimaryButton
             title="Solicitar Orçamento"
