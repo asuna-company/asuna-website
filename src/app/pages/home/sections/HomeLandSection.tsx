@@ -18,7 +18,7 @@ export default function HomeLandSection() {
     <AbstractSection>
       <LeftStar />
       <section
-        className="flex flex-col items-center justify-center w-full pb-44 pt-24 bg-cover bg-no-repeat bg-center"
+        className="flex flex-col items-center justify-center w-full pt-24 bg-cover bg-no-repeat bg-center"
         style={getBackgroundStyle()}
       >
         <div className="flex space-x-3 mb-4">

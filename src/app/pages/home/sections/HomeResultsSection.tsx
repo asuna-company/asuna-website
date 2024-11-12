@@ -30,6 +30,8 @@ export default function HomeResultsSection() {
           .
         </p>
 
+    
+
         <div className="flex pt-4">
           <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas"/>
           <NumberInfoCard numberInfo="35+" tile="Projetos entregues"/>
@@ -48,8 +50,8 @@ export default function HomeResultsSection() {
         <Image
           src="/images/creative-001.png"
           alt="Pessoas Sorrindo"
-          width={460}
-          height={460}
+          width={480}
+          height={480}
           className="rounded-lg"
         />
       </div>
