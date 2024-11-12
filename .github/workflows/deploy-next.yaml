@@ -31,6 +31,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rlgoDzvc -S --delete"
           SOURCE: "build/"
-          REMOTE_HOST: ${{ secrets.FTP_SERVER }
-          REMOTE_USER: ${{ secrets.FTP_USERNAME }
-          REMOTE_PORT: ${{ secrets.FTP_PORT }
+          REMOTE_HOST: ${{ secrets.FTP_SERVER }}
+          REMOTE_USER: ${{ secrets.FTP_USERNAME }}
+          REMOTE_PORT: ${{ secrets.FTP_PORT }}
