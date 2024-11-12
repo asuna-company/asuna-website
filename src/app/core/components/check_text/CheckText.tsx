@@ -1,4 +1,4 @@
-import { isMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import Image from "next/image";
 
 interface CheckTextProps {
@@ -23,7 +23,7 @@ export default function CheckText({
         />
       </div>
       <span className="text-p2 font-poppins font-medium text-neutral-200 text-left">
-        {isMobile() ? mobileTitle : title}
+        {useIsMobile() ? mobileTitle : title}
       </span>
     </div>
   );

@@ -1,3 +1,3 @@
 import useMediaQuery from "@/app/hooks/useMediaQuery";
 
-export const isMobile = () => useMediaQuery('(max-width: 768px)')
+export const useIsMobile = () => useMediaQuery('(max-width: 768px)');

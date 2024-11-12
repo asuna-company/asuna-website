@@ -53,6 +53,7 @@ export default function HomeResultsSection() {
           width={480}
           height={480}
           className="rounded-lg"
+          unoptimized
         />
       </div>
     </AbstractSection>

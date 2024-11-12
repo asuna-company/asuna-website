@@ -1,6 +1,6 @@
 import { useState } from "react";
 import testimonials from "../../../../../public/data/testimonals.json";
-import { isMobile } from "../../constants/mediaQueryConstants";
+import { useIsMobile } from "../../constants/mediaQueryConstants";
 
 import Image from 'next/image'
 
@@ -27,8 +27,8 @@ export default function TestimonialCard() {
         <Image
           src="/svg/quote.svg"
           alt="Citação"
-          width={isMobile() ? 28 : 32}
-          height={isMobile() ? 28 : 32}
+          width={useIsMobile() ? 28 : 32}
+          height={useIsMobile() ? 28 : 32}
           className="text-primary-500/90"
         />
       </div>
