@@ -33,7 +33,7 @@ export default function HomeLandSection() {
         />
 
         <p className="text-p1 text-gray-600 text-center mt-4 max-w-[600px] mx-auto opacity-90">
-          Somos uma <span className="font-semibold">software house B2B</span>{" "}
+         Teste <span className="font-semibold">software house B2B</span>{" "}
           para pequenas e médias empresas, simplificando processos e{" "}
           <span className="font-semibold">impulsionando resultados</span> no seu
           negócio 💙
