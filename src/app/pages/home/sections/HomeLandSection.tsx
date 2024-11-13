@@ -1,4 +1,5 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
+import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
 import SecondaryButton from "@/app/core/components/buttons/SecondaryButton";
 import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
@@ -22,7 +23,7 @@ export default function HomeLandSection() {
     <AbstractSection>
       <LeftStar  isVisible={!useIsMobile()}/>
       <section
-        className="flex flex-col items-center justify-center w-full pt-80 xs:pt-24 bg-cover bg-no-repeat bg-center"
+        className="flex flex-col items-center justify-center w-full pt-72 xs:pt-24 bg-cover bg-no-repeat bg-center"
         style={getBackgroundStyle()}
       >
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
@@ -43,21 +44,7 @@ export default function HomeLandSection() {
           negócio 💙
         </p>
 
-        <div className="flex space-x-4 mt-8 w-full xs:w-auto">
-          <PrimaryButton
-            title="Solicite um Orçamento"
-            mobileTitle="Solicitar Orçamento"
-            fullWidth={useIsMobile()}
-            onClick={() => alert("Button clicked!")}
-          />
-          {!useIsMobile() && (
-            <SecondaryButton
-              title="Conheça nossos Serviços"
-              mobileTitle="Nossos Serviços"
-              onClick={() => alert("Button clicked!")}
-            />
-          )}
-        </div>
+        <BudgetServicesButtons />
       </section>
     
 
