@@ -1,21 +1,25 @@
 
 import TextBadge from "@/app/core/components/badges/TextBadge";
+import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
 import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
+import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
+
+// max-w-[390px] xs:max-w-[600px]
 
 export default function HomeResultsSection() {
   return (
     <AbstractSection align="items-start">
-      <div className="flex flex-col items-start max-w-[700px] justify-start">
-        <div className="pb-6">
+      <div className="flex flex-col items-start max-w-[600px] justify-start">
+        <div className="pb-4 xs:pb-6">
           <TextBadge title="Resultados" />
         </div>
         <SecondaryTitle
-          firstPart="Resultados concretos que"
-          secondPart="transformam a sua empresa"
+          firstPart={`${useIsMobile() ? 'Resultados reais que': 'Resultados concretos que'}`}
+          secondPart={`${useIsMobile() ? 'movem sua operação': 'transformam sua empresa'}`}
         />
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
           A <span className="font-semibold">Asuna</span> é uma{" "}
@@ -30,25 +34,19 @@ export default function HomeResultsSection() {
           .
         </p>
 
-    
-
         <div className="flex pt-4">
           <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas"/>
-          <NumberInfoCard numberInfo="35+" tile="Projetos entregues"/>
-          <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>
+          <NumberInfoCard numberInfo="35+" tile="Projetos entregues" showDivider={!useIsMobile()}/>
+          {!useIsMobile() && <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>}
         </div>
 
-        <div className="pt-8">
-          <PrimaryButton
-            title="Solicitar Orçamento"
-            onClick={() => alert("Button clicked!")}
-          />
-        </div>
+
+        <BudgetServicesButtons hideServicesButton={useIsMobile()} />
       </div>
 
       <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8 pr-0 xs:pr-4">
         <Image
-          src="/images/creative-001.png"
+          src="/images/creative-001.webp"
           alt="Pessoas Sorrindo"
           width={480}
           height={480}

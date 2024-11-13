@@ -3,12 +3,13 @@ import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 interface PrimaryButtonProps {
   title: string;
   mobileTitle?: string;
+  fullWidth?: boolean;
   onClick: () => void;
   paddingY?: string;
 }
 
-function getPrimaryButtonSizeClasses() {
-  return "inline-block h-auto px-5 mx-auto";
+function getPrimaryButtonSizeClasses(fullWidth: boolean) {
+  return fullWidth ? "w-full flex-grow h-auto px-5" : "inline-block h-auto px-5 mx-auto";
 }
 
 function getPrimaryButtonTextClasses() {
@@ -27,9 +28,9 @@ function getPrimaryButtonTransitionClasses() {
   return "transition-all duration-200 transform-origin-center " ;
 }
 
-function getPrimaryButtonClasses() {
+function getPrimaryButtonClasses(fullWidth: boolean) {
   return [
-    getPrimaryButtonSizeClasses(),
+    getPrimaryButtonSizeClasses(fullWidth),
     getPrimaryButtonTextClasses(),
     getPrimaryButtonBackgroundClasses(),
     getPrimaryButtonHoverClasses(),
@@ -40,12 +41,13 @@ function getPrimaryButtonClasses() {
 export default function PrimaryButton({
   title,
   mobileTitle = title,
+  fullWidth = false,
   onClick,
   paddingY = "12.5px",
 }: PrimaryButtonProps) {
   return (
     <button
-      className={getPrimaryButtonClasses()}
+      className={getPrimaryButtonClasses(fullWidth)}
       style={{ paddingTop: paddingY, paddingBottom: paddingY }}
       onClick={onClick}
     >

@@ -10,9 +10,9 @@ import HomeServicesSection from "./pages/home/sections/HomeServicesSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col max-w-full">
       <Navbar />
-      <div className="space-y-32">
+      <div className="space-y-0 xs:space-y-44 overflow-x-hidden">
         <HomeLandSection />
         <HomeResultsSection />
         <HomeServicesSection />

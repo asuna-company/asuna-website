@@ -1,32 +1,31 @@
-name: Deploy via FTP
+# name: Deploy FTP
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  ftp-deploy:
-    name: Deploy to Hostinger via FTP
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#       - name: Install Dependencies
+#         run: npm install
 
-      - name: Install Dependencies
-        run: npm install
+#       - name: Build Application
+#         run: npm run build
 
-      - name: Build Application
-        run: npm run build
-
-      - name: Clean and Sync files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          local-dir: ./build
-          server-dir: /public_html/
-          delete: true
+#       - name: Hostinger Deploy
+#         uses: easingthemes/ssh-deploy@v5.1.0
+#         with:
+#           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+#           ARGS: "-rlgoDzvc --delete"
+#           SOURCE: "build/"
+#           REMOTE_HOST: ${{ secrets.FTP_SERVER }}
+#           REMOTE_USER: ${{ secrets.FTP_USERNAME }}
+#           REMOTE_PORT: ${{ secrets.FTP_PORT }}
+#           REMOTE_PATH: "/public_html/"
+#           EXCLUDE: "/node_modules/"
