@@ -10,7 +10,7 @@ export default function HomeResultsSection() {
   return (
     <AbstractSection align="items-start">
       <div className="flex flex-col items-start max-w-[700px] justify-start">
-        <div className="pb-6">
+        <div className="pb-4 xs:pb-6">
           <TextBadge title="Resultados" />
         </div>
         <SecondaryTitle

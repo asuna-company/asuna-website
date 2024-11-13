@@ -19,7 +19,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="navbar border-gray-300 sticky top-0 z-20">
+    <div className="navbar border-gray-300 sticky top-0 z-50">
       {useIsMobile() ? <MobileNavbar /> : <DesktopNavbar />}
     </div>
   );

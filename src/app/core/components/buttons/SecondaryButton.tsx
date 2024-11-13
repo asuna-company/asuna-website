@@ -1,5 +1,8 @@
+import { useIsMobile } from "../../constants/mediaQueryConstants";
+
 interface SecondaryButtonProps {
   title: string;
+  mobileTitle?: string;
   onClick: () => void;
   paddingY?: string;
 }
@@ -24,6 +27,7 @@ function getButtonOutlineClasses() {
   return "outline outline-1 outline-[#ADADAD]";
 }
 
+
 function getButtonClasses() {
   return [
     getButtonLayoutClasses(),
@@ -34,18 +38,14 @@ function getButtonClasses() {
   ].join(" ");
 }
 
-export default function SecondaryButton({
-  title,
-  onClick,
-  paddingY = "12.5px",
-}: SecondaryButtonProps) {
+export default function SecondaryButton({title, mobileTitle = title, onClick, paddingY = "12.5px"}: SecondaryButtonProps) {
   return (
     <button
       className={getButtonClasses()}
       style={{ paddingTop: `${paddingY}`, paddingBottom: `${paddingY}` }}
       onClick={onClick}
     >
-      {title}
+      {useIsMobile() ? mobileTitle : title}
     </button>
   );
 }

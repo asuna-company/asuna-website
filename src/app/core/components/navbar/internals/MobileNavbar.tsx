@@ -6,10 +6,10 @@ const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-[var(--foreground)]">
       <div className="flex items-center justify-between p-4">
           <Link href="/">
-            <Image src="svg/logo_with_text.svg" alt="Asuna" width={130} height={45} />
+            <Image src="svg/logo_with_text.svg" alt="Asuna" width={145} height={45} />
           </Link>
         <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
           <svg
