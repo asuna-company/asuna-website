@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2017",
+    "types": [
+      "web-vitals",
+      "./types/globals"
+    ],
     "lib": [
       "dom",
       "dom.iterable",
@@ -34,7 +38,9 @@
     ".next/types/**/*.ts",
     "dist/types/**/*.ts",
     "next-env.d.ts",
-    "build/types/**/*.ts"
+    "build/types/**/*.ts",
+    "./types/**/*.d.ts",
+    "core/configs/**/*.ts"
   ],
   "exclude": [
     "node_modules"
