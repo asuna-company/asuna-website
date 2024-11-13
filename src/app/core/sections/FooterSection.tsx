@@ -45,7 +45,7 @@ export default function FooterSection() {
       title: "CONTATO",
       links: [
         { label: "contato@asuna.com.br", href: "mailto:contato@asuna.com.br" },
-        { label: "+55 47 99999-9999", href: "tel:+5547999999999" },
+        { label: "+55 47 99284-7889", href: "tel:+5547992847889" },
       ],
     },
   ];
@@ -68,45 +68,47 @@ export default function FooterSection() {
           <p className="font-heading text-p2 text-center pt-2 opacity-80">
             Entre em contato conosco
           </p>
-          <div className="flex space-x-4 pt-8">
+          <div className="flex space-x-4 pt-8 items-center">
             <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="hover:opacity-80"
-            >
-              <Image
-                src="/icons/facebook.svg"
-                alt="Facebook"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:opacity-80"
-            >
-              <Image
-                src="/icons/instagram.svg"
-                alt="Instagram"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/asuna/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="hover:opacity-80"
             >
               <Image
-                src="/icons/linkedin.svg"
+                src="svg/linkedin_solid.svg"
                 alt="LinkedIn"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              /* TODO: rever icon */
+              href="https://api.whatsapp.com/send?phone=5547992847889"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="hover:opacity-80"
+            >
+              <Image
+                src="svg/square_whatsapp_solid.svg"
+                alt="WhatsApp"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              /* TODO: rever icon */
+              href="mailto:contato@asuna.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              className="hover:opacity-80"
+            >
+              <Image
+                src="svg/envelope_solid.svg"
+                alt="Email"
                 width={24}
                 height={24}
               />
