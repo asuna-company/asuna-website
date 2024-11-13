@@ -1,13 +1,10 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
-import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
-import SecondaryButton from "@/app/core/components/buttons/SecondaryButton";
 import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
 import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 
-
-import Image from "next/image"; 
+import Image from "next/image";
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
@@ -17,18 +14,18 @@ const getBackgroundStyle = () => ({
 });
 
 export default function HomeLandSection() {
-    const textAlign = useIsMobile() ? 'text-left' : 'text-center'
+  const textAlign = useIsMobile() ? "text-left" : "text-center";
 
   return (
     <AbstractSection>
-      <LeftStar  isVisible={!useIsMobile()}/>
+      <LeftStar isVisible={!useIsMobile()} />
       <section
         className="flex flex-col items-center justify-center w-full pt-72 xs:pt-24 bg-cover bg-no-repeat bg-center"
         style={getBackgroundStyle()}
       >
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
           <TextBadge title="Tecnologia e Inovação" />
-          <TextBadge title="98% Satisfação" mobileTitle="B2B"/>
+          <TextBadge title="98% Satisfação" mobileTitle="B2B" />
         </div>
 
         <PrimaryText
@@ -37,8 +34,10 @@ export default function HomeLandSection() {
           titleSecondPart="seu negócio!"
         />
 
-        <p className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-4 max-w-[600px] mx-auto opacity-90`}>
-         Somos uma <span className="font-semibold">software house B2B</span>{" "}
+        <p
+          className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-4 max-w-[600px] mx-auto opacity-90`}
+        >
+          Somos uma <span className="font-semibold">software house B2B</span>{" "}
           para pequenas e médias empresas, simplificando processos e{" "}
           <span className="font-semibold">impulsionando resultados</span> no seu
           negócio 💙
@@ -46,21 +45,23 @@ export default function HomeLandSection() {
 
         <BudgetServicesButtons />
       </section>
-    
 
-      {!useIsMobile() && <RightStar/> }
+      {!useIsMobile() && <RightStar />}
     </AbstractSection>
   );
 }
-
 
 interface StarProps {
   isVisible: boolean;
 }
 
-function LeftStar({isVisible}: StarProps) {
+function LeftStar({ isVisible }: StarProps) {
   return (
-    <div className={`flex justify-start mt-[-24rem] ${isVisible ? 'visible' : 'invisible'}`}> 
+    <div
+      className={`flex justify-start mt-[-24rem] ${
+        isVisible ? "visible" : "invisible"
+      }`}
+    >
       <Image
         src="/svg/figma-4-stars.svg"
         alt="Star"
