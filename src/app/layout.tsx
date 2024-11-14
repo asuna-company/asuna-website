@@ -4,22 +4,23 @@ import "./globals.css";
 
 import { metadata } from "./core/configs/metadata";
 import { reportWebVitals } from "./core/configs/reportWebVitals";
-
 import Script from "next/script";
 
-export { metadata, reportWebVitals };
+export { metadata };
 
-export function reportWebVitalsHandler(metric: any) {
-  console.log(metric);
+if (typeof window !== "undefined") {
+  reportWebVitals((metric) => {
+    console.log(metric);
 
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", metric.name, {
-      event_category: "Web Vitals",
-      value: metric.value,
-      event_label: metric.id,
-      non_interaction: true,
-    });
-  }
+    if (window.gtag) {
+      window.gtag("event", metric.name, {
+        event_category: "Web Vitals",
+        value: metric.value,
+        event_label: metric.id,
+        non_interaction: true,
+      });
+    }
+  });
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
