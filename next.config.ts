@@ -1,12 +1,27 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  skipTrailingSlashRedirect: true,
   compress: true,
   distDir: 'build',
   output: 'export',
-  images: {
-    domains: ['www.asuna.com.br'],
+  swcMinify: true,
+  poweredByHeader: false,
+  trailingSlash: false,
+  staticPageGenerationTimeout: 60,
+  crossOrigin: "anonymous",
+  images: { domains: ['www.asuna.com.br'] },
+  experimental: {
+    externalDir: true,
+    typedRoutes: false,
+    nextScriptWorkers: true,
+    optimizeCss: {
+      minify: true,
+      treeShaking: true,
+    },
+    staleTimes: {
+      dynamic: 30,
+      static: 180,
+    },
   },
 };
 

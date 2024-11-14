@@ -10,16 +10,16 @@ import Image from "next/image";
 export default function HomeResultsSection() {
   return (
     <AbstractSection align="items-start">
-      <div className="flex flex-col items-start max-w-[600px] justify-start">
+      <div className="flex flex-col items-start justify-start">
         <div className="pb-4 xs:pb-6 space-x-2">
           <TextBadge title="Resultados" />
-          <TextBadge title="Último Ano" />
+          {!useIsMobile() && <TextBadge title="Último Ano" />}
         </div>
         <SecondaryTitle
-          firstPart={`${useIsMobile() ? 'Resultados reais que': 'Resultados concretos que'}`}
-          secondPart={`${useIsMobile() ? 'movem sua operação': 'transformam sua empresa'}`}
+          firstPart={`${useIsMobile() ? 'Resultados reais que': 'Resultados exponenciais que'}`}
+          secondPart={`${useIsMobile() ? 'movem sua operação': 'fazem a sua empresa transformar'}`}
         />
-        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90 pb-4">
+        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[680px] opacity-90 pb-4">
           A <span className="font-semibold">Asuna</span> é uma{" "}
           <span className="font-semibold">software house </span>
           comprometida em criar soluções que geram impacto na rotina da sua

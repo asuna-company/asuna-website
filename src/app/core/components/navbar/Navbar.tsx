@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { useIsMobile } from "../../constants/mediaQueryConstants";
-import MobileNavbar from "./internals/MobileNavbar";
-import DesktopNavbar from "./internals/DesktopNavbar";
+import { useEffect, useState, lazy, Suspense } from "react";
+
+const MobileNavbar = lazy(() => import("./internals/MobileNavbar"));
+const DesktopNavbar = lazy(() => import("./internals/DesktopNavbar"));
 
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const isMobileDevice = window.innerWidth <= 768 || useIsMobile();
+    const isMobileDevice = window.innerWidth <= 768;
     setIsMobile(isMobileDevice);
 
     const handleResize = () => {
@@ -19,11 +19,11 @@ export default function Navbar() {
   }, []);
 
   const handleScroll = () => {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector(".navbar");
     if (!navbar) return;
 
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    navbar.classList.toggle('border-b', scrollPosition > 100);
+    navbar.classList.toggle("border-b", scrollPosition > 100);
   };
 
   useEffect(() => {
@@ -33,7 +33,9 @@ export default function Navbar() {
 
   return (
     <div className="navbar border-gray-300 sticky top-0 z-50">
-      {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+      <Suspense fallback={<div>...</div>}>
+        {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+      </Suspense>
     </div>
   );
 }

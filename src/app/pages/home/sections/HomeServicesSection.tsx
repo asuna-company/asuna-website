@@ -14,8 +14,8 @@ export default function HomeServicesSection() {
         <TextBadge title="Mais Procurados" />
         </div>
         <SecondaryTitle
-          firstPart="Seja qual for a sua empresa"
-          secondPart="nós temos a solução perfeita"
+          firstPart={`${useIsMobile() ?'Seja qual for o setor' : 'Seja qual for a sua empresa'}`}
+          secondPart={`${useIsMobile() ?'nós temos a solução' : 'nós temos a solução perfeita'}`}
         />
 
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[620px] opacity-90 pb-6">
