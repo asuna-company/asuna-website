@@ -38,7 +38,7 @@ export default function HomeResultsSection() {
           {!useIsMobile() && <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>}
         </div>
 
-        <BudgetServicesButtons hideServicesButton={useIsMobile()} />
+        <BudgetServicesButtons isMobile={useIsMobile()} hideServicesButton={useIsMobile()} />
       </div>
 
       <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8 pr-0 xs:pr-4">
