@@ -1,14 +1,10 @@
-
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
-import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
 import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
-
-// max-w-[390px] xs:max-w-[600px]
 
 export default function HomeResultsSection() {
   return (
@@ -18,8 +14,12 @@ export default function HomeResultsSection() {
           <TextBadge title="Resultados" />
         </div>
         <SecondaryTitle
-          firstPart={`${useIsMobile() ? 'Resultados reais que': 'Resultados concretos que'}`}
-          secondPart={`${useIsMobile() ? 'movem sua operação': 'transformam sua empresa'}`}
+          firstPart={`${
+            useIsMobile() ? "Resultados reais que" : "Resultados concretos que"
+          }`}
+          secondPart={`${
+            useIsMobile() ? "movem sua operação" : "transformam sua empresa"
+          }`}
         />
         <p className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90">
           A <span className="font-semibold">Asuna</span> é uma{" "}
@@ -35,11 +35,20 @@ export default function HomeResultsSection() {
         </p>
 
         <div className="flex pt-4">
-          <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas"/>
-          <NumberInfoCard numberInfo="35+" tile="Projetos entregues" showDivider={!useIsMobile()}/>
-          {!useIsMobile() && <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>}
+          <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas" />
+          <NumberInfoCard
+            numberInfo="35+"
+            tile="Projetos entregues"
+            showDivider={!useIsMobile()}
+          />
+          {!useIsMobile() && (
+            <NumberInfoCard
+              numberInfo="10+"
+              tile="Colaboradores ativos"
+              showDivider={false}
+            />
+          )}
         </div>
-
 
         <BudgetServicesButtons hideServicesButton={useIsMobile()} />
       </div>

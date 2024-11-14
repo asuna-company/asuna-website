@@ -31,6 +31,7 @@ export default {
         p0: ["24px", "40px"],
         p1: ["16px", "28px"],
         p2: ["14px", "28px"],
+        p3: ["12px", "24px"],
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
