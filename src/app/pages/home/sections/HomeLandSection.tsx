@@ -25,7 +25,7 @@ export default function HomeLandSection() {
       >
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
         <TextBadge title="#1 Região Sul" />
-          <TextBadge title="Soluções Ágeis para B2B" mobileTitle="Soluções para B2B" />
+          <TextBadge title="Soluções diretas para B2B" mobileTitle="Soluções para B2B" />
 
         </div>
 

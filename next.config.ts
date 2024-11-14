@@ -4,12 +4,12 @@ const nextConfig: NextConfig = {
   compress: true,
   distDir: 'build',
   output: 'export',
-  swcMinify: true,
   poweredByHeader: false,
   trailingSlash: false,
   staticPageGenerationTimeout: 60,
   crossOrigin: "anonymous",
   images: { domains: ['www.asuna.com.br'] },
+  compiler: { removeConsole: true },
   experimental: {
     externalDir: true,
     typedRoutes: false,

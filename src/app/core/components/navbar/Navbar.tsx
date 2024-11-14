@@ -33,9 +33,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar border-gray-300 sticky top-0 z-50">
-      <Suspense fallback={<div>...</div>}>
         {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
-      </Suspense>
     </div>
   );
 }
