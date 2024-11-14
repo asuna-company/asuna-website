@@ -3,7 +3,7 @@ import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsExtraMobile, useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
 
@@ -34,8 +34,8 @@ export default function HomeResultsSection() {
 
         <div className="flex py-4">
           <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas"/>
-          <NumberInfoCard numberInfo="35+" tile="Projetos entregues" showDivider={!useIsMobile()}/>
-          {!useIsMobile() && <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>}
+          <NumberInfoCard numberInfo="35+" tile="Projetos entregues" showDivider={!useIsExtraMobile()}/>
+          {!useIsExtraMobile() && <NumberInfoCard numberInfo="10+" tile="Colaboradores ativos" showDivider={false}/>}
         </div>
 
         <BudgetServicesButtons isMobile={useIsMobile()} hideServicesButton={useIsMobile()} />

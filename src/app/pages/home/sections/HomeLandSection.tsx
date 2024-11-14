@@ -59,8 +59,8 @@ function LeftStar() {
         src="/svg/figma-4-stars.svg"
         alt="Star"
         className="left-16 max-medium:left-16 opacity-90"
-        width={96}
-        height={96}
+        width={128}
+        height={128}
         priority
       />
     </div>
@@ -74,8 +74,8 @@ function RightStar() {
         src="/svg/figma-4-stars.svg"
         alt="Star"
         className="top-[28rem] left-16 max-medium:left-16 opacity-90"
-        width={96}
-        height={96}
+        width={128}
+        height={128}
         priority
       />
     </div>

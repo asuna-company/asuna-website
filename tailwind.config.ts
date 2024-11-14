@@ -39,7 +39,8 @@ export default {
       screens: {
         medium: "1480px",
         "medium-small": "1000px",
-        xs: "440px",
+        xs: "768px",
+        xxs: '580px'
       },
       scale: {
         "101": "1.01",

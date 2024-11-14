@@ -1,4 +1,4 @@
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useState, lazy } from "react";
 
 const MobileNavbar = lazy(() => import("./internals/MobileNavbar"));
 const DesktopNavbar = lazy(() => import("./internals/DesktopNavbar"));
