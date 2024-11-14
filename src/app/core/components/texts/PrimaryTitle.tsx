@@ -15,7 +15,7 @@ export default function PrimaryText({
 
   return (
     <h1
-      className={`font-heading xs:text-h0 text-[36px] font-bold text-neutral-200 ${textAlign} mx-auto pb-4 pt-4`}
+      className={`font-heading xs:text-[54px] text-[36px] font-bold text-neutral-200 ${textAlign} mx-auto pb-4 pt-4`}
       style={{ maxWidth: `${maxWidth}px` }}
     >
       {titleFirstPart}

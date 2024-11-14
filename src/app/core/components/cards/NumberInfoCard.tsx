@@ -8,7 +8,7 @@ export default function NumberInfoCard({numberInfo, tile, showDivider = true}: P
   return (
     <div className="flex items-end">
       <div className="flex flex-col">
-        <h3 className="text-primary-500 font-bold text-[40px] -mb-1.5">{numberInfo}</h3>
+        <h3 className="text-primary-500 font-semibold text-[40px] -mb-1.5">{numberInfo}</h3>
         <p className="text-neutral-300 text-[14px] font-medium">{tile}</p>
       </div>
       {showDivider && (

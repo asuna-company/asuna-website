@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col max-w-full">
       <Navbar />
-      <div className="space-y-0 xs:space-y-44 overflow-x-hidden">
+      <div className="space-y-0 xs:space-y-24 overflow-x-hidden">
         <HomeLandSection />
         <HomeResultsSection />
         <HomeServicesSection />

@@ -1,14 +1,18 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import CheckText from "@/app/core/components/check_text/CheckText";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
+import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
 
-const HomeServicesSection = () => {
+export default function HomeServicesSection() {
   return (
     <AbstractSection bgColor="bg-neutral-100">
       <div className="flex flex-col items-start">
+        <div className="space-x-2">
         <TextBadge title="Serviços" />
+        <TextBadge title="Mais Procurados" />
+        </div>
         <SecondaryTitle
           firstPart="Seja qual for a sua empresa"
           secondPart="nós temos a solução perfeita"
@@ -25,26 +29,31 @@ const HomeServicesSection = () => {
         </p>
 
         <div className="grid grid-cols-2 gap-6 w-full mt-4 items-start justify-start">
-          <CheckText title="Desenvolvimento Mobile" />
+          <CheckText title="Desenvolvimento Mobile" mobileTitle="Apps Mobile" />
           <CheckText title="Integração de IA" />
-          <CheckText title="Desenvolvimento Web" />
-          <CheckText title="Soluções diretas para SaaS" />
+          <CheckText title="Desenvolvimento Web" mobileTitle="Websites" />
+          <CheckText title="Soluções para SaaS e MVPs" mobileTitle="SaaS e MVPs" />
           <CheckText title="UI/UX Design" />
-          <CheckText title="Consultoria de Software" />
+          <CheckText title="Consultoria de Software" mobileTitle="Consultoria" />
         </div>
       </div>
 
-      <div className="flex justify-center md:justify-center mt-8 md:mt-0 w-full md:w-auto pt-16 pl-0 xs:pl-32">
-        <Image
-          src="/svg/details_section.svg"
-          alt="Etapas de Desenvolvimento da Asuna"
-          width={640}
-          height={380}
-          className="rounded-lg"
-        />
-      </div>
+      {!useIsMobile() && <ImageServiceSteps/>}
+
     </AbstractSection>
   );
 };
 
-export default HomeServicesSection;
+function ImageServiceSteps() {
+  return (
+    <div className="flex justify-center md:justify-center mt-8 md:mt-0 w-full md:w-auto pt-16 pl-0 xs:pl-32">
+      <Image
+        src="/svg/details_section.svg"
+        alt="Etapas de Desenvolvimento da Asuna"
+        width={640}
+        height={380}
+        className="rounded-lg"
+      />
+    </div>
+  )
+}

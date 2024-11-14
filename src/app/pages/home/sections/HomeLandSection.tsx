@@ -18,14 +18,15 @@ export default function HomeLandSection() {
 
   return (
     <AbstractSection>
-      <LeftStar isVisible={!useIsMobile()} />
+      {!useIsMobile() && <LeftStar />}
       <section
-        className="flex flex-col items-center justify-center w-full pt-72 xs:pt-24 bg-cover bg-no-repeat bg-center"
+        className="flex flex-col items-center justify-center w-full xs:pt-24 bg-cover bg-no-repeat bg-center"
         style={getBackgroundStyle()}
       >
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
-          <TextBadge title="Tecnologia e Inovação" />
-          <TextBadge title="98% Satisfação" mobileTitle="B2B" />
+        <TextBadge title="#1 Região Sul" />
+          <TextBadge title="Soluções Ágeis para B2B" mobileTitle="Soluções para B2B" />
+
         </div>
 
         <PrimaryText
@@ -34,11 +35,9 @@ export default function HomeLandSection() {
           titleSecondPart="seu negócio!"
         />
 
-        <p
-          className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-4 max-w-[600px] mx-auto opacity-90`}
-        >
+        <p className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90`}>
           Somos uma <span className="font-semibold">software house B2B</span>{" "}
-          para pequenas e médias empresas, simplificando processos e{" "}
+          para pequenas e médias empresas, <span className="font-semibold">simplificando processos</span> e{" "}
           <span className="font-semibold">impulsionando resultados</span> no seu
           negócio 💙
         </p>
@@ -51,21 +50,15 @@ export default function HomeLandSection() {
   );
 }
 
-interface StarProps {
-  isVisible: boolean;
-}
 
-function LeftStar({ isVisible }: StarProps) {
+function LeftStar() {
   return (
     <div
-      className={`flex justify-start mt-[-24rem] ${
-        isVisible ? "visible" : "invisible"
-      }`}
-    >
+      className={`flex justify-start mt-[-12rem]`}>
       <Image
         src="/svg/figma-4-stars.svg"
         alt="Star"
-        className="top-[28rem] left-16 max-medium:left-16 w-24 h-24 opacity-90"
+        className="left-16 max-medium:left-16 opacity-90"
         width={96}
         height={96}
         priority
@@ -76,11 +69,11 @@ function LeftStar({ isVisible }: StarProps) {
 
 function RightStar() {
   return (
-    <div className={`flex justify-start`}>
+    <div className={`flex justify-start mt-[12rem]`}>
       <Image
         src="/svg/figma-4-stars.svg"
         alt="Star"
-        className="top-[28rem] left-16 max-medium:left-16 w-24 h-24 opacity-90"
+        className="top-[28rem] left-16 max-medium:left-16 opacity-90"
         width={96}
         height={96}
         priority
