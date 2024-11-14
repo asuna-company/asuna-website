@@ -42,7 +42,7 @@ export default function HomeLandSection() {
           negócio 💙
         </p>
 
-        <BudgetServicesButtons />
+        <BudgetServicesButtons isMobile={useIsMobile()} />
       </section>
 
       {!useIsMobile() && <RightStar />}
