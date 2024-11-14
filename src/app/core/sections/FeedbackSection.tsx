@@ -14,7 +14,7 @@ export default function FeedbackSection() {
         </div>
         <div className="max-w-[600px] mx-auto pt-2">
           <SecondaryTitle
-            firstPart="Veja o que nossos clientes"
+            firstPart="Veja o que as pessoas"
             secondPart="têm a dizer sobre a Asuna"
           />
 
@@ -26,7 +26,8 @@ export default function FeedbackSection() {
 
           <div className="flex pt-4">
             <NumberInfoCard numberInfo="4.9+" tile="Avaliação média"/>
-            <NumberInfoCard numberInfo="30+" tile="Clientes satisfeitos" showDivider={false}/>
+            <NumberInfoCard numberInfo="30+" tile="Clientes satisfeitos"/>
+            <NumberInfoCard numberInfo="35+" tile="Projetos entregues" showDivider={false}/>
           </div>
         </div>
       </div>

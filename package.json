@@ -10,12 +10,15 @@
     "export": "next export"
   },
   "dependencies": {
+    "critters": "^0.0.23",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
+    "react-device-detect": "^2.2.3",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

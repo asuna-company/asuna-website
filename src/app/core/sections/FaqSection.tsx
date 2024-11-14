@@ -2,6 +2,7 @@ import TextBadge from "../components/badges/TextBadge";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import SecondaryTitle from "../components/texts/SecondaryTitle";
 import ExpansionTile from "../components/tiles/ExpansionTile";
+import { useIsMobile } from "../constants/mediaQueryConstants";
 import AbstractSection from "./AbstractSection";
 
 export default function FaqSection() {
@@ -11,18 +12,20 @@ export default function FaqSection() {
         <TextBadge title="FAQ" />
         <SecondaryTitle
           firstPart="Perguntas e respostas"
-          secondPart="mais frequentes"
+          secondPart="mais frequentes sobre a Asuna"
         />
-        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[600px] opacity-90 pb-6">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. 
+        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[600px] opacity-90">
+          Entenda como nossa equipe especializada pode ajudar seu projeto a 
+          <span className='font-semibold'> decolar em tempo recorde</span>, com <span className='font-semibold'>soluções ágeis</span> e <span className="font-semibold">escaláveis</span> para o seu negócio.
+           Veja a seguir as <span className="font-semibold">perguntas mais comuns que recebemos!</span>
         </p>
-        <div className="pt-8">
+        {!useIsMobile() &&
+         <div className="pt-8">
           <PrimaryButton
             title="Tenho uma dúvida"
             onClick={() => alert("Button clicked!")}
           />
-        </div>
+        </div>}
       </div>
 
       <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-8 pt-0 xs:pt-12">
