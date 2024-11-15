@@ -13,17 +13,20 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'images/metadata-banner.jpg',
+        url: 'https://www.asuna.com.br/images/metadata-banner.jpg',
         width: 1200,
         height: 675,
-        alt: 'Asuna | Software House'
-      }
-    ]
+        alt: 'Asuna | Software House',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Asuna | Software House',
     description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas.',
-    images: ['/images/metadata-banner.jpg'],
+    images: ['https://www.asuna.com.br/images/metadata-banner.jpg'],
   },
+  alternates: {
+    canonical: 'https://www.asuna.com.br/',
+  }
 };

@@ -26,19 +26,16 @@ export default function FooterSection() {
     {
       title: "POLÍTICAS",
       links: [
-        { label: "Política de privacidade", href: "/politicas/privacidade" },
-        { label: "Notas legais", href: "/politicas/notas-legais" },
-        { label: "Termos de uso", href: "/politicas/termos-de-uso" },
+        { label: "Política de privacidade", href: "/" },
+        { label: "Notas legais", href: "/" },
+        { label: "Termos de uso", href: "/" },
       ],
     },
     {
       title: "OUTROS LINKS",
       links: [
-        { label: "Criação de sites", href: "/servicos/criacao-de-sites" },
-        {
-          label: "Criação de aplicativos",
-          href: "/servicos/criacao-de-aplicativos",
-        },
+        { label: "Criação de sites", href: "/" },
+        { label: "Criação de aplicativos", href: "/" },
       ],
     },
     {
