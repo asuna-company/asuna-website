@@ -35,13 +35,14 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "./types/**/*.d.ts",
     ".next/types/**/*.ts",
+    ".vscode/build/types/**/*.ts",
+    "core/configs/**/*.ts",
     "dist/types/**/*.ts",
     "next-env.d.ts",
-    ".vscode/build/types/**/*.ts",
-    "./types/**/*.d.ts",
-    "core/configs/**/*.ts",
-    "next-sitemap.config.js"
+    "next-sitemap.config.js",
+    "build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
