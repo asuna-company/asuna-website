@@ -38,7 +38,7 @@
     ".next/types/**/*.ts",
     "dist/types/**/*.ts",
     "next-env.d.ts",
-    "build/types/**/*.ts",
+    ".vscode/build/types/**/*.ts",
     "./types/**/*.d.ts",
     "core/configs/**/*.ts",
     "next-sitemap.config.js"

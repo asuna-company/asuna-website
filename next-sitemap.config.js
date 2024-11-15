@@ -3,9 +3,9 @@ const config = {
   siteUrl: 'https://www.asuna.com.br',
   generateRobotsTxt: true,
   generateIndexSitemap: true,
-  sitemapSize: 100,
-  changefreq: 'weekly',
-  priority: 0.7,
+  sitemapSize: 500,
+  changefreq: 'daily',
+  priority: 1.0,
   exclude: ['/api/*', '/admin/*'],
   robotsTxtOptions: {
     policies: [
@@ -13,9 +13,6 @@ const config = {
         userAgent: '*',
         allow: '/',
       },
-    ],
-    additionalSitemaps: [
-      'https://www.asuna.com.br/sitemap.xml',
     ],
   },
 };

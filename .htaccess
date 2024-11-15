@@ -13,3 +13,9 @@
   AddOutputFilterByType BROTLI application/javascript application/json
   AddOutputFilterByType BROTLI image/svg+xml application/xml+rss
 </IfModule>
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+    Header set X-Robots-Tag "index, follow"
+    Header set Content-Security-Policy "default-src 'self'"
+</IfModule>
