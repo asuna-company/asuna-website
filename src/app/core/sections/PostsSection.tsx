@@ -10,13 +10,13 @@ export default function PostsSection() {
       <div>
         <TextBadge title="Blog" />
         <div className="pt-2">
-          <SecondaryTitle firstPart="Publicações Recentes" secondPart="" />
+          <SecondaryTitle firstPart="Publicações recentes" secondPart="no blog especializado da Asuna" />
         </div>
 
-        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-2">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. 
-        </p>
+        <h3 className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-2">
+        Veja o que nossos especialistas prepararam para você.
+        Conteúdos pensados exclusivamentes para transformar o seu negócio.
+        </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-neutral-900">
           {posts.map((post, index) => (
@@ -38,7 +38,7 @@ export default function PostsSection() {
                     width={18}
                     height={18}
                   />
-                  <span className="ml-2">{post.duration} min read</span>
+                  <span className="ml-2">{post.duration} min</span>
                 </div>
                 <div className="text-p3 flex ml-4">
                   <Image

@@ -29,7 +29,7 @@ export default function HomeResultsSection() {
               : "fazem a sua empresa transformar"
           }`}
         />
-        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[680px] opacity-90 pb-4">
+        <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-[680px] opacity-90 pb-4">
           A <span className="font-semibold">Asuna</span> é uma{" "}
           <span className="font-semibold">software house </span>
           comprometida em criar soluções que geram impacto na rotina da sua
@@ -40,7 +40,7 @@ export default function HomeResultsSection() {
             aumentando a eficiência e reduzindo custos
           </span>
           .
-        </p>
+        </h2>
 
         <div className="flex py-4">
           <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas" />

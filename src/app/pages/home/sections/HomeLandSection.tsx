@@ -30,17 +30,16 @@ export default function HomeLandSection() {
         </div>
 
         <PrimaryText
-          maxWidth={700}
-          titleFirstPart="Softwares que aceleram o futuro do"
-          titleSecondPart="seu negócio!"
+          maxWidth={850}
+          titleFirstPart="A Software House ideal para fazer"
+          titleSecondPart="sua empresa inovar!"
         />
 
-        <p className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90`}>
-          Somos uma <span className="font-semibold">software house B2B</span>{" "}
+        <h2 className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90`}>
+          Somos a Asuna, uma <span className="font-semibold">software house B2B</span>{" "}
           para pequenas e médias empresas, <span className="font-semibold">simplificando processos</span> e{" "}
-          <span className="font-semibold">impulsionando resultados</span> no seu
-          negócio 💙
-        </p>
+          <span className="font-semibold">impulsionando</span> a sua empresa 💙
+        </h2>
 
         <BudgetServicesButtons isMobile={useIsMobile()} />
       </section>
