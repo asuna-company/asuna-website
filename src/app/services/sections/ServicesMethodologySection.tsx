@@ -71,7 +71,7 @@ export default function ServicesMethodologySection() {
           }`}
         />
 
-        <div className="flex justify-end items-end space-x-8">
+        <div className="flex justify-center items-center space-x-8">
           <div className="flex flex-col items-start space-y-6">
             <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-xl opacity-90 pb-4">
               It is a long established fact that a reader will be distracted by
