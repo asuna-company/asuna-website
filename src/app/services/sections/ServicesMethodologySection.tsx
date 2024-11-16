@@ -9,25 +9,26 @@ const cards = [
   {
     id: "websites",
     title: "Websites",
-    body: "Conteúdo sobre Websites.",
-    image: "https://via.placeholder.com/500x300?text=Websites",
+    body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout readable content of a page when looking at its layout readable content of a page when looking at its layout.",
+    image:
+      "https://media.discordapp.net/attachments/867116271300509736/1307404889277861982/Mask_group.png?ex=673a2f30&is=6738ddb0&hm=8ae63b704cbab4d92c1ba86da7094a27ff433d1300cffe4beef820113face2f8&=&format=webp&quality=lossless&width=524&height=358",
   },
   {
     id: "apps",
     title: "Apps",
-    body: "Conteúdo sobre Apps.",
+    body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout readable content of a page when looking at its layout readable content of a page when looking at its layout.",
     image: "https://via.placeholder.com/500x300?text=Apps",
   },
   {
     id: "uiux",
     title: "UI/UX Design",
-    body: "Conteúdo sobre UI/UX Design.",
+    body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout readable content of a page when looking at its layout readable content of a page when looking at its layout.",
     image: "https://via.placeholder.com/500x300?text=UI%2FUX+Design",
   },
   {
     id: "consulting",
     title: "Consultoria",
-    body: "Conteúdo sobre Consultoria.",
+    body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout readable content of a page when looking at its layout readable content of a page when looking at its layout.",
     image: "https://via.placeholder.com/500x300?text=Consultoria",
   },
 ];
@@ -37,17 +38,15 @@ export default function ServicesMethodologySection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
-          return 0;
-        }
-        return prev + 1;
-      });
+      if (progress === 100) {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
+      }
+
+      setProgress((prev) => (prev >= 100 ? 0 : prev + 1));
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [progress]);
 
   const handleCardClick = (index: number) => {
     setActiveIndex(index);
@@ -72,10 +71,9 @@ export default function ServicesMethodologySection() {
           }`}
         />
 
-        <div className="flex space-x-4">
+        <div className="flex justify-end items-end space-x-8">
           <div className="flex flex-col items-start space-y-6">
-            {" "}
-            <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90 pb-4">
+            <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-xl opacity-90 pb-4">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout.
             </h2>
@@ -94,9 +92,9 @@ export default function ServicesMethodologySection() {
           <Image
             src={cards[activeIndex].image}
             alt={cards[activeIndex].title}
-            width={500}
-            height={300}
-            className="rounded-lg"
+            width={700}
+            height={700}
+            className="rounded-lg flex-shrink-0 "
             unoptimized
           />
         </div>
@@ -131,15 +129,11 @@ function Card({ title, body, progress, onClick, isSelected }: CardProps) {
         </h1>
         {isSelected && (
           <>
-            <h2 className="text-p1 text-start mt-4 max-w-[550px] opacity-90 pb-4">
-              {body}
-            </h2>
-            <div className="w-full h-1">
-              <div
-                className="h-1 bg-blue-600 transition-all"
-                style={{ width: `${progress}%` }}
-              ></div>
-            </div>
+            <h2 className="text-p1 text-start mt-4 opacity-90 pb-2">{body}</h2>
+            <div
+              className="h-1 bg-blue-600 transition-all"
+              style={{ width: `${progress}%` }}
+            ></div>
           </>
         )}
       </div>
