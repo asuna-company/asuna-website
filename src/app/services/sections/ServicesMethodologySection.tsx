@@ -1,0 +1,148 @@
+import TextBadge from "@/app/core/components/badges/TextBadge";
+import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
+import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+import AbstractSection from "@/app/core/sections/AbstractSection";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const cards = [
+  {
+    id: "websites",
+    title: "Websites",
+    body: "Conteúdo sobre Websites.",
+    image: "https://via.placeholder.com/500x300?text=Websites",
+  },
+  {
+    id: "apps",
+    title: "Apps",
+    body: "Conteúdo sobre Apps.",
+    image: "https://via.placeholder.com/500x300?text=Apps",
+  },
+  {
+    id: "uiux",
+    title: "UI/UX Design",
+    body: "Conteúdo sobre UI/UX Design.",
+    image: "https://via.placeholder.com/500x300?text=UI%2FUX+Design",
+  },
+  {
+    id: "consulting",
+    title: "Consultoria",
+    body: "Conteúdo sobre Consultoria.",
+    image: "https://via.placeholder.com/500x300?text=Consultoria",
+  },
+];
+export default function ServicesMethodologySection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index);
+    setProgress(0);
+  };
+
+  return (
+    <AbstractSection>
+      <div className="flex flex-col items-start space-y-6">
+        <TextBadge title="Nossa Metodologia" />
+
+        <SecondaryTitle
+          firstPart={`${
+            useIsMobile()
+              ? "Nós proporcionamos novas"
+              : "Nós proporcionamos novas"
+          }`}
+          secondPart={`${
+            useIsMobile()
+              ? "oportunidades de crescimento"
+              : "oportunidades de crescimento"
+          }`}
+        />
+
+        <div className="flex space-x-4">
+          <div className="flex flex-col items-start space-y-6">
+            {" "}
+            <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-[550px] opacity-90 pb-4">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </h2>
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={`${index + 1}. ${card.title}`}
+                body={card.body}
+                progress={index === activeIndex ? progress : 0}
+                isSelected={index === activeIndex}
+                onClick={() => handleCardClick(index)}
+              />
+            ))}
+          </div>
+
+          <Image
+            src={cards[activeIndex].image}
+            alt={cards[activeIndex].title}
+            width={500}
+            height={300}
+            className="rounded-lg"
+            unoptimized
+          />
+        </div>
+      </div>
+    </AbstractSection>
+  );
+}
+
+interface CardProps {
+  title: string;
+  body: string;
+  progress?: number;
+  isSelected?: boolean;
+  onClick?: () => void;
+}
+
+function Card({ title, body, progress, onClick, isSelected }: CardProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={`flex w-full items-center font-poppins rounded-full transition ${
+        isSelected ? "text-neutral-200" : "text-[#919497]"
+      }`}
+      style={{
+        paddingTop: "5.5px",
+        paddingBottom: "5.5px",
+      }}
+    >
+      <div className="flex w-full flex-col items-start space-y-6">
+        <h1 className="text-h1 font-heading font-bold text-left text-[30px] xs:text-[38px]">
+          {title}
+        </h1>
+        {isSelected && (
+          <>
+            <h2 className="text-p1 text-start mt-4 max-w-[550px] opacity-90 pb-4">
+              {body}
+            </h2>
+            <div className="w-full h-1">
+              <div
+                className="h-1 bg-blue-600 transition-all"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+          </>
+        )}
+      </div>
+    </button>
+  );
+}

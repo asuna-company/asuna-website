@@ -33,10 +33,7 @@ export default function ServicesServicesSection() {
   return (
     <AbstractSection bgColor="bg-neutral-900">
       <div className="flex flex-col items-start space-y-6">
-        <div className="space-x-2">
-          <TextBadge title="Serviços" />
-          <TextBadge title="Mais Procurados" />
-        </div>
+        <TextBadge title="Serviços" />
 
         <SecondaryTitle
           firstPart={`${
@@ -63,7 +60,6 @@ export default function ServicesServicesSection() {
           ))}
         </div>
 
-        {/* Dynamic Content */}
         <div className="mt-6">{renderContent()}</div>
       </div>
     </AbstractSection>

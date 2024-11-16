@@ -39,5 +39,3 @@ export default function TextBadgeButton({
     </button>
   );
 }
-// className="flex items-center px-4 text-primary-500 text-[16px] font-poppins font-semibold rounded-full
-// border-[0.5px] border-primary-50 bg-primary-50 transition hover:bg-primary-100 hover:text-primary-700"
