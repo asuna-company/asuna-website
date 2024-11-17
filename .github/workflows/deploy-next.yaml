@@ -21,6 +21,9 @@ jobs:
       - name: Install SSHPASS
         run: sudo apt-get install -y sshpass
 
+      - name: Setup SSH Directory
+        run: mkdir -p ~/.ssh && chmod 700 ~/.ssh
+
       - name: Add Server to Known Hosts
         run: ssh-keyscan -p 65002 217.196.58.150 >> ~/.ssh/known_hosts
 
