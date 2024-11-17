@@ -13,19 +13,26 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Application
         run: npm run build
 
-      - name: Hostinger Deploy
-        uses: easingthemes/ssh-deploy@v5.1.0
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rlgoDzvc --delete"
-          SOURCE: "build/"
-          REMOTE_HOST: ${{ secrets.FTP_SERVER }}
-          REMOTE_USER: ${{ secrets.FTP_USERNAME }}
-          REMOTE_PORT: ${{ secrets.FTP_PORT }}
-          REMOTE_PATH: "/public_html/"
-          EXCLUDE: "/node_modules/"
+      - name: Install SSHPASS
+        run: sudo apt-get install -y sshpass
+
+      - name: Compress Build Files
+        run: tar -czvf build.tar.gz build/
+
+      - name: Transfer Build File to Server
+        run: sshpass -p "010904Lz$" scp -P 65002 build.tar.gz u660271111@217.196.58.150:/home/u660271111/domains/asuna.com.br/
+
+      - name: Remove Old Files and Deploy
+        run: |
+          sshpass -p "010904Lz$" ssh -p 65002 u660271111@217.196.58.150 "
+          cd domains/asuna.com.br/public_html &&
+          rm -rf * &&
+          mv ../build.tar.gz . &&
+          tar -xzvf build.tar.gz &&
+          rm build.tar.gz
+          "
