@@ -39,6 +39,6 @@ jobs:
           cd domains/asuna.com.br/public_html &&
           rm -rf * &&
           mv ../build.tar.gz . &&
-          tar -xzvf build.tar.gz &&
+          tar --strip-components=1 -xzvf build.tar.gz &&
           rm build.tar.gz
           "
