@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 const cards = [
   {
     id: "websites",
-    title: "Websites",
-    body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout readable content of a page when looking at its layout readable content of a page when looking at its layout.",
+    title: "Análise de Requisitos",
+    body: "Alinhamos com o cliente as necessidades e objetivos, mapeando requisitos essenciais para garantir que a solução atenda ao esperado, sem surpresas.",
     image:
       "https://media.discordapp.net/attachments/867116271300509736/1307404889277861982/Mask_group.png?ex=673a2f30&is=6738ddb0&hm=8ae63b704cbab4d92c1ba86da7094a27ff433d1300cffe4beef820113face2f8&=&format=webp&quality=lossless&width=524&height=358",
   },
@@ -49,6 +49,8 @@ export default function ServicesMethodologySection() {
   }, [progress]);
 
   const handleCardClick = (index: number) => {
+    if (index == activeIndex) return;
+
     setActiveIndex(index);
     setProgress(0);
   };
@@ -72,7 +74,7 @@ export default function ServicesMethodologySection() {
         />
 
         <div className="flex justify-center items-center space-x-8">
-          <div className="flex flex-col items-start space-y-6">
+          <div className="flex flex-col items-start space-y-6 pr-20">
             <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-xl opacity-90 pb-4">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout.
@@ -115,7 +117,7 @@ function Card({ title, body, progress, onClick, isSelected }: CardProps) {
   return (
     <button
       onClick={onClick}
-      className={`flex w-full items-center font-poppins rounded-full transition ${
+      className={`flex w-full  items-center font-poppins rounded-full transition ${
         isSelected ? "text-neutral-200" : "text-[#919497]"
       }`}
       style={{
@@ -123,8 +125,8 @@ function Card({ title, body, progress, onClick, isSelected }: CardProps) {
         paddingBottom: "5.5px",
       }}
     >
-      <div className="flex w-full flex-col items-start space-y-6">
-        <h1 className="text-h1 font-heading font-bold text-left text-[30px] xs:text-[38px]">
+      <div className="flex w-[650px] flex-col items-start space-y-2 ">
+        <h1 className="text-h1 font-heading font-bold text-left text-[30px] xs:text-[32px]">
           {title}
         </h1>
         {isSelected && (
