@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="canonical" href="https://asuna.com.br" />
+        <link rel="canonical" href="https://asuna.com.br" />  
       </Head>
 
       <Script
