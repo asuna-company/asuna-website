@@ -49,8 +49,8 @@ export default function FooterSection() {
 
   return (
     <footer className="w-full bg-neutral-900 py-12">
-      <div className="max-w-[1480px] w-full mx-auto flex flex-wrap justify-between">
-        <div className="flex flex-col items-start text-white p-6 space-y-4">
+      <div className="max-w-[1440px] w-[90%] mx-auto flex flex-col md:flex-row ${align} justify-between">
+        <div className="flex flex-col items-start text-white py-6 space-y-4">
           <Link href="/" className="hover:opacity-80">
             <Image
               src="/svg/logo_with_text_white.svg"
