@@ -25,23 +25,18 @@ if (typeof window !== "undefined") {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="canonical" href="https://asuna.com.br" />  
-      </Head>
-
       <Script
         id="google-tag-manager"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NL7JPZNT');
+            window.requestIdleCallback(() => {
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-NL7JPZNT');
+            });
           `,
         }}
       />
@@ -49,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Script
         id="schema-markup"
         type="application/ld+json"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -71,7 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }}
       />
 
-      <body className="bg-[var(--foreground)]">
+      <Script
+        src="/_next/static/chunks/517-875600e1b331d1a3.js"
+        strategy="lazyOnload"
+      />
+
+      <body>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NL7JPZNT"

@@ -27,7 +27,7 @@ const cards = [
   {
     id: "publication",
     title: "Publicação",
-    body: "Lançamos o produto com todo o suporte necessário, garantindo uma transição suave e acompanhando os primeiros passos no ar.",
+    body: "Lançamos o produto com todo o suporte necessário, garantindo uma transição suave e acompanhando os primeiros passos do seu projeto no ar.",
     image: "https://via.placeholder.com/500x300?text=Publicação",
   },
 ];
@@ -59,40 +59,34 @@ export default function ServicesMethodologySection() {
     <AbstractSection>
       <div className="flex flex-col items-start space-y-6">
         <TextBadge title="Nossa Metodologia" />
+        <SecondaryTitle firstPart="Nós proporcionamos novas" secondPart="oportunidades de crescimento"/>
   
-        <SecondaryTitle
-          firstPart="Nós proporcionamos novas"
-          secondPart="oportunidades de crescimento"
-        />
-  
-        <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-xl opacity-90 pb-4">
-          It is a long established fact that a reader will be distracted by
-          the readable content of a page when looking at its layout.
-        </h2>
-  
-        <div className="flex justify-center items-center space-x-8">
-          <div className="flex flex-col items-start space-y-6 pr-20">
-            {cards.map((card, index) => (
-              <Card
-                key={index}
-                title={`${index + 1}. ${card.title}`}
-                body={card.body}
-                progress={index === activeIndex ? progress : 0}
-                isSelected={index === activeIndex}
-                onClick={() => handleCardClick(index)}
-              />
-            ))}
-          </div>
-  
+        <div className="flex justify-between items-center space-x-8 w-full pt-4">
+        <div className="flex flex-col items-start space-y-6">
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              title={`${index + 1}. ${card.title}`}
+              body={card.body}
+              progress={index === activeIndex ? progress : 0}
+              isSelected={index === activeIndex}
+              onClick={() => handleCardClick(index)}
+            />
+          ))}
+        </div>
+
+        <div className="pl-32">
           <Image
             src={cards[activeIndex].image}
             alt={cards[activeIndex].title}
             width={700}
             height={700}
-            className="rounded-lg flex-shrink-0"
+            className="rounded-lg"
             unoptimized
           />
         </div>
+      </div>
+
       </div>
     </AbstractSection>
   );
@@ -118,8 +112,8 @@ function Card({ title, body, progress, onClick, isSelected }: CardProps) {
         paddingBottom: "5.5px",
       }}
     >
-      <div className="flex w-[650px] flex-col items-start space-y-2 ">
-        <h1 className="text-h1 font-heading font-bold text-left text-[30px] xs:text-[32px]">
+      <div className="flex w-[650px] flex-col items-start space-y- ">
+        <h1 className="text-h1 font-heading font-bold text-left text-[30px] xs:text-[30px]">
           {title}
         </h1>
         {isSelected && (
