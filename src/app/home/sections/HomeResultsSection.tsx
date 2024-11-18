@@ -18,16 +18,8 @@ export default function HomeResultsSection() {
           {!useIsMobile() && <TextBadge title="Último Ano" />}
         </div>
         <SecondaryTitle
-          firstPart={`${
-            useIsMobile()
-              ? "Resultados reais que"
-              : "Resultados exponenciais que"
-          }`}
-          secondPart={`${
-            useIsMobile()
-              ? "movem sua operação"
-              : "fazem a sua empresa transformar"
-          }`}
+          firstPart={`${ useIsMobile() ? "Resultados reais que" : "Resultados exponenciais que"}`}
+          secondPart={`${useIsMobile() ? "movem sua operação" : "fazem a sua empresa transformar"}`}
         />
         <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-[680px] opacity-90 pb-4">
           A <span className="font-semibold">Asuna</span> é uma{" "}
@@ -68,6 +60,7 @@ export default function HomeResultsSection() {
         <Image
           src="/images/creative-001.webp"
           alt="Pessoas Sorrindo"
+          sizes="(max-width: 500px) 100vw, 500px"
           width={500}
           height={500}
           className="rounded-lg"

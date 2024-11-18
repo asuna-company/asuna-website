@@ -1,31 +1,44 @@
-# name: Deploy FTP
+name: Deploy FTP
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v4
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-#       - name: Install Dependencies
-#         run: npm install
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
 
-#       - name: Build Application
-#         run: npm run build
+      - name: Build Application
+        run: npm run build
 
-#       - name: Hostinger Deploy
-#         uses: easingthemes/ssh-deploy@v5.1.0
-#         with:
-#           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-#           ARGS: "-rlgoDzvc --delete"
-#           SOURCE: "build/"
-#           REMOTE_HOST: ${{ secrets.FTP_SERVER }}
-#           REMOTE_USER: ${{ secrets.FTP_USERNAME }}
-#           REMOTE_PORT: ${{ secrets.FTP_PORT }}
-#           REMOTE_PATH: "/public_html/"
-#           EXCLUDE: "/node_modules/"
+      - name: Install SSHPASS
+        run: sudo apt-get install -y sshpass
+
+      - name: Setup SSH Directory
+        run: mkdir -p ~/.ssh && chmod 700 ~/.ssh
+
+      - name: Add Server to Known Hosts
+        run: ssh-keyscan -p 65002 ${{ secrets.FTP_IP }} >> ~/.ssh/known_hosts
+
+      - name: Compress Build Files
+        run: tar -czvf build.tar.gz build/
+
+      - name: Transfer Build File to Server
+        run: sshpass -p "${{ secrets.FTP_PASSWORD }}" scp -P 65002 build.tar.gz ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_IP }}:/home/${{ secrets.FTP_USERNAME }}/domains/asuna.com.br/
+
+      - name: Remove Old Files and Deploy
+        run: |
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -p 65002 ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_IP }} "
+          cd domains/asuna.com.br/public_html &&
+          rm -rf * &&
+          mv ../build.tar.gz . &&
+          tar --strip-components=1 -xzvf build.tar.gz &&
+          rm build.tar.gz
+          "

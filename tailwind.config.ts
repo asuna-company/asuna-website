@@ -20,7 +20,7 @@ export default {
           100: "#EEF4FF",
           200: "#1A202C",
           300: "#2C2F35",
-          900: "#1A1B1D",
+          900: "#1b202b",
         },
       },
       fontSize: {
