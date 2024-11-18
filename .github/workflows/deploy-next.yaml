@@ -25,17 +25,17 @@ jobs:
         run: mkdir -p ~/.ssh && chmod 700 ~/.ssh
 
       - name: Add Server to Known Hosts
-        run: ssh-keyscan -p 65002 217.196.58.150 >> ~/.ssh/known_hosts
+        run: ssh-keyscan -p 65002 ${{ secrets.FTP_IP }} >> ~/.ssh/known_hosts
 
       - name: Compress Build Files
         run: tar -czvf build.tar.gz build/
 
       - name: Transfer Build File to Server
-        run: sshpass -p "010904Lz$" scp -P 65002 build.tar.gz u660271111@217.196.58.150:/home/u660271111/domains/asuna.com.br/
+        run: sshpass -p "${{ secrets.FTP_PASSWORD }}" scp -P 65002 build.tar.gz ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_IP }}:/home/${{ secrets.FTP_USERNAME }}/domains/asuna.com.br/
 
       - name: Remove Old Files and Deploy
         run: |
-          sshpass -p "010904Lz$" ssh -p 65002 u660271111@217.196.58.150 "
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" ssh -p 65002 ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_IP }} "
           cd domains/asuna.com.br/public_html &&
           rm -rf * &&
           mv ../build.tar.gz . &&
