@@ -65,11 +65,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }}
       />
 
-      <Script
-        src="/_next/static/chunks/517-875600e1b331d1a3.js"
-        strategy="lazyOnload"
-      />
-
       <body>
         <noscript>
           <iframe

@@ -11,12 +11,18 @@
     "sitemap": "next-sitemap"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "critters": "^0.0.23",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.460.0",
     "next": "15.0.3",
     "next-sitemap": "^4.2.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-device-detect": "^2.2.3",
     "react-dom": "19.0.0-rc-66855b96-20241106",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {

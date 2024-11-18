@@ -33,7 +33,6 @@ export default function ServicesServicesSection() {
   return (
     <AbstractSection bgColor="bg-neutral-900">
       <div className="flex flex-col items-start space-y-6 relative">
-        {/* Conteúdo principal */}
         <TextBadge title="Serviços" />
         <SecondaryTitle
           firstPart={`${
@@ -49,24 +48,22 @@ export default function ServicesServicesSection() {
           }`}
         />
 
-        {/* Wrapper relativo para o scroll */}
         <div className="relative w-full mt-4">
           <div
             className="absolute left-0 right-0 -mx-4 px-4 flex flex-nowrap space-x-4 overflow-x-auto scroll-smooth scrollbar-hidden"
             style={{
-              width: "100vw", // Força a largura total da viewport
-              WebkitOverflowScrolling: "touch", // Suaviza o scroll no iOS
-              scrollbarWidth: "none", // Oculta no Firefox
+              width: "100vw",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
             }}
           >
             {SERVICES.map((service) => (
               <div
                 key={service.id}
                 className="flex-shrink-0"
-                style={{
-                  minWidth: "fit-content", // Garante que os itens não sejam comprimidos
-                }}
+                style={{ minWidth: "fit-content"}}
               >
+
                 <TextBadgeButton
                   title={service.label}
                   isSelected={selectedService === service.id}

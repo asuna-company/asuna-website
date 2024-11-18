@@ -32,7 +32,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="navbar border-gray-300 sticky top-0 z-50">
+    <div className="navbar border-gray-300 bg-background sticky top-0 z-50">
         {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
     </div>
   );

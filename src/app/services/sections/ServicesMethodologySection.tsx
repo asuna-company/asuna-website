@@ -119,7 +119,7 @@ function Card({ title, body, progress, onClick, isSelected }: CardProps) {
         {isSelected && (
           <>
             <h2 className="text-p1 text-start mt-4 opacity-90 pb-2">{body}</h2>
-            <div className="relative w-[650px] h-1 rounded-full bg-neutral-100">
+            <div className="relative w-[650px] h-1 rounded-full bg-slate-200">
               <div
                 className="absolute top-0 left-0 h-full bg-primary-500 rounded-full transition-all"
                 style={{ width: `${progress}%` }}

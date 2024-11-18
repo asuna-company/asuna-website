@@ -1,3 +1,4 @@
+
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
@@ -19,6 +20,7 @@ export default function HomeLandSection() {
   return (
     <AbstractSection>
       {!useIsMobile() && <LeftStar />}
+
       <section
         className="flex flex-col items-center justify-center w-full xs:pt-24 bg-cover bg-no-repeat bg-center"
         style={getBackgroundStyle()}

@@ -54,6 +54,7 @@ function ImageServiceSteps() {
         height={380}
         className="rounded-lg"
       />
+
     </div>
   )
 }
