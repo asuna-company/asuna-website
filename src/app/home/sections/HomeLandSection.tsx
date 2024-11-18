@@ -1,7 +1,7 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsMedium, useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 
 import Image from "next/image";

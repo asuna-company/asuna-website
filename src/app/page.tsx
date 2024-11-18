@@ -1,13 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Navbar from "./core/components/navbar/Navbar";
-import FaqSection from "./core/sections/FaqSection";
-import FeedbackSection from "./core/sections/FeedbackSection";
-import FooterSection from "./core/sections/FooterSection";
-import PostsSection from "./core/sections/PostsSection";
 import HomeLandSection from "./home/sections/HomeLandSection";
 import HomeResultsSection from "./home/sections/HomeResultsSection";
-import HomeServicesSection from "./home/sections/HomeServicesSection";
+
+const ServicesSectionDynamic = dynamic(() => import('./home/sections/HomeServicesSection'), { ssr: false });
+const FeedbackSectionDynamic = dynamic(() => import('./core/sections/FeedbackSection'), { ssr: false });
+const PostsSectionDynamic = dynamic(() => import('./core/sections/PostsSection'), { ssr: false });
+const FaqSectionDynamic = dynamic(() => import('./core/sections/FaqSection'), { ssr: false });
+const FooterSectionDynamic = dynamic(() => import('./core/sections/FooterSection'), { ssr: false });
 
 export default function Home() {
   return (
@@ -16,11 +18,11 @@ export default function Home() {
       <div className="space-y-0 xs:space-y-24 overflow-x-hidden">
         <HomeLandSection />
         <HomeResultsSection />
-        <HomeServicesSection />
-        <FeedbackSection />
-        <PostsSection />
-        <FaqSection />
-        <FooterSection />
+        <ServicesSectionDynamic />
+        <FeedbackSectionDynamic />
+        <PostsSectionDynamic />
+        <FaqSectionDynamic />
+        <FooterSectionDynamic />
       </div>
     </div>
   );

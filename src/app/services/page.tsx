@@ -1,12 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Navbar from "../core/components/navbar/Navbar";
-import FaqSection from "../core/sections/FaqSection";
-import FeedbackSection from "../core/sections/FeedbackSection";
-import FooterSection from "../core/sections/FooterSection";
-import PostsSection from "../core/sections/PostsSection";
 import ServicesMethodologySection from "./sections/ServicesMethodologySection";
 import ServicesServicesSection from "./sections/ServicesServicesSection";
+
+const FeedbackSectionDynamic = dynamic(() => import('../core/sections/FeedbackSection'), { ssr: false });
+const PostsSectionDynamic = dynamic(() => import('../core/sections/PostsSection'), { ssr: false });
+const FaqSectionDynamic = dynamic(() => import('../core/sections/FaqSection'), { ssr: false });
+const FooterSectionDynamic = dynamic(() => import('../core/sections/FooterSection'), { ssr: false });
 
 export default function Services() {
   return (
@@ -15,10 +17,10 @@ export default function Services() {
       <div className="space-y-0 xs:space-y-24 overflow-x-hidden">
         <ServicesMethodologySection />
         <ServicesServicesSection />
-        <FeedbackSection />
-        <PostsSection />
-        <FaqSection />
-        <FooterSection />
+        <FeedbackSectionDynamic />
+        <PostsSectionDynamic />
+        <FaqSectionDynamic />
+        <FooterSectionDynamic />
       </div>
     </div>
   );

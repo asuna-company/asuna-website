@@ -8,26 +8,26 @@ const cards = [
   {
     id: "requirement_analysis",
     title: "Análise de Requisitos",
-    body: "Alinhamos com o cliente as necessidades e objetivos, mapeando requisitos essenciais para garantir que a solução atenda ao esperado, sem surpresas.",
+    body: "Alinhamos com o cliente as necessidades e objetivos, mapeando os requisitos essenciais para garantir que a solução atenda ao esperado, sem surpresas.",
     image:
       "https://via.placeholder.com/500x300?text=Análise de Requisitos",
   },
   {
     id: "design",
     title: "UI/UX Design",
-    body: "Desenhamos protótipos interativos e validamos com o você e sua equipe, criando interfaces bonitas e intuitivas, ajustadas para quem vai usar.",
+    body: "Desenhamos protótipos interativos e validamos com o você e toda sua equipe, criando interfaces bonitas e intuitivas, ajustada para ser usada da melhor forma.",
     image: "https://via.placeholder.com/500x300?text=Design",
   },
   {
     id: "development",
     title: "Desenvolvimento",
-    body: "Criamos o software com checkpoints regulares para validar cada etapa e garantir que o resultado final atenda às expectativas de você e sua equipe.",
+    body: "Criamos o software com checkpoints regulares para validar cada etapa com você e garantir que o resultado final atenda às suas expectativas.",
     image: "https://via.placeholder.com/500x300?text=Desenvolvimento",
   },
   {
     id: "publication",
     title: "Publicação",
-    body: "Lançamos o produto com todo o suporte necessário, garantindo uma transição suave e acompanhando os primeiros passos do seu projeto no ar.",
+    body: "Lançamos o produto com todo o suporte necessário, garantindo uma transição suave e acompanhando os primeiros passos do seu projeto de software no ar.",
     image: "https://via.placeholder.com/500x300?text=Publicação",
   },
 ];
@@ -119,10 +119,13 @@ function Card({ title, body, progress, onClick, isSelected }: CardProps) {
         {isSelected && (
           <>
             <h2 className="text-p1 text-start mt-4 opacity-90 pb-2">{body}</h2>
-            <div
-              className="h-1 bg-blue-600 transition-all"
-              style={{ width: `${progress}%` }}
-            ></div>
+            <div className="relative w-[650px] h-1 rounded-full bg-neutral-100">
+              <div
+                className="absolute top-0 left-0 h-full bg-primary-500 rounded-full transition-all"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+
           </>
         )}
       </div>

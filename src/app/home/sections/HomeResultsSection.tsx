@@ -60,9 +60,10 @@ export default function HomeResultsSection() {
         <Image
           src="/images/creative-001.webp"
           alt="Pessoas Sorrindo"
-          sizes="(max-width: 500px) 100vw, 500px"
           width={500}
           height={500}
+          decoding="async"
+          sizes="(max-width: 500px) 256px, (max-width: 768px) 500px, (max-width: 1024px) 790px, 1000px"
           className="rounded-lg"
           unoptimized
         />
