@@ -3,7 +3,6 @@ import "./globals.css";
 import { metadata } from "./core/configs/metadata";
 import { reportWebVitals } from "./core/configs/reportWebVitals";
 import Script from "next/script";
-import Head from "next/head";
 
 export { metadata };
 
