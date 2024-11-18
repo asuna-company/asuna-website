@@ -1,6 +1,5 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
 import { useEffect, useState } from "react";
