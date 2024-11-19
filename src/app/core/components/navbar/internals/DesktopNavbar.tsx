@@ -2,25 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import PrimaryButton from "../../buttons/PrimaryButton";
 
-function getLinkClasses() {
-  return "text-gray-700 hover:text-blue-600 hover:underline hover:underline-offset-4 text-p2 font-poppins font-medium ";
+interface DesktopNavbarProps {
+  isDark: boolean
 }
 
-const NavbarLink = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => (
+function getLinkClasses(isDark: boolean) {
+  const desactiveTextColor = isDark ? 'text-white/50' :'text-gray-700'
+  const fontWeight =  isDark ? 'font-light' :'font-medium'
+
+  return `${desactiveTextColor} hover:text-blue-600 hover:underline hover:underline-offset-4 text-p2 font-poppins ${fontWeight}`
+}
+
+const NavbarLink = ({isDark, href, children}: { isDark: boolean; href: string; children: React.ReactNode}) => (
   <li>
-    <Link href={href} className={getLinkClasses()}>
+    <Link href={href} className={getLinkClasses(isDark)}>
       {children}
     </Link>
   </li>
 );
 
-export default function DesktopNavbar() {
+export default function DesktopNavbar({isDark}: DesktopNavbarProps) {
   return (
     <div className="bg-[var(--foreground)]">
       <nav className="max-w-[1440px] w-[90%] mx-auto flex flex-col md:flex-row ${align} justify-between">
@@ -35,9 +36,9 @@ export default function DesktopNavbar() {
           </Link>
 
           <ul className="flex space-x-8 items-center pt-1">
-            <NavbarLink href="/">Home</NavbarLink>
-            <NavbarLink href="/services">Nossos Serviços</NavbarLink>
-            <NavbarLink href="/about">Sobre a Asuna</NavbarLink>
+            <NavbarLink href="/" isDark={isDark}>Home</NavbarLink>
+            <NavbarLink href="/services" isDark={isDark}>Nossos Serviços</NavbarLink>
+            <NavbarLink href="/about" isDark={isDark}>Sobre a Asuna</NavbarLink>
 
             <PrimaryButton
               title="Entre em Contato"

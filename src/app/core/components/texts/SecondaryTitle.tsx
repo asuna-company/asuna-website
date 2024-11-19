@@ -2,6 +2,7 @@ interface SecondaryTitleProps {
   firstPart: string;
   secondPart: string;
   firstPartColor?: string;
+  secondPartColor?: string;
 }
 
 function getLayout() {
@@ -20,15 +21,14 @@ export default function SecondaryTitle({
   firstPart,
   secondPart,
   firstPartColor = "text-neutral-200",
+  secondPartColor = "text-primary-500"
 }: SecondaryTitleProps) {
   return (
     <div className={getSecondaryTitleClasses()}>
-      <h2
-        className={`${firstPartColor} font-semibold text-[30px] xs:text-[38px] mb-0`}
-      >
+      <h2 className={`${firstPartColor} font-semibold text-[30px] xs:text-[38px] mb-0`}>
         {firstPart}
       </h2>
-      <h2 className="text-primary-500 font-bold text-[30px] xs:text-[38px] -mt-2 xs:mt-0">
+      <h2 className={`${secondPartColor} font-bold text-[30px] xs:text-[38px] -mt-2 xs:mt-0`}>
         {secondPart}
       </h2>
     </div>

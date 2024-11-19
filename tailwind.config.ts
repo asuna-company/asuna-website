@@ -23,7 +23,8 @@ export default {
   				'100': '#EEF4FF',
   				'200': '#1A202C',
   				'300': '#2C2F35',
-  				'900': '#1b202b'
+					'800': '#1b202b',
+  				'900': '#1A1B1D'
   			},
   			card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -33,10 +34,10 @@ export default {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
+				secondary: {
+					'400': '#7587FF',
+					'500': '#4A62FF'
+				},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'

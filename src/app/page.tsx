@@ -14,7 +14,7 @@ const FooterSectionDynamic = dynamic(() => import('./core/sections/FooterSection
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col max-w-full">
-      <Navbar />
+      <Navbar startDarkSectionFlag={false} />
       <div className="space-y-0 xs:space-y-24 overflow-x-hidden">
         <HomeLandSection />
         <HomeResultsSection />

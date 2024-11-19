@@ -34,7 +34,7 @@ export default function HomeLandSection() {
         <PrimaryText
           maxWidth={850}
           titleFirstPart="A Software House ideal para fazer"
-          titleSecondPart="sua empresa inovar!"
+          titleSecondPart="sua empresa evoluir!"
         />
 
         <h2 className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90`}>

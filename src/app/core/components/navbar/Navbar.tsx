@@ -3,8 +3,14 @@ import { useEffect, useState, lazy } from "react";
 const MobileNavbar = lazy(() => import("./internals/MobileNavbar"));
 const DesktopNavbar = lazy(() => import("./internals/DesktopNavbar"));
 
-export default function Navbar() {
+interface NavbarProps {
+  bgColor?: string;
+  startDarkSectionFlag: boolean
+}
+
+export default function Navbar({ bgColor = "bg-background", startDarkSectionFlag }: NavbarProps) {
   const [isMobile, setIsMobile] = useState(false);
+  const [isDarkSection, setIsDarkSection] = useState(startDarkSectionFlag);
 
   useEffect(() => {
     const isMobileDevice = window.innerWidth <= 768;
@@ -18,22 +24,40 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleScroll = () => {
-    const navbar = document.querySelector(".navbar");
-    if (!navbar) return;
-
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    navbar.classList.toggle("border-b", scrollPosition > 100);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("[data-bg='dark']");
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  
+      let isInDarkSection = false;
+  
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionHeight = section.scrollHeight;
+        const top = rect.top + window.scrollY;
+        const bottom = top + sectionHeight;
+  
+        if (scrollPosition >= top && scrollPosition < bottom - 40) {
+          isInDarkSection = true;
+        }
+      });
+  
+      setIsDarkSection(isInDarkSection);
+    };
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+
+  const backgroundColor = isDarkSection ? "bg-transparent" : bgColor;
+  const borderNavbar = isDarkSection ? "border-b border-transparent" : "border-b border-gray-300";
 
   return (
-    <div className="navbar border-gray-300 bg-background sticky top-0 z-50">
-        {isMobile ? <MobileNavbar /> : <DesktopNavbar />}
+    <div
+      className={`navbar sticky top-0 z-50 transition-all duration-100  ${borderNavbar} ${backgroundColor}`}
+    >
+      {isMobile ? <MobileNavbar /> : <DesktopNavbar isDark={isDarkSection} />}
     </div>
   );
 }
