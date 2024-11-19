@@ -2,11 +2,13 @@ import Image from "next/image";
 import posts from "../../../../public/data/posts.json";
 import SecondaryTitle from "../components/texts/SecondaryTitle";
 import AbstractSection from "./AbstractSection";
+import TextBadge from "../components/badges/TextBadge";
 
 export default function PostsSection() {
   return (
     <AbstractSection align="items-start">
       <div>
+        <TextBadge title="Blog"/>
         <div className="pt-2">
           <SecondaryTitle firstPart="Publicações recentes" secondPart="no blog especializado da Asuna" />
         </div>

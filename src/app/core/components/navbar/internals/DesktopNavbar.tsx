@@ -9,8 +9,9 @@ interface DesktopNavbarProps {
 function getLinkClasses(isDark: boolean) {
   const desactiveTextColor = isDark ? 'text-white/50' :'text-gray-700'
   const fontWeight =  isDark ? 'font-light' :'font-medium'
+  const hoverColor = isDark ? 'hover:text-white': 'hover:text-primary-500'
 
-  return `${desactiveTextColor} hover:text-blue-600 hover:underline hover:underline-offset-4 text-p2 font-poppins ${fontWeight}`
+  return `${desactiveTextColor} ${hoverColor} hover:underline hover:underline-offset-4 text-p2 font-poppins ${fontWeight}`
 }
 
 const NavbarLink = ({isDark, href, children}: { isDark: boolean; href: string; children: React.ReactNode}) => (
@@ -22,13 +23,15 @@ const NavbarLink = ({isDark, href, children}: { isDark: boolean; href: string; c
 );
 
 export default function DesktopNavbar({isDark}: DesktopNavbarProps) {
+  const logoImage = isDark ? "svg/logo_with_text_white.svg" : "svg/logo_with_text.svg"
+
   return (
     <div className="bg-[var(--foreground)]">
       <nav className="max-w-[1440px] w-[90%] mx-auto flex flex-col md:flex-row ${align} justify-between">
         <div className="container mx-auto  py-4 flex items-center justify-between">
           <Link href="/">
             <Image
-              src="svg/logo_with_text.svg"
+              src={logoImage}
               alt="Asuna"
               width={175}
               height={45}

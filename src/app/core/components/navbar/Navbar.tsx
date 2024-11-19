@@ -11,6 +11,7 @@ interface NavbarProps {
 export default function Navbar({ bgColor = "bg-background", startDarkSectionFlag }: NavbarProps) {
   const [isMobile, setIsMobile] = useState(false);
   const [isDarkSection, setIsDarkSection] = useState(startDarkSectionFlag);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const isMobileDevice = window.innerWidth <= 768;
@@ -43,6 +44,7 @@ export default function Navbar({ bgColor = "bg-background", startDarkSectionFlag
       });
   
       setIsDarkSection(isInDarkSection);
+      setHasScrolled(scrollPosition > 100);
     };
   
     window.addEventListener("scroll", handleScroll);
@@ -50,14 +52,14 @@ export default function Navbar({ bgColor = "bg-background", startDarkSectionFlag
   }, []);
   
 
-  const backgroundColor = isDarkSection ? "bg-transparent" : bgColor;
-  const borderNavbar = isDarkSection ? "border-b border-transparent" : "border-b border-gray-300";
+  const backgroundColor = isDarkSection ? "bg-transparent" : bgColor; 
+  const borderNavbar = !isDarkSection && hasScrolled ? "border-b border-gray-300" : "border-b border-transparent";
 
   return (
     <div
-      className={`navbar sticky top-0 z-50 transition-all duration-100  ${borderNavbar} ${backgroundColor}`}
+      className={`navbar sticky top-0 z-50 transition-all duration-200  ${borderNavbar} ${backgroundColor}`}
     >
-      {isMobile ? <MobileNavbar /> : <DesktopNavbar isDark={isDarkSection} />}
+      {isMobile ? <MobileNavbar isDark={isDarkSection} /> : <DesktopNavbar isDark={isDarkSection} />}
     </div>
   );
 }

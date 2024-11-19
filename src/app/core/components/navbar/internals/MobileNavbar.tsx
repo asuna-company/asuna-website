@@ -3,17 +3,24 @@ import Image from "next/image";
 import { useState } from "react";
 import PrimaryButton from "../../buttons/PrimaryButton";
 
-export default function MobileNavbar() {
+interface MobileNavbarProps {
+  isDark: boolean
+}
+
+
+export default function MobileNavbar({isDark}: MobileNavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
+  const logoImage = isDark ? "svg/logo_with_text_white.svg" : "svg/logo_with_text.svg"
 
   return (
+    
     <nav className="bg-[var(--foreground)]">
       <div className="flex items-center justify-between p-4">
         <Link href="/">
           <Image
-            src="svg/logo_with_text.svg"
+            src={logoImage}
             alt="Asuna"
             width={130}
             height={45}
@@ -31,7 +38,7 @@ export default function MobileNavbar() {
             onClick={toggleMenu}
             className="text-gray-700 flex items-center"
             aria-label="Toggle Menu">
-          <MenuIcon isOpen={isOpen} />
+          <MenuIcon isOpen={isOpen} isDark={isDark} />
           </button>
         </div>
       </div>
@@ -53,11 +60,11 @@ export default function MobileNavbar() {
   );
 };
 
-const MenuIcon = ({ isOpen }: { isOpen: boolean }) => (
+const MenuIcon = ({ isOpen, isDark }: { isOpen: boolean, isDark: boolean }) => (
   <svg
     className="w-6 h-6"
     fill="none"
-    stroke="currentColor"
+    stroke={isDark ? "white" : "currentColor"}
     viewBox="0 0 24 24"
   >
     {isOpen ? (
@@ -79,7 +86,7 @@ const MenuIcon = ({ isOpen }: { isOpen: boolean }) => (
 );
 
 const menuItems = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Serviços" },
-  { href: "#about", label: "Sobre Nós" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Serviços" },
+  { href: "about", label: "Sobre Nós" },
 ];

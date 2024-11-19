@@ -3,6 +3,7 @@ import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import TestimonialCard from "../components/tiles/TestimonialCard";
 import AbstractSection from "./AbstractSection";
 import NumberInfoCard from "../components/cards/NumberInfoCard";
+import { useIsMobile } from "../constants/mediaQueryConstants";
 
 export default function FeedbackSection() {
   return (
@@ -15,7 +16,7 @@ export default function FeedbackSection() {
         <div className="max-w-[600px] mx-auto pt-2">
           <SecondaryTitle
             firstPart="Veja o que as pessoas"
-            secondPart="têm a dizer sobre a Asuna"
+            secondPart={`${useIsMobile() ? 'têm a dizer sobre nós': 'têm a dizer sobre a Asuna'}`}
           />
 
           <p className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-2">

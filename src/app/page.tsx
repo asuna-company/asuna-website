@@ -12,6 +12,8 @@ const FaqSectionDynamic = dynamic(() => import('./core/sections/FaqSection'), { 
 const FooterSectionDynamic = dynamic(() => import('./core/sections/FooterSection'), { ssr: false });
 
 export default function Home() {
+
+
   return (
     <div className="min-h-screen flex flex-col max-w-full">
       <Navbar startDarkSectionFlag={false} />

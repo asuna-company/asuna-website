@@ -1,4 +1,4 @@
-import useMediaQuery from "@/app/hooks/useMediaQuery";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export const useIsMedium = () => useMediaQuery('(max-width: 1000px)');
 export const useIsMobile = () => useMediaQuery('(max-width: 768px)');

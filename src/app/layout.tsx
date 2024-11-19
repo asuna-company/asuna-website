@@ -1,8 +1,10 @@
-import { AppRouterProvider } from "./AppRouter";
+
 import "./globals.css";
 import { metadata } from "./core/configs/metadata";
 import { reportWebVitals } from "./core/configs/reportWebVitals";
 import Script from "next/script";
+
+import { AppRouterProvider } from "./core/configs/appRouter";
 
 export { metadata };
 
@@ -24,46 +26,8 @@ if (typeof window !== "undefined") {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <Script
-        id="google-tag-manager"
-        strategy="lazyOnload"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.requestIdleCallback(() => {
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-NL7JPZNT');
-            });
-          `,
-        }}
-      />
-
-      <Script
-        id="schema-markup"
-        type="application/ld+json"
-        strategy="lazyOnload"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Asuna",
-            "url": "https://www.asuna.com.br",
-            "logo": "https://www.asuna.com.br/images/logo.webp",
-            "sameAs": [
-              "https://www.linkedin.com/company/asuna",
-            ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+55-47-99284-7889",
-              "contactType": "Customer Service",
-              "areaServed": "BR",
-              "availableLanguage": ["Portuguese"]
-            }
-          }),
-        }}
-      />
+      <GoogleTagScript/>
+      <SchemaMarkupScript/>
 
       <body>
         <noscript>
@@ -79,4 +43,52 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
+}
+
+
+
+function GoogleTagScript() {
+  return <Script
+    id="google-tag-manager"
+    strategy="lazyOnload"
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.requestIdleCallback(() => {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NL7JPZNT');
+        });
+      `,
+    }}
+  />
+}
+
+
+function SchemaMarkupScript() {
+  return <Script
+    id="schema-markup"
+    type="application/ld+json"
+    strategy="lazyOnload"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Asuna",
+        "url": "https://www.asuna.com.br",
+        "logo": "https://www.asuna.com.br/images/logo.webp",
+        "sameAs": [
+          "https://www.linkedin.com/company/asuna",
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-47-99284-7889",
+          "contactType": "Customer Service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese"]
+        }
+      }),
+    }}
+  />
 }

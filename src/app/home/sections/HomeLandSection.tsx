@@ -6,7 +6,7 @@ import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
   backgroundSize: "80rem",
@@ -16,6 +16,7 @@ const getBackgroundStyle = () => ({
 
 export default function HomeLandSection() {
   const textAlign = useIsMobile() ? "text-left" : "text-center";
+  const useRouterConfig = useRouter()
 
   return (
     <AbstractSection>
@@ -33,17 +34,17 @@ export default function HomeLandSection() {
 
         <PrimaryText
           maxWidth={850}
-          titleFirstPart="A Software House ideal para fazer"
-          titleSecondPart="sua empresa evoluir!"
+          titleFirstPart="A software house ideal para fazer"
+          titleSecondPart="sua empresa crescer!"
         />
 
         <h2 className={`text-p1 text-gray-600 ${textAlign} mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90`}>
           Somos a Asuna, uma <span className="font-semibold">software house B2B</span>{" "}
-          para pequenas e médias empresas, <span className="font-semibold">simplificando processos</span> e{" "}
-          <span className="font-semibold">impulsionando</span> a sua empresa 💙
+          para pequenas e médias empresas, <span className="font-semibold">simplificamos processos</span> e{" "}
+          <span className="font-semibold">impulsionamos</span> a sua empresa 💙
         </h2>
 
-        <BudgetServicesButtons isMobile={useIsMobile()} />
+        <BudgetServicesButtons isMobile={useIsMobile()} onClickSecondaryButton={() => useRouterConfig.push('/services')} />
       </section>
 
       {!useIsMobile() && <RightStar />}
