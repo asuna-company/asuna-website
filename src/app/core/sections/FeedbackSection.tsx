@@ -26,9 +26,9 @@ export default function FeedbackSection() {
 
 
           <div className="flex pt-4">
-            <NumberInfoCard numberInfo="4.9+" tile="Avaliação média"/>
-            <NumberInfoCard numberInfo="30+" tile="Clientes satisfeitos"/>
-            <NumberInfoCard numberInfo="35+" tile="Projetos entregues" showDivider={false}/>
+            <NumberInfoCard number={4.9} isDecimal={true} tile="Avaliação média"/>
+            <NumberInfoCard number={30} tile="Clientes satisfeitos"/>
+            <NumberInfoCard number={35} tile="Projetos entregues" showDivider={false}/>
           </div>
         </div>
       </div>

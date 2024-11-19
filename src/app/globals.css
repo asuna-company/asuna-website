@@ -115,3 +115,46 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.035); 
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  position: absolute;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.animate-circle-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.animate-circle-rotate-reverse {
+  animation: rotate-reverse 25s linear infinite;
+}

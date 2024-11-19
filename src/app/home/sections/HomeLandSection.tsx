@@ -7,6 +7,7 @@ import AbstractSection from "@/app/core/sections/AbstractSection";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
   backgroundSize: "80rem",
@@ -28,7 +29,7 @@ export default function HomeLandSection() {
       >
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
         <TextBadge title="#1 Região Sul" />
-          <TextBadge title="Soluções diretas para B2B" mobileTitle="Soluções para B2B" />
+        <TextBadge title="Soluções diretas para B2B" mobileTitle="Soluções para B2B" />
 
         </div>
 

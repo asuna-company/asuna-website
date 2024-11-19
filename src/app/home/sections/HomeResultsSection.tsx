@@ -2,14 +2,14 @@ import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import {
-  useIsExtraMobile,
-  useIsMobile,
-} from "@/app/core/constants/mediaQueryConstants";
+import {useIsExtraMobile, useIsMobile} from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function HomeResultsSection() {
+  const useRouterConfig = useRouter()
+
   return (
     <AbstractSection align="items-start">
       <div className="flex flex-col items-start justify-start">
@@ -35,15 +35,11 @@ export default function HomeResultsSection() {
         </h2>
 
         <div className="flex py-4">
-          <NumberInfoCard numberInfo="50K+" tile="Pessoas impactadas" />
-          <NumberInfoCard
-            numberInfo="35+"
-            tile="Projetos entregues"
-            showDivider={!useIsExtraMobile()}
-          />
+          <NumberInfoCard number={50} numberSuffix="K+" tile="Pessoas impactadas" />
+          <NumberInfoCard number={35} tile="Projetos entregues" showDivider={!useIsExtraMobile()}/>
           {!useIsExtraMobile() && (
             <NumberInfoCard
-              numberInfo="10+"
+              number={10}
               tile="Colaboradores ativos"
               showDivider={false}
             />
@@ -52,6 +48,7 @@ export default function HomeResultsSection() {
 
         <BudgetServicesButtons
           isMobile={useIsMobile()}
+          onClickSecondaryButton={() => useRouterConfig.push("/services")}
           hideServicesButton={useIsMobile()}
         />
       </div>

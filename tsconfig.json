@@ -42,7 +42,8 @@
     "dist/types/**/*.ts",
     "next-env.d.ts",
     "next-sitemap.config.js",
-    "build/types/**/*.ts"
+    "build/types/**/*.ts",
+    "src/app/core/components/animations/NumberTicker"
   ],
   "exclude": [
     "node_modules"
