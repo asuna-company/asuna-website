@@ -6,6 +6,8 @@ interface SecondaryButtonProps {
   onClick: () => void;
   fullWidth?: boolean;
   paddingY?: string;
+  textColor?: string;
+  isDarkMode?: boolean;
 }
 
 function getButtonSizeClasses(fullWidth: boolean) {
@@ -24,8 +26,10 @@ function getButtonTextClasses() {
   return "text-p2 text-black font-poppins font-medium text-center";
 }
 
-function getButtonHoverClasses() {
-  return "hover:bg-gray-100 hover:outline-primary-200";
+function getButtonHoverClasses(isDarkMode: boolean) {
+  const hover = isDarkMode ? 'hover:bg-[#FFFFFF1A]': 'hover:bg-gray-100'
+
+  return `${hover} hover:outline-primary-200`;
 }
 
 function getButtonOutlineClasses() {
@@ -36,14 +40,14 @@ function getButtonTransitionClasses() {
   return "transition-all duration-200 transform-origin-center";
 }
 
-function getButtonClasses(fullWidth: boolean) {
+function getButtonClasses(fullWidth: boolean, isDarkMode: boolean) {
   return [
     getButtonSizeClasses(fullWidth),
     getButtonLayoutClasses(),
     getButtonBackgroundClasses(),
     getButtonTextClasses(),
     getButtonOutlineClasses(),
-    getButtonHoverClasses(),
+    getButtonHoverClasses(isDarkMode),
     getButtonTransitionClasses(),
   ].join(" ");
 }
@@ -54,11 +58,15 @@ export default function SecondaryButton({
   onClick,
   fullWidth = false,
   paddingY = "12.5px",
+  isDarkMode = false
 }: SecondaryButtonProps) {
+    const darkSecondaryTextColor = '#FFFFFF'
+    const textColor = isDarkMode ? darkSecondaryTextColor : undefined
+
   return (
     <button
-      className={getButtonClasses(fullWidth)}
-      style={{ paddingTop: `${paddingY}`, paddingBottom: `${paddingY}` }}
+      className={getButtonClasses(fullWidth, isDarkMode)}
+      style={{ paddingTop: `${paddingY}`, paddingBottom: `${paddingY}`, color: textColor  }}
       onClick={onClick}
     >
       {useIsMobile() ? mobileTitle : title}

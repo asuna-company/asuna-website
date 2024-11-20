@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import PrimaryButton from "../../buttons/PrimaryButton";
+import PrimaryButton from "../../../components/buttons/PrimaryButton";
 
 interface DesktopNavbarProps {
   isDark: boolean
@@ -40,6 +40,7 @@ export default function DesktopNavbar({isDark}: DesktopNavbarProps) {
 
           <ul className="flex space-x-8 items-center pt-1">
             <NavbarLink href="/" isDark={isDark}>Home</NavbarLink>
+            <NavbarLink href="/blog" isDark={isDark}>Nosso Blog</NavbarLink>
             <NavbarLink href="/services" isDark={isDark}>Nossos Serviços</NavbarLink>
             <NavbarLink href="/about" isDark={isDark}>Sobre a Asuna</NavbarLink>
 

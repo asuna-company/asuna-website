@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import PrimaryButton from "../../buttons/PrimaryButton";
+import PrimaryButton from "../../../components/buttons/PrimaryButton";
 
 interface MobileNavbarProps {
   isDark: boolean
@@ -46,11 +46,7 @@ export default function MobileNavbar({isDark}: MobileNavbarProps) {
       {isOpen && (
         <div className="flex flex-col items-center space-y-4 py-4">
           {menuItems.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
+            <Link key={href} href={href} className="text-gray-700 hover:text-primary-500 transition-colors">
               {label}
             </Link>
           ))}

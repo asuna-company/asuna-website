@@ -38,10 +38,7 @@ export default function ServicesMethodologySection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (progress === 100) {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
-      }
-
+      if (progress === 100) setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
       setProgress((prev) => (prev >= 100 ? 0 : prev + 1));
     }, 100);
 
