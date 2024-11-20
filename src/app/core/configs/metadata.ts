@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.asuna.com.br'),
   title: 'Asuna | Software House',
-  description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento da seu negócio.',
+  description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
   openGraph: {
     title: 'Asuna | Software House',
-    description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento da seu negócio.',
+    description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
     url: 'https://www.asuna.com.br/',
     siteName: 'Asuna',
     locale: 'pt_BR',

@@ -4,9 +4,11 @@ import AbstractSection from "@/app/core/sections/AbstractSection";
 import TextBadgeButton from "../components/TextBadgeButton";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
+;
 import AppsSolutionsInternalSection from "./internals/AppsSolutionsInternalSection";
 import WebsitesSolutionsInternalSection from "./internals/WebsitesSolutionsInternalSection";
+import DesignSolutionsInternalSection from "./internals/DesignSolutionsInternalSection";
+import ConsultingSolutionsInternalSection from "./internals/ConsultingSolutionsInternalSection";
 
 
 const SERVICES = [
@@ -26,9 +28,9 @@ export default function ServicesSolutionsSection() {
       case "apps":
         return <AppsSolutionsInternalSection/>
       case "uiux":
-        return <p className="text-white">Conteúdo sobre UI/UX Design.</p>;
+        return <DesignSolutionsInternalSection/>
       case "consulting":
-        return <p className="text-white">Conteúdo sobre Consultoria.</p>;
+        return <ConsultingSolutionsInternalSection/>;
       default:
         return null;
     }
