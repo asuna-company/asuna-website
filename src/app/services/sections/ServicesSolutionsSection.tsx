@@ -1,9 +1,12 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
-import { useState } from "react";
 import TextBadgeButton from "../components/TextBadgeButton";
+
+import { useState } from "react";
+import dynamic from "next/dynamic";
+
+const DynamicWebsiteSolutionsInternalSection = dynamic(() => import("./internals/WebsiteSolutionsInternalSection"), {ssr: false});
 
 const SERVICES = [
   { id: "websites", label: "Websites" },
@@ -18,7 +21,7 @@ export default function ServicesSolutionsSection() {
   const renderContent = () => {
     switch (selectedService) {
       case "websites":
-        return <p className="text-white">Conteúdo sobre Websites.</p>;
+        return <DynamicWebsiteSolutionsInternalSection/>
       case "apps":
         return <p className="text-white">Conteúdo sobre Apps.</p>;
       case "uiux":
@@ -68,7 +71,7 @@ export default function ServicesSolutionsSection() {
           </div>
         </div>
 
-        <div className="mt-6">{renderContent()}</div>
+        <div className="pt-16 px-1">{renderContent()}</div>
       </div>
     </AbstractSection>
   );

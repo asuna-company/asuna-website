@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar startDarkSectionFlag={false}  />
       <div className="space-y-0 xs:space-y-24 overflow-x-hidden">
         <HomeLandSection />
-        <HomeResultsSection />
+        <div className="pt-0 xs:pt-8"><HomeResultsSection /></div>
         <ServicesSectionDynamic />
         <FeedbackSectionDynamic />
         <PostsSectionDynamic />

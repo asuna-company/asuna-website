@@ -3,13 +3,16 @@ import PrimaryText from '@/app/core/components/texts/PrimaryTitle';
 import AbstractSection from '@/app/core/sections/AbstractSection';
 import { useIsMobile } from '@/app/core/constants/mediaQueryConstants';
 import React from 'react';
+import EmojiBadge from '../components/EmojiBadge';
 
 export default function ServicesLandSection({ scrollToSolutions }: { scrollToSolutions: () => void }) {
   const textAlign = useIsMobile() ? 'text-left' : 'text-center';
 
   return (
-    <AbstractSection bgColor="bg-neutral-900" paddingVertical="py-0" dataBg="dark">
-      <section className="relative w-full h-screen flex flex-col items-center justify-center bg-neutral-900">
+    <AbstractSection bgColor="bg-neutral-900" paddingVertical="pt-16 xs:py-0" dataBg="dark" maxWidth='1650px'>
+      {!useIsMobile() && <LeftBadges/>}
+
+      <section className="relative w-full h-[70vh] pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-900">
         <EllipseGradient />
         <CircleLines />
 
@@ -19,10 +22,10 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
             <span className="text-gray-300 text-[18px]">Bem-vindos!</span>
           </div>
 
-
           <PrimaryText
             maxWidth={900}
             titleFirstPart="Serviços de software que irão elevar toda a sua operação!"
+            titleSecondPart=""
             isDarkMode={true}
           />
 
@@ -32,24 +35,61 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
           </h2>
 
           <BudgetServicesButtons
-              isMobile={useIsMobile()}
-              onClickSecondaryButton={scrollToSolutions}
-              isDarkMode={true}
+            isMobile={useIsMobile()}
+            onClickSecondaryButton={scrollToSolutions}
+            isDarkMode={true}
           />
         </div>
       </section>
+
+      {!useIsMobile() && <RightBadges/>}
+
     </AbstractSection>
   );
+} 
+
+function LeftBadges() {
+  return (
+    <div className="flex flex-col items-start space-y-60 w-fit">
+      <div className="pl-44 animate-bounce-slow">
+        <EmojiBadge emoji="🎨" title="UI/UX Design" />
+      </div>
+      <div className="animate-float">
+        <EmojiBadge emoji="📱" title="Desenvolvimento Mobile" />
+      </div>
+      <div className="pl-44 animate-bounce-slow">
+        <EmojiBadge emoji="🌐" title="Desenvolvimento Web" />
+      </div>
+    </div>
+  )
+}
+
+function RightBadges() {
+  return (
+    <div className="flex flex-col items-start space-y-60 w-fit">
+      <div className="animate-bounce-slow">
+        <EmojiBadge emoji="🤖" title="Integração com IA" />
+      </div>
+      <div className="pl-44 animate-float">
+        <EmojiBadge emoji="🚀" title="Soluções para SaaS" />
+      </div>
+      <div className="animate-bounce-slow">
+        <EmojiBadge emoji="🎉" title="Consultoria de Software" />
+      </div>
+    </div>
+  )
 }
 
 function EllipseGradient() {
+  const isMobile = useIsMobile()
+
   return (
     <div
       className="absolute top-0 left-1/2 transform -translate-x-1/2 blur-3xl opacity-50"
       style={{
         background: 'radial-gradient(circle, #3649FF, #8958FE)',
-        width: '1100px',
-        height: '1200px',
+        width: isMobile ? '800px': '1100px',
+        height: isMobile ? '800px': '1100px',
         borderRadius: '100%',
         transform: 'translate(-50%, -50%)',
         opacity: 0.25,

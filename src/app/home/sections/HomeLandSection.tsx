@@ -23,7 +23,7 @@ export default function HomeLandSection() {
     <AbstractSection>
       {!useIsMobile() && <LeftStar />}
 
-      <section className="flex flex-col items-center justify-center w-full xs:pt-24 bg-cover bg-no-repeat bg-center" style={getBackgroundStyle()}>
+      <section className="flex flex-col items-center justify-center w-full xs:pt-20 bg-cover bg-no-repeat bg-center" style={getBackgroundStyle()}>
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
           <TextBadge title="#1 Região Sul" />
           <TextBadge title="Soluções diretas para B2B" mobileTitle="Soluções para B2B" />
