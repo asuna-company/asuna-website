@@ -8,10 +8,9 @@ interface DesktopNavbarProps {
 
 function getLinkClasses(isDark: boolean) {
   const desactiveTextColor = isDark ? 'text-white/50' :'text-gray-700'
-  const fontWeight =  isDark ? 'font-light' :'font-medium'
   const hoverColor = isDark ? 'hover:text-white': 'hover:text-primary-500'
 
-  return `${desactiveTextColor} ${hoverColor} hover:underline hover:underline-offset-4 text-p2 font-poppins ${fontWeight}`
+  return `${desactiveTextColor} ${hoverColor} hover:underline hover:underline-offset-4 text-p2 font-poppinsfont-medium`
 }
 
 const NavbarLink = ({isDark, href, children}: { isDark: boolean; href: string; children: React.ReactNode}) => (

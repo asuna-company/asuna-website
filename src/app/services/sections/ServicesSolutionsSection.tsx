@@ -5,8 +5,9 @@ import TextBadgeButton from "../components/TextBadgeButton";
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import AppsSolutionsInternalSection from "./internals/AppsSolutionsInternalSection";
+import WebsitesSolutionsInternalSection from "./internals/WebsitesSolutionsInternalSection";
 
-const DynamicWebsiteSolutionsInternalSection = dynamic(() => import("./internals/WebsiteSolutionsInternalSection"), {ssr: false});
 
 const SERVICES = [
   { id: "websites", label: "Websites" },
@@ -21,9 +22,9 @@ export default function ServicesSolutionsSection() {
   const renderContent = () => {
     switch (selectedService) {
       case "websites":
-        return <DynamicWebsiteSolutionsInternalSection/>
+        return <WebsitesSolutionsInternalSection/>
       case "apps":
-        return <p className="text-white">Conteúdo sobre Apps.</p>;
+        return <AppsSolutionsInternalSection/>
       case "uiux":
         return <p className="text-white">Conteúdo sobre UI/UX Design.</p>;
       case "consulting":
@@ -71,7 +72,7 @@ export default function ServicesSolutionsSection() {
           </div>
         </div>
 
-        <div className="pt-16 px-1">{renderContent()}</div>
+        <div className="pt-16 px-1 w-full flex-1">{renderContent()}</div>
       </div>
     </AbstractSection>
   );

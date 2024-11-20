@@ -9,10 +9,10 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
   const textAlign = useIsMobile() ? 'text-left' : 'text-center';
 
   return (
-    <AbstractSection bgColor="bg-neutral-900" paddingVertical="pt-16 xs:py-0" dataBg="dark" maxWidth='1650px'>
+    <AbstractSection bgColor="bg-neutral-900" paddingVertical="pt-24 xs:py-0" dataBg="dark" maxWidth='1650px'>
       {!useIsMobile() && <LeftBadges/>}
 
-      <section className="relative w-full h-[70vh] pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-900">
+      <section className="relative w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-900">
         <EllipseGradient />
         <CircleLines />
 
@@ -88,8 +88,8 @@ function EllipseGradient() {
       className="absolute top-0 left-1/2 transform -translate-x-1/2 blur-3xl opacity-50"
       style={{
         background: 'radial-gradient(circle, #3649FF, #8958FE)',
-        width: isMobile ? '800px': '1100px',
-        height: isMobile ? '800px': '1100px',
+        width: isMobile ? '600px': '1100px',
+        height: isMobile ? '600px': '1100px',
         borderRadius: '100%',
         transform: 'translate(-50%, -50%)',
         opacity: 0.25,
