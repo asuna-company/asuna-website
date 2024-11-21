@@ -1,10 +1,13 @@
 
 import "./globals.css";
-import { metadata } from "./core/configs/metadata";
-import { reportWebVitals } from "./core/configs/reportWebVitals";
+
 import Script from "next/script";
 
 import { AppRouterProvider } from "./core/configs/appRouter";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+import { metadata } from "./core/configs/metadata";
+import { reportWebVitals } from "./core/configs/reportWebVitals";
 
 export { metadata };
 
@@ -39,7 +42,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
 
-        <AppRouterProvider>{children}</AppRouterProvider>
+        <AppRouterProvider>
+          {children}
+          <SpeedInsights />
+        </AppRouterProvider>
       </body>
     </html>
   );

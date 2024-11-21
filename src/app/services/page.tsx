@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Navbar from "../core/sections/navbar/Navbar";
+import Navbar from "../core/sections/Navbar";
 import ServicesMethodologySection from "./sections/ServicesMethodologySection";
 import ServicesLandSection from "./sections/ServicesLandSection";
 import { useRef } from "react";
@@ -25,7 +25,7 @@ export default function Services() {
 
   return (
     <div className="min-h-screen flex flex-col max-w-full relative">
-      <div className="absolute inset-0"><Navbar startDarkSectionFlag={true} /></div>
+      <div className="absolute inset-0"><Navbar isDark={true} /></div>
       <div className="relative overflow-x-hidden space-y-0 xs:space-y-8">
         <ServicesLandSection scrollToSolutions={scrollToSolutions} />        
         <ServicesMethodologySection />

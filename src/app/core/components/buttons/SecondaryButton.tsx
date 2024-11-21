@@ -1,8 +1,5 @@
-import { useIsMobile } from "../../constants/mediaQueryConstants";
-
 interface SecondaryButtonProps {
   title: string;
-  mobileTitle?: string;
   onClick: () => void;
   fullWidth?: boolean;
   paddingY?: string;
@@ -11,29 +8,24 @@ interface SecondaryButtonProps {
 }
 
 function getButtonSizeClasses(fullWidth: boolean) {
-  return fullWidth ? "w-full flex-grow h-auto px-5" : "inline-block h-auto px-5 mx-auto";
-}
-
-function getButtonLayoutClasses() {
-  return "inline-block items-center justify-center";
-}
-
-function getButtonBackgroundClasses() {
-  return "bg-[var(--foreground)] rounded-lg";
+  return fullWidth
+    ? "w-full h-auto px-5"
+    : "inline-block w-auto h-auto px-5 mx-auto";
 }
 
 function getButtonTextClasses() {
-  return "text-p2 text-black font-poppins font-medium text-center";
+  return "text-center font-poppins font-medium text-p2 break-words whitespace-nowrap";
+}
+
+function getButtonBackgroundClasses(isDarkMode: boolean) {
+  const backgroundColor = isDarkMode ? "bg-[#333]" : "bg-[var(--foreground)]";
+  const outlineColor = isDarkMode ? "outline-[#666]" : "outline-[#ADADAD]";
+  return `${backgroundColor} rounded-lg outline outline-1 ${outlineColor}`;
 }
 
 function getButtonHoverClasses(isDarkMode: boolean) {
-  const hover = isDarkMode ? 'hover:bg-[#FFFFFF1A]': 'hover:bg-gray-100'
-
-  return `${hover} hover:outline-primary-200`;
-}
-
-function getButtonOutlineClasses() {
-  return "outline outline-1 outline-[#ADADAD]";
+  const hoverColor = isDarkMode ? 'hover:bg-[#FFFFFF1A]' : 'hover:bg-gray-100';
+  return `${hoverColor} hover:outline-primary-200 hover:scale-101 hover:shadow-[0_0_5px_rgba(59,73,255,0.5)]`;
 }
 
 function getButtonTransitionClasses() {
@@ -43,10 +35,8 @@ function getButtonTransitionClasses() {
 function getButtonClasses(fullWidth: boolean, isDarkMode: boolean) {
   return [
     getButtonSizeClasses(fullWidth),
-    getButtonLayoutClasses(),
-    getButtonBackgroundClasses(),
     getButtonTextClasses(),
-    getButtonOutlineClasses(),
+    getButtonBackgroundClasses(isDarkMode),
     getButtonHoverClasses(isDarkMode),
     getButtonTransitionClasses(),
   ].join(" ");
@@ -54,22 +44,20 @@ function getButtonClasses(fullWidth: boolean, isDarkMode: boolean) {
 
 export default function SecondaryButton({
   title,
-  mobileTitle = title,
   onClick,
   fullWidth = false,
   paddingY = "12.5px",
   isDarkMode = false
 }: SecondaryButtonProps) {
-    const darkSecondaryTextColor = '#FFFFFF'
-    const textColor = isDarkMode ? darkSecondaryTextColor : undefined
+  const textColor = isDarkMode ? "#FFFFFF" : "#000000";
 
   return (
     <button
       className={getButtonClasses(fullWidth, isDarkMode)}
-      style={{ paddingTop: `${paddingY}`, paddingBottom: `${paddingY}`, color: textColor  }}
+      style={{ paddingTop: paddingY, paddingBottom: paddingY, color: textColor }}
       onClick={onClick}
     >
-      {useIsMobile() ? mobileTitle : title}
+      {title}
     </button>
   );
 }

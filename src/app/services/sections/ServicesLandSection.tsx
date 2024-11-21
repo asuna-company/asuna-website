@@ -9,10 +9,10 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
   const textAlign = useIsMobile() ? 'text-left' : 'text-center';
 
   return (
-    <AbstractSection bgColor="bg-neutral-900" paddingVertical="pt-24 xs:py-0" dataBg="dark" maxWidth='1650px'>
+    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-0" dataBg="dark" maxWidth='1650px'> 
       {!useIsMobile() && <LeftBadges/>}
 
-      <section className="relative w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-900">
+      <section className="relative w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-700">
         <EllipseGradient />
         <CircleLines />
 
@@ -35,7 +35,6 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
           </h2>
 
           <BudgetServicesButtons
-            isMobile={useIsMobile()}
             onClickSecondaryButton={scrollToSolutions}
             isDarkMode={true}
           />

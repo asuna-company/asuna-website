@@ -2,25 +2,34 @@ import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import {useIsExtraMobile, useIsMobile} from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/sections/AbstractSection";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function HomeResultsSection() {
-  const useRouterConfig = useRouter()
+  const useRouterConfig = useRouter();
 
   return (
     <AbstractSection align="items-start">
       <div className="flex flex-col items-start justify-start">
         <div className="pb-4 xs:pb-6 space-x-2">
           <TextBadge title="Resultados" />
-          {!useIsMobile() && <TextBadge title="Último Ano" />}
+          <div className="hidden md:inline-block">
+            <TextBadge title="Último Ano" />
+          </div>
         </div>
-        <SecondaryTitle
-          firstPart={`${ useIsMobile() ? "Resultados reais que" : "Resultados exponenciais que"}`}
-          secondPart={`${useIsMobile() ? "movem sua operação" : "fazem a sua empresa transformar"}`}
-        />
+        <div className="md:hidden">
+          <SecondaryTitle
+            firstPart="Resultados reais que"
+            secondPart="movem sua operação"
+          />
+        </div>
+        <div className="hidden md:block">
+          <SecondaryTitle
+            firstPart="Resultados exponenciais que"
+            secondPart="fazem a sua empresa transformar"
+          />
+        </div>
         <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-[680px] opacity-90 pb-4">
           A <span className="font-semibold">Asuna</span> é uma{" "}
           <span className="font-semibold">software house </span>
@@ -36,20 +45,13 @@ export default function HomeResultsSection() {
 
         <div className="flex py-4">
           <NumberInfoCard number={50} numberSuffix="K+" tile="Pessoas impactadas" />
-          <NumberInfoCard number={35} tile="Projetos entregues" showDivider={!useIsExtraMobile()}/>
-          {!useIsExtraMobile() && (
-            <NumberInfoCard
-              number={10}
-              tile="Colaboradores ativos"
-              showDivider={false}
-            />
-          )}
+          <NumberInfoCard number={35} tile="Projetos entregues" showDivider />
+         <div className="hidden md:block"><NumberInfoCard number={10} tile="Colaboradores ativos" showDivider={false}/></div> 
         </div>
 
         <BudgetServicesButtons
-          isMobile={useIsMobile()}
           onClickSecondaryButton={() => useRouterConfig.push("/services")}
-          hideServicesButton={useIsMobile()}
+          hideServicesButton={false}
         />
       </div>
 
@@ -60,9 +62,11 @@ export default function HomeResultsSection() {
           width={500}
           height={500}
           decoding="async"
+          priority
+          placeholder="blur"
+          blurDataURL="/images/creative-001-placeholder.webp"
           sizes="(max-width: 500px) 256px, (max-width: 768px) 500px, (max-width: 1024px) 790px, 1000px"
           className="rounded-lg"
-          unoptimized
         />
       </div>
     </AbstractSection>
