@@ -11,6 +11,20 @@ import { reportWebVitals } from "./core/configs/reportWebVitals";
 
 export { metadata };
 
+import { Poppins, Inter } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap", 
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 if (typeof window !== "undefined") {
   window.addEventListener("load", () => {
     reportWebVitals((metric) => {
@@ -28,7 +42,7 @@ if (typeof window !== "undefined") {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${poppins.style} ${inter.style}`}>
       <SchemaMarkupScript/>
       <body>
         <AppRouterProvider>
