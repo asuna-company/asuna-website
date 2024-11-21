@@ -29,19 +29,8 @@ if (typeof window !== "undefined") {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <GoogleTagScript/>
       <SchemaMarkupScript/>
-
       <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NL7JPZNT"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-
         <AppRouterProvider>
           {children}
           <SpeedInsights />
@@ -52,31 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 
 
-
-function GoogleTagScript() {
-  return <Script
-    id="google-tag-manager"
-    strategy="lazyOnload"
-    dangerouslySetInnerHTML={{
-      __html: `
-        window.requestIdleCallback(() => {
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-NL7JPZNT');
-        });
-      `,
-    }}
-  />
-}
-
-
 function SchemaMarkupScript() {
   return <Script
     id="schema-markup"
     type="application/ld+json"
-    strategy="lazyOnload"
     dangerouslySetInnerHTML={{
       __html: JSON.stringify({
         "@context": "https://schema.org",
