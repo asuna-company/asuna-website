@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Navbar from "../core/sections/Navbar";
 import ServicesMethodologySection from "./sections/ServicesMethodologySection";
 import ServicesLandSection from "./sections/ServicesLandSection";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const SolutionsSectionDynamic = dynamic(() => import('./sections/ServicesSolutionsSection'), { ssr: false });
 const FeedbackSectionDynamic = dynamic(() => import('../core/sections/FeedbackSection'), { ssr: false });

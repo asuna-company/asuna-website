@@ -18,6 +18,11 @@ export default function SchemaMarkupScript() {
             "sameAs": [
               "https://www.linkedin.com/company/asuna"
             ],
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "BR:CNPJ",
+              "value": "57.841.370/0001-79"
+            },
             "contactPoint": [
               {
                 "@type": "ContactPoint",
