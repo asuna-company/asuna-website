@@ -3,7 +3,7 @@ import PrimaryButton from "../components/buttons/PrimaryButton";
 import SecondaryTitle from "../components/texts/SecondaryTitle";
 import ExpansionTile from "../components/tiles/ExpansionTile";
 import { useIsMobile } from "../constants/mediaQueryConstants";
-import AbstractSection from "./AbstractSection";
+import AbstractSection from "../components/sections/AbstractSection";
 
 export default function FaqSection() {
   return (
@@ -30,20 +30,20 @@ export default function FaqSection() {
 
       <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-8 pt-0 xs:pt-12">
         <ExpansionTile
-          title="Qual valor tenho que investir?"
-          content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+          title="Quais tipos de software a Asuna desenvolve?"
+          content="Nós desenvolvemos sistemas sob demanda, incluindo aplicativos mobile, sites, e soluções backend, tudo adaptado às necessidades de empresas de pequeno e médio porte."
         />
         <ExpansionTile
-          title="Lorem Ipsum goes here"
-          content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+          title="Como funciona o processo de desenvolvimento com a Asuna?"
+          content="Trabalhamos em etapas claras: definição de requisitos, design, desenvolvimento, testes e lançamento. Mantemos os clientes sempre informados com atualizações regulares sobre o andamento do projeto."
         />
         <ExpansionTile
-          title="Lorem Ipsum goes here"
-          content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+          title="Quais são os custos envolvidos no desenvolvimento de um software?"
+          content="O custo varia de acordo com a complexidade do projeto, suas funcionalidades e o prazo desejado. Podemos fornecer uma estimativa após uma análise inicial das suas necessidades."
         />
         <ExpansionTile
-          title="Lorem Ipsum goes here"
-          content="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+          title="Quais tecnologias utilizamos para desenvolver o seu projeto?"
+          content="Na Asuna, utilizamos Flutter, Kotlin e Swift para desenvolvimento mobile. No backend, trabalhamos com C#, Go e Node.js, garantindo soluções modernas e eficientes."
         />
       </div>
     </AbstractSection>

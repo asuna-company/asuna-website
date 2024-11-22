@@ -49,13 +49,13 @@ export default function TestimonialCard() {
               onClick={handlePrevClick}
               className="text-blue-600 font-bold bg-primary-50 px-4 py-2 rounded-full"
             >
-              &larr;
+            <LeftArrow/>
             </button>
             <button
               onClick={handleNextClick}
               className="text-blue-600 font-bold bg-primary-50 px-4 py-2 rounded-full"
             >
-              &rarr;
+            <RightArrow/>
             </button>
           </div>
         </div>
@@ -63,3 +63,38 @@ export default function TestimonialCard() {
     </div>
   );
 };
+
+
+function LeftArrow() {
+  return <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-4 h-4"
+    >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 19.5L8.25 12l7.5-7.5"
+    />
+  </svg>
+}
+
+function RightArrow() {
+  return <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-4 h-4"
+    >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M8.25 4.5L15.75 12l-7.5 7.5"
+    />
+  </svg>
+}

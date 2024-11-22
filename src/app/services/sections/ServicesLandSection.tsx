@@ -1,22 +1,22 @@
 import BudgetServicesButtons from '@/app/core/components/buttons/combos/BudgetServicesButtons';
 import PrimaryText from '@/app/core/components/texts/PrimaryTitle';
-import AbstractSection from '@/app/core/sections/AbstractSection';
 import { useIsMobile } from '@/app/core/constants/mediaQueryConstants';
 import React from 'react';
 import EmojiBadge from '../components/EmojiBadge';
+import AbstractSection from '@/app/core/components/sections/AbstractSection';
 
 export default function ServicesLandSection({ scrollToSolutions }: { scrollToSolutions: () => void }) {
   const textAlign = useIsMobile() ? 'text-left' : 'text-center';
 
   return (
     <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-0" dataBg="dark" maxWidth='1650px'> 
-      {!useIsMobile() && <LeftBadges/>}
+      <div className='hidden xs:block'><LeftBadges/></div>
 
       <section className="relative w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-700">
         <EllipseGradient />
         <CircleLines />
 
-        <div className="relative z-10 text-center pb-12 xs:pb-16 flex flex-col items-center">
+        <div className="relative z-10 text-center pr-4 pb-12 xs:pb-24 flex flex-col items-center">
           <div className={`flex items-center space-x-2 pb-2 ${useIsMobile() ? 'text-left w-full' : 'justify-center'}`}>
             <span className="text-[20px]">👋</span>
             <span className="text-gray-300 text-[18px]">Bem-vindos!</span>
@@ -29,19 +29,16 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
             isDarkMode={true}
           />
 
-          <h2 className={`text-p1 text-gray-300 ${textAlign} mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90 font-inter`}>
+          <h2 className={`text-p1 text-gray-300 ${textAlign} mb-2 mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90 font-inter`}>
             A Asuna é sua parceira em serviços de software que elevam seu negócio,
             viemos para simplificar processos e trazer as melhores soluções do mercado.
           </h2>
 
-          <BudgetServicesButtons
-            onClickSecondaryButton={scrollToSolutions}
-            isDarkMode={true}
-          />
+          <BudgetServicesButtons onClickSecondaryButton={scrollToSolutions} isDarkMode={true}/>
         </div>
       </section>
 
-      {!useIsMobile() && <RightBadges/>}
+      <div className='hidden xs:block'><RightBadges/></div>
 
     </AbstractSection>
   );

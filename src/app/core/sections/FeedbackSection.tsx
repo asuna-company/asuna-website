@@ -1,7 +1,7 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import TestimonialCard from "../components/tiles/TestimonialCard";
-import AbstractSection from "./AbstractSection";
+import AbstractSection from "../components/sections/AbstractSection";
 import NumberInfoCard from "../components/cards/NumberInfoCard";
 import { useIsMobile } from "../constants/mediaQueryConstants";
 

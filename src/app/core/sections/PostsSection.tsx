@@ -1,66 +1,97 @@
 import Image from "next/image";
 import posts from "../../../../public/data/posts.json";
 import SecondaryTitle from "../components/texts/SecondaryTitle";
-import AbstractSection from "./AbstractSection";
 import TextBadge from "../components/badges/TextBadge";
+import { useIsMobile } from "../constants/mediaQueryConstants";
+import { useState } from "react";
+
+interface BlogPost {
+  author: string;
+  duration: string;
+  imageUrl: string;
+  tag: string;
+  title: string;
+}
+
 
 export default function PostsSection() {
+  const [currentPostIndex, setCurrentPostIndex] = useState(0);
+  const isMobile = useIsMobile();
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const container = e.currentTarget;
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.scrollWidth / posts.length;
+    const index = Math.round(scrollPosition / cardWidth);
+    setCurrentPostIndex(index);
+  };
+
   return (
-    <AbstractSection align="items-start">
-      <div>
-        <TextBadge title="Blog"/>
-        <div className="pt-2">
-          <SecondaryTitle firstPart="Publicações recentes" secondPart="no blog especializado da Asuna" />
-        </div>
-
-        <h3 className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-2">
-          Veja o que nossos especialistas prepararam para você.
-          Conteúdos pensados exclusivamente para transformar o seu negócio.
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-neutral-900">
-          {posts.map((post, index) => (
-            <div key={index} className="max-w-[500px] w-full flex flex-col">
-              <Image
-                src={post.imageUrl}
-                alt={post.title}
-                width={500}
-                height={300}
-                unoptimized
-                className="rounded-lg"
+    <div>
+      <section className="w-full overflow-hidden">
+        <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between" style={{ maxWidth: "1440px" }}>
+          <div className="flex flex-col items-start">
+            <TextBadge title="Blog" />
+            <div className="max-w-[900px] mx-auto pt-2 items-start justify-start">
+              <SecondaryTitle
+                firstPart="Publicações Recentes"
+                secondPart={isMobile ? "no blog da Asuna" : "no blog de especialistas da Asuna"}
               />
-
-              <div className="flex justify-between items-center mt-2 px-1">
-                <p className="text-p2 text-primary-500">{post.tag}</p> 
-
-                <div className="flex">
-                  <div className="flex items-center">
-                    <Image
-                      src="svg/clock-circle.svg"
-                      alt="Clock"
-                      width={18}
-                      height={18}
-                    />
-                    <span className="ml-2 text-[13px]">{post.duration}</span>
-                  </div>
-                  <div className="flex items-center ml-4">
-                    <Image
-                      src="svg/user.svg"
-                      alt="Author Icon"
-                      width={18}
-                      height={18}
-                    />
-                    <span className="ml-2 text-[13px]">{post.author}</span>
-                  </div>
-                </div>
-              </div>
-                <h2 className="text-p1 font-bold mt-2 transition-colors duration-20 px-1">
-                    <a href="" className="hover:text-primary-500 hover:underline">{post.title}</a>
-                </h2>
+              <h3 className="text-p1 text-gray-600 text-start mt-4 opacity-90 pb-2">
+                Veja o que nossos especialistas fizeram para vocês. Conteúdos exclusivos para o seu negócio e dia a dia.
+              </h3>
             </div>
-          ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="w-full xs:w-[90%] pl-4 xs:pl-0 mt-4 xs:mt-6 mx-auto flex flex-col md:flex-row justify-between" style={{ maxWidth: "1440px" }}>
+        <div
+          id="postsContainer"
+          className="flex flex-row gap-6 md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory pb-4 pr-6"
+          onScroll={handleScroll}
+        >
+          {posts.map((post, index) => BlogCard(post, index))}
         </div>
       </div>
-    </AbstractSection>
+    </div>
+  );
+}
+
+function BlogCard(post: BlogPost, index: number) {
+  return (
+    <div
+      key={index}
+      className="flex-shrink-0 sm:max-w-[80%] md:max-w-[500px] max-w-[95%] flex flex-col snap-start"
+    >
+      <Image
+        src={post.imageUrl}
+        alt={post.title}
+        width={500}
+        height={300}
+        unoptimized
+        className="rounded-lg"
+      />
+
+      <div className="flex justify-between items-center mt-2 px-1">
+        <p className="text-p2 text-primary-500">{post.tag}</p>
+
+        <div className="flex">
+          <div className="flex items-center">
+            <Image src="svg/clock-circle.svg" alt="Clock" width={18} height={18} />
+            <span className="ml-2 text-[13px]">{post.duration}</span>
+          </div>
+          <div className="flex items-center ml-4">
+            <Image src="svg/user.svg" alt="Author Icon" width={18} height={18} />
+            <span className="ml-2 text-[13px]">{post.author}</span>
+          </div>
+        </div>
+      </div>
+      <h2 className="font-semibold mt-2 transition-colors duration-20 px-1 line-clamp-2">
+        <a href="" className="hover:text-primary-500 hover:underline">
+          {post.title}
+        </a>
+      </h2>
+    </div>
   );
 }

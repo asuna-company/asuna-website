@@ -1,6 +1,6 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import AbstractSection from "@/app/core/sections/AbstractSection";
+import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import TextBadgeButton from "../components/TextBadgeButton";
 
 import { useState } from "react";

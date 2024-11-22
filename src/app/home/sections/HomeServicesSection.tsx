@@ -2,7 +2,7 @@ import TextBadge from "@/app/core/components/badges/TextBadge";
 import CheckText from "@/app/core/components/check_text/CheckText";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
-import AbstractSection from "@/app/core/sections/AbstractSection";
+import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import Image from "next/image";
 
 export default function HomeServicesSection() {

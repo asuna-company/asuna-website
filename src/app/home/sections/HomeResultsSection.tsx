@@ -2,7 +2,7 @@ import TextBadge from "@/app/core/components/badges/TextBadge";
 import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
 import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import AbstractSection from "@/app/core/sections/AbstractSection";
+import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
