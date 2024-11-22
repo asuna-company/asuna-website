@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.asuna.com.br'),
-  title: 'Asuna | Software House',
+  title: 'Asuna | Soluções de Software Para Pequenas e Médias Empresas',
   description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
   openGraph: {
     title: 'Asuna | Software House',
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
         url: 'https://www.asuna.com.br/images/metadata-banner.jpg',
         width: 1200,
         height: 675,
-        alt: 'Asuna | Software House',
+        alt: 'Asuna - Software House',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Asuna | Software House',
+    title: 'Asuna - Software House',
     description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas.',
     images: ['https://www.asuna.com.br/images/metadata-banner.jpg'],
   },

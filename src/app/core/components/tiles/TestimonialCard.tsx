@@ -34,7 +34,7 @@ export default function TestimonialCard() {
       </div>
 
       <div>
-        <p
+        <h3
           className="text-[18px] xs:text-[24px] font-medium leading-[170%] tracking-[0.01em] text-gray-800 pt-4"
           dangerouslySetInnerHTML={{ __html: text }}
         />

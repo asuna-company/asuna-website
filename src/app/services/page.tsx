@@ -5,6 +5,8 @@ import Navbar from "../core/sections/Navbar";
 import ServicesMethodologySection from "./sections/ServicesMethodologySection";
 import ServicesLandSection from "./sections/ServicesLandSection";
 import { useEffect, useRef } from "react";
+import Head from "next/head";
+import useScrollToTop from "../core/hooks/useScrollTop";
 
 const SolutionsSectionDynamic = dynamic(() => import('./sections/ServicesSolutionsSection'), { ssr: false });
 const FeedbackSectionDynamic = dynamic(() => import('../core/sections/FeedbackSection'), { ssr: false });
@@ -23,20 +25,23 @@ export default function Services() {
     }
   };
 
+  useScrollToTop();
+
   return (
-    <div className="min-h-screen flex flex-col max-w-full relative">
-      <div className="absolute inset-0"><Navbar isDark={true} /></div>
-      <div className="relative overflow-x-hidden space-y-0 xs:space-y-8">
-        <ServicesLandSection scrollToSolutions={scrollToSolutions} />        
-        <ServicesMethodologySection />
-        <div ref={solutionsRef}> <SolutionsSectionDynamic /></div>
-        <FeedbackSectionDynamic />
-        <PostsSectionDynamic />
-        <FaqSectionDynamic />
-        <FooterSectionDynamic />
+    <>
+      <title>Conheça os Nossos Serviços | Asuna - Soluções de Software Para Pequenas e Médias Empresas</title>
+      <div className="min-h-screen flex flex-col max-w-full relative">
+        <div className="absolute inset-0"><Navbar isDark={true} /></div>
+        <div className="relative overflow-x-hidden space-y-0 xs:space-y-8">
+          <ServicesLandSection scrollToSolutions={scrollToSolutions} />        
+          <ServicesMethodologySection />
+          <div ref={solutionsRef}> <SolutionsSectionDynamic /></div>
+          <FeedbackSectionDynamic />
+          <PostsSectionDynamic />
+          <FaqSectionDynamic />
+          <FooterSectionDynamic />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
-
-
