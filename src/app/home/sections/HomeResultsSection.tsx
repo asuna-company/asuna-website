@@ -14,7 +14,7 @@ export default function HomeResultsSection() {
       <div className="flex flex-col items-start justify-start">
         <div className="pb-4 xs:pb-6 space-x-2">
           <TextBadge title="Resultados Exponenciais" />
-          <div className="hidden md:inline-block"> <TextBadge title="Último Ano" /> </div>
+          <div className="hidden md:inline-block"> <TextBadge title="Último Ano" /> </div> 
         </div>
         <div className="md:hidden">
           <SecondaryTitle firstPart="Resultados reais que" secondPart="movem sua operação"/>

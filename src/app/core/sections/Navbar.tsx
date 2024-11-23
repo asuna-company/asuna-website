@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,7 +62,7 @@ export default function Navbar({ isDark }: NavbarProps) {
 
         <ul className="hidden md:flex space-x-8 items-center">
           <NavbarLink href="/" isDark={isDarkSection}>Home</NavbarLink>
-          {/* <NavbarLink href="/blog" isDark={isDarkSection}>Nosso Blog</NavbarLink> */}
+          <NavbarLink href="/blog" isDark={isDarkSection}>Nosso Blog</NavbarLink>
           <NavbarLink href="/services" isDark={isDarkSection}>Nossos Serviços</NavbarLink>
           {/* <NavbarLink href="/about" isDark={isDarkSection}>Sobre a Asuna</NavbarLink> */}
           <PrimaryButton
@@ -114,7 +116,7 @@ const MenuIcon = ({ isOpen, isDark }: { isOpen: boolean; isDark: boolean }) => (
 
 const menuItems = [
   { href: "/", label: "Home" },
-  // { href: "/blog", label: "Nosso Blog" },
+  { href: "/blog", label: "Nosso Blog" },
   { href: "/services", label: "Nossos Serviços" },
   // { href: "/about", label: "Sobre a Asuna" },
 ];
