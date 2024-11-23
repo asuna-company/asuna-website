@@ -74,7 +74,7 @@ function BlogCard(post: BlogPost, index: number) {
       />
 
       <div className="flex justify-between items-center mt-2 px-1">
-        <p className="text-p2 text-primary-500">{post.tag}</p>
+        <p className="text-p2 text-primary-500 text-[12.5px] xs:text-[14px]">{post.tag}</p>
 
         <div className="flex">
           <div className="flex items-center">

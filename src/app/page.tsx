@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col max-w-full">
       <Navbar isDark={false}  />
-      <div className="space-y-0 xs:space-y-24 overflow-x-hidden">
+      <div className="space-y-0 xs:space-y-20 overflow-x-hidden">
         <HomeLandSection />
         <div className="pt-0 xs:pt-8"><HomeResultsSection /></div>
         <ServicesSectionDynamic />

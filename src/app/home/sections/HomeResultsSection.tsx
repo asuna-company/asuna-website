@@ -13,22 +13,14 @@ export default function HomeResultsSection() {
     <AbstractSection align="items-start">
       <div className="flex flex-col items-start justify-start">
         <div className="pb-4 xs:pb-6 space-x-2">
-          <TextBadge title="Resultados" />
-          <div className="hidden md:inline-block">
-            <TextBadge title="Último Ano" />
-          </div>
+          <TextBadge title="Resultados Exponenciais" />
+          <div className="hidden md:inline-block"> <TextBadge title="Último Ano" /> </div>
         </div>
         <div className="md:hidden">
-          <SecondaryTitle
-            firstPart="Resultados reais que"
-            secondPart="movem sua operação"
-          />
+          <SecondaryTitle firstPart="Resultados reais que" secondPart="movem sua operação"/>
         </div>
         <div className="hidden md:block">
-          <SecondaryTitle
-            firstPart="Resultados exponenciais que"
-            secondPart="fazem a sua empresa transformar"
-          />
+          <SecondaryTitle firstPart="Resultados exponenciais que" secondPart="fazem a sua empresa transformar"/>
         </div>
         <h2 className="text-p1 text-gray-600 text-start mt-4 max-w-[680px] opacity-90 pb-4">
           A <span className="font-semibold">Asuna</span> é uma{" "}
@@ -36,14 +28,10 @@ export default function HomeResultsSection() {
           comprometida em criar soluções que geram impacto na rotina da sua
           empresa. No último ano, entregamos projetos que fizeram a diferença
           para nossos clientes,
-          <span className="font-semibold">
-            {" "}
-            aumentando a eficiência e reduzindo custos
-          </span>
-          .
+          <span className="font-semibold">{" "}aumentando a eficiência e reduzindo custos</span>.
         </h2>
 
-        <div className="flex py-4">
+        <div className="flex pt-4 pb-6">
           <NumberInfoCard number={50} numberSuffix="K+" tile="Pessoas impactadas" />
           <NumberInfoCard number={35} tile="Projetos entregues" showDivider />
           <div className="hidden md:block"><NumberInfoCard number={10} tile="Colaboradores ativos" showDivider={false}/></div> 
