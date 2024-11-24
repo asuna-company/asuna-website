@@ -1,5 +1,6 @@
 "use client"
 
+import FooterSection from "../core/sections/FooterSection";
 import Navbar from "../core/sections/Navbar";
 
 import BlogMainSection from "./sections/BlogMainSection";
@@ -12,6 +13,7 @@ export default function BlogPage() {
       <div className="overflow-x-hidden space-y-8">
         <BlogMainSection/>
         <BlogPostsSection/>
+        <FooterSection/>
       </div>
     </div>
   )

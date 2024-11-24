@@ -45,7 +45,7 @@ export default function Navbar({ isDark }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const logoImage = isDarkSection ? "svg/logo_with_text_white.svg" : "svg/logo_with_text.svg";
+  const logoImage = isDarkSection ? "svg/logo_with_text_white_blue.svg" : "svg/logo_with_text.svg";
   const defaultBackgrounds = isDarkSection ? "bg-transparent" : 'bg-background';
   const navbarBackground = isDarkAndScrolled ? "bg-[#222328]" : defaultBackgrounds;
   const borderColor = isDarkSection ? "border-b border-neutral-300" : "border-b border-gray-300";

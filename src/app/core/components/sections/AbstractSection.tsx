@@ -7,6 +7,7 @@ interface AbstractSectionProps {
   paddingVertical?: string
   dataBg?: string
   maxWidth?: string
+  flex?: string
 }
 
 const AbstractSection: React.FC<AbstractSectionProps> = ({
@@ -15,11 +16,12 @@ const AbstractSection: React.FC<AbstractSectionProps> = ({
   align = 'items-center',
   paddingVertical = 'py-12',
   dataBg = 'light',
-  maxWidth = '1440px'
+  maxWidth = '1440px',
+  flex = 'flex-row'
 }) => {
   return (
     <section className={`w-full ${bgColor} ${paddingVertical} overflow-hidden`} data-bg={dataBg}>
-      <div className={`w-[90%] mx-auto flex flex-col md:flex-row ${align} justify-between`} style={{maxWidth: maxWidth}}>
+      <div className={`w-[90%] mx-auto flex flex-col md:${flex} ${align} justify-between`} style={{maxWidth: maxWidth}}>
         {children}
       </div>
     </section>
