@@ -60,8 +60,14 @@ export default function SchemaMarkupScript() {
               {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Serviços",
+                "name": "Nossos Serviços",
                 "item": "https://www.asuna.com.br/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Nosso Blog",
+                "item": "https://www.asuna.com.br/blog"
               },
             ]
           }

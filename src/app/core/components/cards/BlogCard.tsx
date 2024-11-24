@@ -1,5 +1,6 @@
 import { Post } from "@/app/blog/infrastructure/types/PostType";
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function BlogCard({post}: {post: Post}) {
   return (
@@ -27,9 +28,9 @@ export default function BlogCard({post}: {post: Post}) {
         </div>
       </div>
       <h2 className="font-semibold mt-2 transition-colors duration-20 px-1 line-clamp-2">
-        <a href={`/blog/${post.slug}`} className="hover:text-primary-500 hover:underline">
-          {post.title}
-        </a>
+        <Link href={`/blog/${post.slug}`} passHref className="hover:text-primary-500 hover:underline">
+            {post.title}
+        </Link>
       </h2>
     </div>
   );
