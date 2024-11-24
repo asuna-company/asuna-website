@@ -3,6 +3,7 @@ import testimonials from "../../../../../public/data/testimonals.json";
 import { useIsMobile } from "../../constants/mediaQueryConstants";
 
 import Image from 'next/image'
+import { blurDataUrl } from "../../constants/imageConstants";
 
 export default function TestimonialCard() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -30,6 +31,9 @@ export default function TestimonialCard() {
           width={useIsMobile() ? 28 : 32}
           height={useIsMobile() ? 28 : 32}
           className="text-primary-500/90"
+          placeholder="blur"
+          loading="lazy"
+          blurDataURL={blurDataUrl}
         />
       </div>
 

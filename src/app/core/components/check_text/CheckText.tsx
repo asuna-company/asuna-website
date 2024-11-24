@@ -1,5 +1,6 @@
 import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import Image from "next/image";
+import { blurDataUrl } from "../../constants/imageConstants";
 
 interface CheckTextProps {
   title: string;
@@ -16,6 +17,9 @@ export default function CheckText({ title, mobileTitle = title }: CheckTextProps
           width={24}
           height={24}
           className="w-full h-full object-contain"
+          placeholder="blur"
+          loading="lazy"
+          blurDataURL={blurDataUrl}
         />
       </div>
       <span className="text-p2 font-poppins font-medium text-neutral-200 text-left">

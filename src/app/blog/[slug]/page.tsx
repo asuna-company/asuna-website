@@ -1,5 +1,6 @@
 import axios from "axios";
 import { notFound } from "next/navigation";
+import { Post } from "../infrastructure/types/PostType";
 
 type PostProps = {
   params: {
@@ -7,14 +8,6 @@ type PostProps = {
   };
 };
 
-type Post = {
-  slug: string;
-  title: string;
-  author: string;
-  readingTime: string;
-  tag: string;
-  imageUrl: string;
-};
 
 const cdnFilesUrl = "https://cdn.asuna.com.br/posts/files.json";
 
