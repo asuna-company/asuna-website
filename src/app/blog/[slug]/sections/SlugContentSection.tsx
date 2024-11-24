@@ -3,11 +3,12 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-export default function SlugContentSection({ slug, content }: { slug: string; content: string }) {
+export default function SlugContentSection({ params }: { params: { slug: string, content: string } }) {
+  const {slug, content } = params;
+
   return (
-    <div className="max-w-4xl mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-4">{slug.replace(/-/g, " ")}</h1>
-      <div className="prose">
+    <div className="mx-auto p-8">
+      <div className="prose max-w-[1440px]">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </div>

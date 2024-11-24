@@ -27,24 +27,12 @@ const nextConfig: NextConfig = {
       static: 180,
     },
   },
-  async headers() {
+
+  async rewrites() {
     return [
       {
-        source: '/posts/:path*.json', // Alvo arquivos .json no caminho /posts/
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*', // Permite acesso de qualquer origem
-          },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET, OPTIONS', // Métodos permitidos
-          },
-          {
-            key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type, Authorization', // Headers permitidos
-          },
-        ],
+        source: "/sitemap-:id.xml",
+        destination: "/sitemap.xml/:id",
       },
     ];
   },
