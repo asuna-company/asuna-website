@@ -74,7 +74,7 @@ export default function FooterSection() {
               className="hover:opacity-80"
             >
               <Image
-                src="svg/linkedin_solid.svg"
+                src="/svg/linkedin_solid.svg"
                 alt="LinkedIn"
                 width={24}
                 height={24}
@@ -89,7 +89,7 @@ export default function FooterSection() {
               className="hover:opacity-80"
             >
               <Image
-                src="svg/square_whatsapp_solid.svg"
+                src="/svg/square_whatsapp_solid.svg"
                 alt="WhatsApp"
                 width={24}
                 height={24}
@@ -104,7 +104,7 @@ export default function FooterSection() {
               className="hover:opacity-80"
             >
               <Image
-                src="svg/envelope_solid.svg"
+                src="/svg/envelope_solid.svg"
                 alt="Email"
                 width={24}
                 height={24}

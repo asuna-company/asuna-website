@@ -18,7 +18,7 @@ export default function BlogPage() {
 }
 
 export function generateMetadata() {
-  const title = "Conheça o Nosso Blog | Asuna - Soluções de Software Para Pequenas e Médias Empresas";
+  const title = "Conheça o Nosso Blog - Asuna";
   const canonicalUrl = "https://asuna.com.br/blog";
   const description = "Conheça o blog da Asuna e fique por dentro de tudo sobre soluções de software para pequenas e médias empresas.";
   const ogDescription = "Confira nossos artigos sobre soluções de software, tecnologia e muito mais para pequenas e médias empresas.";

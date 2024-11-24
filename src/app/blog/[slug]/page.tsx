@@ -28,11 +28,9 @@ export async function generateMetadata({ params }: Props) {
 
   const markdownContent = await getMarkdownContent({ slug });
   const markdownTitle = markdownContent?.match(/^# (.+)$/m)?.[1] || "Default Title";
-
-  const pageTitle = `${markdownTitle} | Asuna - Soluções de Software Para Pequenas e Médias Empresas`
   const canonicalUrl = `https://asuna.com.br/blog/${slug}`;
 
-  return {title: pageTitle, alternates: { canonical: canonicalUrl } };
+  return {title: markdownTitle, alternates: { canonical: canonicalUrl } };
 }
 
 async function getMarkdownContent({ slug }: { slug: string }): Promise<string | null> {
