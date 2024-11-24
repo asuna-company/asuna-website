@@ -30,7 +30,17 @@ export async function generateMetadata({ params }: Props) {
   const markdownTitle = markdownContent?.match(/^# (.+)$/m)?.[1] || "Default Title";
   const canonicalUrl = `https://asuna.com.br/blog/${slug}`;
 
-  return {title: markdownTitle, alternates: { canonical: canonicalUrl } };
+  const description = "Conheça o blog da Asuna e fique por dentro de tudo sobre soluções de software para pequenas e médias empresas.";
+  const ogDescription = "Confira nossos artigos sobre soluções de software, tecnologia e muito mais para pequenas e médias empresas.";
+  const ogTitle = markdownTitle;
+  const ogUrl = canonicalUrl;
+
+  return {
+    markdownTitle,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title: ogTitle, description: ogDescription, url: ogUrl, type: "website", siteName: "Asuna", locale: "pt_BR" },
+  };
 }
 
 async function getMarkdownContent({ slug }: { slug: string }): Promise<string | null> {
