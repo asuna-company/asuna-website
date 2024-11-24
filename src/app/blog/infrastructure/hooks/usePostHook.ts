@@ -13,8 +13,8 @@ export const usePosts = () => {
       try {
         const data = await fetchPosts();
         setPosts(data);
-      } catch (err: any) {
-        setError(err.message || 'Ocorreu um erro desconhecido');
+      } catch  {
+        setError('Ocorreu um erro desconhecido');
       }
       finally {
         setLoading(false);

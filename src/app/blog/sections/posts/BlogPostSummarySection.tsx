@@ -1,6 +1,7 @@
 import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import { usePosts } from "../../infrastructure/hooks/usePostHook";
 import BlogPostListSection from "./BlogPostListSection";
+import Link from "next/link";
 
 export default function BlogPostsSection() {
   const { posts, loading, error } = usePosts()
@@ -29,9 +30,9 @@ export default function BlogPostsSection() {
 
 function FilterTextButton({ title }: { title: string }) {
   return (
-    <a href="/" className="hover:text-primary-500">
+    <Link href="/" className="hover:text-primary-500">
       <p>{title}</p>
-    </a>
+    </Link>
   );
 }
 

@@ -54,11 +54,11 @@ export default function BlogPostListSection({posts}: {posts: Post[]}) {
   );
 }
 
-function BlogPostCard({ post }: { post: any }) {
+function BlogPostCard({ post }: { post: Post }) {
   return (
     <div className="p-4 border rounded-lg shadow-md">
       <h3 className="text-lg font-bold">{post.title}</h3>
-      <p>{post.summary}</p>
+      <p>{post.title}</p>
     </div>
   );
 }
