@@ -21,7 +21,7 @@ export default function SchemaMarkupScript() {
             "identifier": {
               "@type": "PropertyValue",
               "propertyID": "BR:CNPJ",
-              "value": "57.841.370/0001-79"
+              "value": "57841370000179"
             },
             "contactPoint": [
               {
@@ -51,7 +51,17 @@ export default function SchemaMarkupScript() {
               ],
               "opens": "09:00",
               "closes": "18:00"
-            }
+            },
+            "founders": [
+              {
+                "@type": "Person",
+                "name": "Luiz E. Gasparetto"
+              },
+              {
+                "@type": "Person",
+                "name": "Artur F. Zanella"
+              }
+            ]
           },
           {
             "@context": "https://schema.org",
@@ -70,7 +80,8 @@ export default function SchemaMarkupScript() {
                 "item": "https://www.asuna.com.br/blog"
               },
             ]
-          }
+          },
+          
         ])
       }}
     />
