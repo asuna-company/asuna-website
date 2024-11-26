@@ -1,16 +1,13 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
-import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import TextBadgeButton from "../components/TextBadgeButton";
 
 import { useState } from "react";
-;
 import AppsSolutionsInternalSection from "./internals/AppsSolutionsInternalSection";
-import WebsitesSolutionsInternalSection from "./internals/WebsitesSolutionsInternalSection";
-import DesignSolutionsInternalSection from "./internals/DesignSolutionsInternalSection";
 import ConsultingSolutionsInternalSection from "./internals/ConsultingSolutionsInternalSection";
-
-
+import DesignSolutionsInternalSection from "./internals/DesignSolutionsInternalSection";
+import WebsitesSolutionsInternalSection from "./internals/WebsitesSolutionsInternalSection";
 const SERVICES = [
   { id: "websites", label: "Websites" },
   { id: "apps", label: "Apps" },
@@ -24,13 +21,13 @@ export default function ServicesSolutionsSection() {
   const renderContent = () => {
     switch (selectedService) {
       case "websites":
-        return <WebsitesSolutionsInternalSection/>
+        return <WebsitesSolutionsInternalSection />;
       case "apps":
-        return <AppsSolutionsInternalSection/>
+        return <AppsSolutionsInternalSection />;
       case "uiux":
-        return <DesignSolutionsInternalSection/>
+        return <DesignSolutionsInternalSection />;
       case "consulting":
-        return <ConsultingSolutionsInternalSection/>;
+        return <ConsultingSolutionsInternalSection />;
       default:
         return null;
     }
@@ -49,9 +46,9 @@ export default function ServicesSolutionsSection() {
 
         <div className="relative w-full mt-4">
           <div
-            className="absolute left-0 right-0 -mx-4 px-4 flex flex-nowrap space-x-3 overflow-x-auto scroll-smooth scrollbar-hidden"
+            className="absolute left-0 right-0 -mx-[10%] px-[10%] flex flex-nowrap space-x-3 overflow-x-auto scroll-smooth scrollbar-hidden"
             style={{
-              width: "100vw",
+              width: "120%",
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
             }}
@@ -60,15 +57,14 @@ export default function ServicesSolutionsSection() {
               <div
                 key={service.id}
                 className="flex-shrink-0"
-                style={{ minWidth: "fit-content"}}
+                style={{ minWidth: "fit-content" }}
               >
-
-              <TextBadgeButton
-                title={service.label}
-                isSelected={selectedService === service.id}
-                onClick={() => setSelectedService(service.id)}
-                textColor="text-secondary-400"
-              />
+                <TextBadgeButton
+                  title={service.label}
+                  isSelected={selectedService === service.id}
+                  onClick={() => setSelectedService(service.id)}
+                  textColor="text-secondary-400"
+                />
               </div>
             ))}
           </div>
