@@ -13,6 +13,8 @@ import { GoogleTagManager } from '@next/third-parties/google'
 
 export { metadata };
 
+const GTM_ID = "GTM-NL7JPZNT"; 
+
 if (typeof window !== "undefined") {
   window.addEventListener("load", () => {
     reportWebVitals((metric) => {
@@ -28,18 +30,16 @@ if (typeof window !== "undefined") {
   });
 }
 
-const GTM_ID = ""; 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${poppins.style} ${inter.style}`}>
       <body>
         <SchemaMarkupScript />
-        <GoogleTagManager gtmId="GTM-NL7JPZNT"/>
         <AppRouterProvider>
           {children}
           <SpeedInsights />
         </AppRouterProvider>
+        <GoogleTagManager gtmId={GTM_ID}/>
       </body>
     </html>
   );
