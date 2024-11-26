@@ -1,23 +1,26 @@
 [
-  {
+  {    
+    "slug": "Understanding the Twelve-Factor app: Methodology for Modern Applications",
     "author": "Luiz Gasparetto",
-    "duration": "12 min",
-    "imageUrl": "https://images-ext-1.discordapp.net/external/mlXqtGx1EG7U1MnDItTwbQkeTVzNlPefR5o-GaBcnUI/https/www.asuna.com.br/images/metadata-banner.jpg?format=webp&width=960&height=540",
+    "title": "Entendendo o Twelve-Factor App: Metodologia que é necessária para ser aplicada em softwares modernos",
+    "readingTime": "12 min",
     "tag": "Front-end",
-    "title": "Entendendo o Twelve-Factor App: Metodologia que é necessária para ser aplicada em softwares modernos"
+    "imageUrl": "https://images-ext-1.discordapp.net/external/mlXqtGx1EG7U1MnDItTwbQkeTVzNlPefR5o-GaBcnUI/https/www.asuna.com.br/images/metadata-banner.jpg?format=webp&width=960&height=540"
   },
   {
+    "slug": "Understanding the Twelve-Factor app: Methodology for Modern Applications",
     "author": "Alexandre",
-    "duration": "12 min",
-    "imageUrl": "https://images-ext-1.discordapp.net/external/mlXqtGx1EG7U1MnDItTwbQkeTVzNlPefR5o-GaBcnUI/https/www.asuna.com.br/images/metadata-banner.jpg?format=webp&width=960&height=540",
+    "title": "Understanding the Twelve-Factor app: Methodology for Modern Applications",
+    "readingTime": "12 min",
     "tag": "Front-end",
-    "title": "Understanding the Twelve-Factor app: Methodology for Modern Applications"
+    "imageUrl": "https://images-ext-1.discordapp.net/external/mlXqtGx1EG7U1MnDItTwbQkeTVzNlPefR5o-GaBcnUI/https/www.asuna.com.br/images/metadata-banner.jpg?format=webp&width=960&height=540"
   },
   {
+    "slug": "Understanding the Twelve-Factor app: Methodology for Modern Applications",
+    "title": "Understanding the Twelve-Factor app: Methodology for Modern Applications",
     "author": "Artur Zanella",
-    "duration": "12 min",
-    "imageUrl": "https://images-ext-1.discordapp.net/external/mlXqtGx1EG7U1MnDItTwbQkeTVzNlPefR5o-GaBcnUI/https/www.asuna.com.br/images/metadata-banner.jpg?format=webp&width=960&height=540",
+    "readingTime": "12 min",
     "tag": "Front-end",
-    "title": "Understanding the Twelve-Factor app: Methodology for Modern Applications"
+    "imageUrl": "https://images-ext-1.discordapp.net/external/mlXqtGx1EG7U1MnDItTwbQkeTVzNlPefR5o-GaBcnUI/https/www.asuna.com.br/images/metadata-banner.jpg?format=webp&width=960&height=540"
   }
 ]
