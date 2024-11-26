@@ -10,12 +10,9 @@ export default function BlogPostsSection() {
 
   return (
     <AbstractSection align="items-start" flex="flex-col">
-      <section className="flex flex-col xs:flex-row items-start mb-8 space-x-0 xs:space-x-8">
-        <p className="text-[18px] font-semibold">Categorias:</p>
-        <div
-          className="flex gap-4  overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full pt-4 xs:pt-[1.5px]"
-          id="filterTextButtons"
-        >
+      <section className="flex flex-col xs:flex-row items-start mb-8 xs:space-x-8">
+        <p className="text-[18px] font-semibold whitespace-nowrap">Categorias:</p>
+        <div className="flex gap-4 overflow-x-auto pt-4 xs:pt-[1.5px] scrollbar-hide">
           <FilterTextButton title="Software" />
           <FilterTextButton title="Empreendedorismo" />
           <FilterTextButton title="Mercado Digital" />

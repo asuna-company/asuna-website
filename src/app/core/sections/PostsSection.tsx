@@ -38,15 +38,11 @@ export default function PostsSection() {
           </div>
         </div>
 
-        <div className="relative w-full mt-4">
-          <div
-            className="absolute left-0 right-0 -mx-[10%] px-[10%] flex flex-nowrap space-x-3 overflow-x-auto scroll-smooth scrollbar-hidden snap-x snap-mandatory"
-            style={{
-              width: "120%",
-              WebkitOverflowScrolling: "touch",
-              scrollbarWidth: "none",
-            }}
-          >
+        <div
+          className="w-full xs:w-[90%] pl-4 xs:pl-0 mt-4 xs:mt-6 mx-auto flex flex-col md:flex-row justify-between"
+          style={{ maxWidth: "1440px" }}
+        >
+          <div className="flex flex-row gap-6 md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory pb-4 pr-6">
             {posts.map((post, index) => (
               <BlogCard key={index} post={post} />
             ))}
