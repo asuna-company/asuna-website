@@ -32,6 +32,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${poppins.style} ${inter.style}`}>
       <body>
+        <SchemaMarkupScript />
+        <AppRouterProvider>
+          {children}
+          <SpeedInsights />
+        </AppRouterProvider>
+
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
@@ -53,12 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-
-        <SchemaMarkupScript />
-        <AppRouterProvider>
-          {children}
-          <SpeedInsights />
-        </AppRouterProvider>
       </body>
     </html>
   );
