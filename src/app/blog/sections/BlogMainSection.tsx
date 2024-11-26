@@ -21,7 +21,7 @@ export default function BlogMainSection() {
   return (
     <div style={getBackgroundStyle()} className="w-full text-left">
       <AbstractSection align="items-start">
-        <div className="pt-24 w-full text-left">
+        <div className="pt-4 xs:pt-24 w-full text-left">
           <div className="space-x-3 mb-4">
             <TextBadge title="Nosso Blog" />
             <TextBadge title="Mercado de Software" />

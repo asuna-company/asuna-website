@@ -37,10 +37,7 @@ export default function PostsSection() {
       </section>
 
       <div className="w-full xs:w-[90%] pl-4 xs:pl-0 mt-4 xs:mt-6 mx-auto flex flex-col md:flex-row justify-between" style={{ maxWidth: "1440px" }}>
-        <div
-          id="postsContainer"
-          className="flex flex-row gap-6 md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory pb-4 pr-6"
-        >
+        <div className="flex flex-row gap-6 md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory pb-4 pr-6">
           {posts.map((post, index) => BlogCard(post, index))}
         </div>
       </div>
