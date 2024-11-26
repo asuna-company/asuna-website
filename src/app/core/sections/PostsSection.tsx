@@ -15,16 +15,7 @@ interface BlogPost {
 
 
 export default function PostsSection() {
-  const [currentPostIndex, setCurrentPostIndex] = useState(0);
   const isMobile = useIsMobile();
-
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const container = e.currentTarget;
-    const scrollPosition = container.scrollLeft;
-    const cardWidth = container.scrollWidth / posts.length;
-    const index = Math.round(scrollPosition / cardWidth);
-    setCurrentPostIndex(index);
-  };
 
   return (
     <div>
@@ -49,7 +40,6 @@ export default function PostsSection() {
         <div
           id="postsContainer"
           className="flex flex-row gap-6 md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory pb-4 pr-6"
-          onScroll={handleScroll}
         >
           {posts.map((post, index) => BlogCard(post, index))}
         </div>

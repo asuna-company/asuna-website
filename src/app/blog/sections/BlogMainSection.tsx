@@ -40,7 +40,7 @@ export default function BlogMainSection() {
           </div>
         </div>
 
-        <div className="pt-32 space-y-4">
+        <div className="hidden xs:block pt-32 space-y-4">
           <div className="hidden md:flex"> <FigmaStar left="-left-16" /> </div>
           <div className="hidden md:flex"> <FigmaStar left="-left-72"/> </div>
         </div>
