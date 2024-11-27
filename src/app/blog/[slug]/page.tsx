@@ -22,8 +22,6 @@ export default async function SlugPage({ params }: Props) {
   return (
     <div className="min-h-screen flex flex-col max-w-full">
       <Navbar isDark={false} />
-
-      <h1> {headMarkdownContent.imageUrl}  </h1>
       <SlugContentSection params={{ slug, content: formattedMarkdownContent }} />
       <FooterSection/>
     </div>

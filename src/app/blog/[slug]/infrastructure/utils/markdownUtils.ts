@@ -12,7 +12,7 @@ export async function getMarkdownContent({ slug }: { slug: string }): Promise<st
 }
 
 export function getMarkdownContentFormatted(markdownContent: string): string {
-  return markdownContent.replace(/^---[\s\S]*?---/, "").trim();
+  return markdownContent.replace(/^---[\s\S]*?---/, "").replace(/^# .+$/m, "") .trim();
 }
 
 export function getMarkdownHead(markdownContent: string): MarkdownHead {
