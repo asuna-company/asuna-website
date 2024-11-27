@@ -22,6 +22,8 @@ export default async function SlugPage({ params }: Props) {
   return (
     <div className="min-h-screen flex flex-col max-w-full">
       <Navbar isDark={false} />
+
+      <h1> {headMarkdownContent.imageUrl}  </h1>
       <SlugContentSection params={{ slug, content: formattedMarkdownContent }} />
       <FooterSection/>
     </div>
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
   const markdownContent = await getMarkdownContent({ slug });
   const headMarkdownContent = getMarkdownHead(markdownContent ?? '');
   
-  const markdownTitle = headMarkdownContent.title || "Default Title";
+  const markdownTitle = headMarkdownContent.title?.replace(/^"|"$/g, '') || "Default Title";
   const canonicalUrl = `https://asuna.com.br/blog/${slug}`;
   const description = "Conheça o blog da Asuna e fique por dentro de tudo sobre soluções de software para pequenas e médias empresas.";
   const ogDescription = "Confira nossos artigos sobre soluções de software, tecnologia e muito mais para pequenas e médias empresas.";
