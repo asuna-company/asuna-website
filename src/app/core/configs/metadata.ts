@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "asina", "asuna site", "asuna desenvolvimento", "assuna desenvolvimento", 
     "azuna desenvolvimento", "asuna web", "asuna app", "asuna aplicativos", 
     "asun", "asuma tecnologia", "asuna consultoria", "assuna consultoria", 
-    "assuma consultoria", "azuna consultoria"
+    "assuma consultoria", "azuna consultoria", "asana", "asana software"
   ],
   openGraph: {
     title: 'Asuna | Software House',
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     type: 'website',
     countryName: 'Brazil',
-    phoneNumbers: [''],
+    phoneNumbers: ['+5547992847889'],
     images: [
       {
-        url: 'https://www.asuna.com.br/images/metadata-banner.jpg',
+        url: 'https://cdn.asuna.com.br/images/metadata-banner.jpg',
         width: 1200,
         height: 675,
         alt: 'Asuna - Software House',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Asuna | Software House',
     description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas.',
-    images: ['https://www.asuna.com.br/images/metadata-banner.jpg'],
+    images: ['https://cdn.asuna.com.br/images/metadata-banner.jpg'],
   },
   alternates: {
     canonical: 'https://www.asuna.com.br/',
@@ -49,8 +49,6 @@ export const metadata: Metadata = {
       { url: '/favicon/favicon-96x96.png', sizes: '96x96' },
       { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon/apple-touch-icon.png', sizes: '180x180' },
-      { url: '/favicon/web-app-manifest-192x192.png', sizes: '192x192' },
-      { url: '/favicon/web-app-manifest-512x512.png', sizes: '512x512' },
     ],
-  },
+  }, 
 };

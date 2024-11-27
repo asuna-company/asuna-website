@@ -1,5 +1,6 @@
 "use client";
 
+import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -7,10 +8,10 @@ export default function SlugContentSection({ params }: { params: { slug: string,
   const {slug, content } = params;
 
   return (
-    <div className="mx-auto p-8">
-      <div className="prose max-w-[1440px]">
-        <ReactMarkdown>{content}</ReactMarkdown>
+    <AbstractSection>
+      <div className="prose max-w-[1200px] ">
+        <ReactMarkdown >{content}</ReactMarkdown>
       </div>
-    </div>
+    </AbstractSection>
   );
 }

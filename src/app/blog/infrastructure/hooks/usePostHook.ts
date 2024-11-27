@@ -1,27 +1,30 @@
-import { useEffect, useState } from 'react';
-
-import { Post } from '../types/PostType';
+import { useState, useEffect } from 'react';
 import { fetchPosts } from '../services/postsServices';
+import { Post } from '../types/PostType';
+
+let cachedPosts: Post[] | null = null;
 
 export const usePosts = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [posts, setPosts] = useState<Post[]>(cachedPosts || []);
+  const [loading, setLoading] = useState<boolean>(!cachedPosts);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const getPosts = async () => {
+    if (cachedPosts) return;
+
+    const fetchData = async () => {
       try {
         const data = await fetchPosts();
+        cachedPosts = data;
         setPosts(data);
-      } catch  {
+      } catch {
         setError('Ocorreu um erro desconhecido');
-      }
-      finally {
+      } finally {
         setLoading(false);
       }
     };
 
-    getPosts();
+    fetchData();
   }, []);
 
   return { posts, loading, error };
