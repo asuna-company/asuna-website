@@ -5,13 +5,15 @@ import Link from "next/link";
 export default function BlogCard({post}: {post: Post}) {
   return (
     <div className="flex-shrink-0 sm:max-w-[80%] md:max-w-[500px] max-w-[95%] flex flex-col snap-start">
-      <Image
-        src={post.imageUrl}
-        alt={post.title}
-        width={500}
-        height={300}
-        className="rounded-lg"
-      />
+      <Link href={`/blog/${post.slug}`}>
+        <Image
+          src={post.imageUrl}
+          alt={post.title}
+          width={500}
+          height={300}
+          className="rounded-lg"
+        />
+      </Link>
 
       <div className="flex justify-between items-center mt-2 px-1">
         <p className="text-p2 text-primary-500 text-[12.5px] xs:text-[14px]">{post.tag}</p>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import FooterSection from "@/app/core/sections/FooterSection";
 import { MarkdownHead } from "./infrastructure/types/markdownHead";
 import { getMarkdownContent, getMarkdownContentFormatted, getMarkdownHead } from "./infrastructure/utils/markdownUtils";
+import SlugMainSection from "./sections/SlugMainSection";
 
 
 
@@ -22,6 +23,7 @@ export default async function SlugPage({ params }: Props) {
   return (
     <div className="min-h-screen flex flex-col max-w-full">
       <Navbar isDark={false} />
+      <SlugMainSection markdownHead={headMarkdownContent}/>
       <SlugContentSection params={{ slug, content: formattedMarkdownContent }} />
       <FooterSection/>
     </div>

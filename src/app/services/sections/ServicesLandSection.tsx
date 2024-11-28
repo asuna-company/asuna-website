@@ -25,8 +25,8 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
           <PrimaryText
             maxWidth={900}
             titleFirstPart="Serviços de software que irão elevar toda a sua operação!"
-            titleSecondPart=""
             isDarkMode={true}
+            alignLeft={true}
           />
 
           <h2 className={`text-p1 text-gray-300 ${textAlign} mb-2 mt-1 xs:mt-0 max-w-[600px] mx-auto opacity-90 font-inter`}>

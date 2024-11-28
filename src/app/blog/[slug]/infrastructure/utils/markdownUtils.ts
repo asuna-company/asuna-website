@@ -24,7 +24,12 @@ export function getMarkdownHead(markdownContent: string): MarkdownHead {
 
   return headLines.reduce<MarkdownHead>((acc, line) => {
     const [key, ...rest] = line.split(':');
-    const value = rest.join(':').trim();
+    let value = rest.join(':').trim();
+
+    
+    if (value.startsWith('"') && value.endsWith('"')) {
+      value = value.slice(1, -1);
+    }
 
     if (key && value) acc[key.trim() as keyof MarkdownHead] = value;
 

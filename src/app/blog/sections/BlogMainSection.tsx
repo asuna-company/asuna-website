@@ -8,14 +8,12 @@ import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
 
 import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 
-
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
   backgroundSize: "110rem",
   backgroundPosition: "top -80px left 0",
   backgroundRepeat: "no-repeat",
 });
-
 
 export default function BlogMainSection() {
   return (

@@ -17,7 +17,7 @@ const cards = [
     id: "design",
     title: "UI/UX Design",
     body: "Desenhamos protótipos interativos e validamos com o você e toda sua equipe, criando interfaces bonitas e intuitivas, ajustada para ser usada da melhor forma.",
-    mobileBody: "Criamos protótipos e interfaces bonitas e funcionais que dão match com o seu negócio.",
+    mobileBody: "Criamos protótipos e interfaces bonitas e funcionais que dão o match perfeito.",
     image: "https://via.placeholder.com/500x300?text=Design",
   },
   {
