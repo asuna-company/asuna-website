@@ -6,9 +6,9 @@ import BlogPostsSection from "./sections/posts/BlogPostSummarySection";
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen flex flex-col max-w-full">
+    <div className="min-h-screen flex flex-col max-w-full overflow-x-auto">
       <Navbar isDark={false} />
-      <div className="overflow-x-hidden space-y-8">
+      <div className="space-y-0 xs:space-y-8">
         <BlogMainSection />
         <BlogPostsSection />
         <FooterSection />
