@@ -36,17 +36,16 @@ export async function generateMetadata({ params }: Props) {
   const markdownContent = await getMarkdownContent({ slug });
   const headMarkdownContent = getMarkdownHead(markdownContent ?? '');
   
-  const markdownTitle = headMarkdownContent.title?.replace(/^"|"$/g, '') || "Default Title";
+  const title = headMarkdownContent.title || "Default Title";
   const canonicalUrl = `https://asuna.com.br/blog/${slug}`;
   const description = "Conheça o blog da Asuna e fique por dentro de tudo sobre soluções de software para pequenas e médias empresas.";
   const ogDescription = "Confira nossos artigos sobre soluções de software, tecnologia e muito mais para pequenas e médias empresas.";
   const ogImage = headMarkdownContent.imageUrl || "https://cdn.asuna.com.br/images/metadata-banner.jpg";
-  const ogTitle = markdownTitle;
+  const ogTitle = title;
   const ogUrl = canonicalUrl;
-  
 
   return {
-    markdownTitle,
+    title,
     description,
     alternates: { canonical: canonicalUrl },
     openGraph: { title: ogTitle, description: ogDescription, url: ogUrl, type: "website", siteName: "Asuna", locale: "pt_BR",
