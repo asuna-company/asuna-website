@@ -6,7 +6,7 @@ export default function Services() {
 
 export function generateMetadata() {
   const title = 'Conheça os Nossos Serviços | Asuna'
-  const canonicalUrl = `https://asuna.com.br/services/`;
+  const canonicalUrl = `https://asuna.com.br/services`;
   const description = "Conheça os serviços da Asuna e descubra como podemos impulsionar a sua empresa para o próximo nível.";
   const ogDescription = "Conheça os serviços da Asuna e descubra como podemos impulsionar a sua empresa para o próximo nível.";
   const ogTitle = title;

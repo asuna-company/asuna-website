@@ -52,33 +52,13 @@ export default function FooterSection() {
       <div className="max-w-[1440px] w-[90%] mx-auto flex flex-col md:flex-row ${align} justify-between">
         <div className="flex flex-col items-start text-white py-6 space-y-4">
           <Link href="/" className="hover:opacity-80">
-            <Image
-              src="/svg/logo_with_text_white.svg"
-              alt="Asuna Logo"
-              width={175}
-              height={45}
-            />
+            <Image src="/svg/logo_with_text_white.svg" alt="Asuna Logo" width={175} height={45}/>
           </Link>
-          <h3 className="font-heading text-h3 font-bold text-center pt-6">
-            Tem algum projeto?
-          </h3>
-          <p className="font-heading text-p2 text-center pt-2 opacity-80">
-            Entre em contato conosco
-          </p>
+          <h3 className="font-heading text-h3 font-bold text-center pt-6">Tem algum projeto?</h3>
+          <p className="font-heading text-p2 text-center pt-2 opacity-80">Entre em contato conosco </p>
           <div className="flex space-x-4 pt-8 items-center">
-            <a
-              href="https://www.linkedin.com/company/asuna/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="hover:opacity-80"
-            >
-              <Image
-                src="/svg/linkedin_solid.svg"
-                alt="LinkedIn"
-                width={24}
-                height={24}
-              />
+            <a href="https://www.linkedin.com/company/asuna/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80">
+              <Image src="/svg/linkedin_solid.svg" alt="LinkedIn" width={24} height={24}/>
             </a>
             <a
               /* TODO: rever icon */
@@ -88,27 +68,10 @@ export default function FooterSection() {
               aria-label="WhatsApp"
               className="hover:opacity-80"
             >
-              <Image
-                src="/svg/square_whatsapp_solid.svg"
-                alt="WhatsApp"
-                width={24}
-                height={24}
-              />
+              <Image src="/svg/square_whatsapp_solid.svg" alt="WhatsApp" width={24} height={24}/>
             </a>
-            <a
-              /* TODO: rever icon */
-              href="mailto:contato@asuna.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Email"
-              className="hover:opacity-80"
-            >
-              <Image
-                src="/svg/envelope_solid.svg"
-                alt="Email"
-                width={24}
-                height={24}
-              />
+            <a href="mailto:contato@asuna.com.br" target="_blank" rel="noopener noreferrer" aria-label="Email" className="hover:opacity-80">
+              <Image src="/svg/envelope_solid.svg" alt="Email" width={24} height={24}/>
             </a>
           </div>
         </div>

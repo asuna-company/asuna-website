@@ -9,8 +9,8 @@ export default function BlogPostsSection() {
   const { posts, loading } = usePosts();
 
   return (
-    <AbstractSection align="items-start" flex="flex-col">
-      <section className="flex flex-col xs:flex-row items-start mb-8 xs:space-x-8">
+    <AbstractSection align="items-start" flex="flex-col" paddingVertical="pb-12 xs:py-12">
+      <section className="hidden xs:flex flex-col xs:flex-row items-start mb-8 xs:space-x-8">
         <p className="text-[18px] font-semibold whitespace-nowrap">Categorias:</p>
         <div className="flex gap-4 overflow-x-auto pt-4 xs:pt-[1.5px] scrollbar-hide">
           <FilterTextButton title="Software" />
@@ -20,13 +20,7 @@ export default function BlogPostsSection() {
         </div>
       </section>
 
-      {loading ? (
-        <ShimmerPostLoading />
-      ) : (
-        <div className="pt-8 w-full">
-          <BlogPostListSection posts={posts} />
-        </div>
-      )}
+      {loading ? ( <ShimmerPostLoading /> ) : ( <div className="pt-8 w-full"> <BlogPostListSection posts={posts} /> </div> )}
     </AbstractSection>
   );
 }

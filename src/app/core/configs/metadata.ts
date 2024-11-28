@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.asuna.com.br'),
+  metadataBase: new URL('https://asuna.com.br'),
   title: 'Asuna | Soluções de Software Para Pequenas e Médias Empresas',
   description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Asuna | Software House',
     description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
-    url: 'https://www.asuna.com.br/',
+    url: 'https://asuna.com.br/',
     siteName: 'Asuna',
     locale: 'pt_BR',
     type: 'website',
@@ -38,9 +38,7 @@ export const metadata: Metadata = {
     description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas.',
     images: ['https://cdn.asuna.com.br/images/metadata-banner.jpg'],
   },
-  alternates: {
-    canonical: 'https://www.asuna.com.br/',
-  },
+  alternates: { canonical: 'https://asuna.com.br/' },
   manifest: '/favicon/site.webmanifest',
   icons: {
     shortcut: '/favicon/favicon.ico',
