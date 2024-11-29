@@ -9,22 +9,22 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
   const textAlign = useIsMobile() ? 'text-left' : 'text-center';
 
   return (
-    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-0" dataBg="dark" maxWidth='1650px'> 
+    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-0" dataBg="dark" maxWidth='1850px'> 
       <div className='hidden xs:block'><LeftBadges/></div>
 
       <section className="relative w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-center justify-center bg-neutral-700">
         <EllipseGradient />
         <CircleLines />
 
-        <div className="relative z-10 text-center pr-4 pb-12 xs:pb-24 flex flex-col items-center">
+        <div className="relative z-10 text-center pb-12 xs:pb-12 flex flex-col items-center">
           <div className={`flex items-center space-x-2 pb-2 ${useIsMobile() ? 'text-left w-full' : 'justify-center'}`}>
             <span className="text-[20px]">👋</span>
             <span className="text-gray-300 text-[18px]">Bem-vindos!</span>
           </div>
 
           <PrimaryText
-            maxWidth={900}
-            titleFirstPart="Serviços de software que irão elevar toda a sua operação!"
+            maxWidth={1000}
+            titleFirstPart="Serviços que podem mudar o seu negócio!"
             isDarkMode={true}
             alignLeft={useIsMobile()}
           />

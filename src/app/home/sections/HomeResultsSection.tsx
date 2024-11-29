@@ -37,11 +37,6 @@ export default function HomeResultsSection() {
           <div className="hidden md:block"><NumberInfoCard number={10} tile="Colaboradores ativos" showDivider={false}/></div> 
         </div>
 
-
-        {/* <p className="max-w-[680px] py-4 text-[14px] text-neutral-500">“Trabalhar com o time da Asuna foi uma experiência incrível! O time é ágil,
-        atento aos detalhes e sempre disposto a encontrar as melhores soluções para o nosso projeto. Com certeza, recomendamos para quem busca
-        qualidade e eficiência.” <span className="font-medium text-neutral-200 text-[13px]">- Odair Z.</span></p> */}
-
         <BudgetServicesButtons
           onClickSecondaryButton={() => useRouterConfig.push("/services")}
           hideServicesButton={false}
