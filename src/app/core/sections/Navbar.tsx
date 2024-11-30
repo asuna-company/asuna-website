@@ -63,7 +63,7 @@ export default function Navbar({ isDark }: NavbarProps) {
         <ul className="hidden md:flex space-x-8 items-center">
           <NavbarLink href="/" isDark={isDarkSection}>Home</NavbarLink>
           <NavbarLink href="/blog" isDark={isDarkSection}>Nosso Blog</NavbarLink>
-          <NavbarLink href="/services" isDark={isDarkSection}>Nossos Serviços</NavbarLink>
+          <NavbarLink href="/servicos" isDark={isDarkSection}>Nossos Serviços</NavbarLink>
           {/* <NavbarLink href="/about" isDark={isDarkSection}>Sobre a Asuna</NavbarLink> */}
           <PrimaryButton
             title="Entre em Contato"
@@ -117,6 +117,6 @@ const MenuIcon = ({ isOpen, isDark }: { isOpen: boolean; isDark: boolean }) => (
 const menuItems = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Nosso Blog" },
-  { href: "/services", label: "Nossos Serviços" },
+  { href: "/servicos", label: "Nossos Serviços" },
   // { href: "/about", label: "Sobre a Asuna" },
 ];

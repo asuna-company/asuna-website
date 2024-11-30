@@ -11,8 +11,8 @@ export default function SchemaMarkupScript() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Asuna",
-            "url": "https://www.asuna.com.br",
-            "logo": "https://www.asuna.com.br/images/logo.webp",
+            "url": "https://asuna.com.br",
+            "logo": "https://asuna.com.br/images/logo.webp",
             "description": "A Asuna é uma software house especializada em desenvolvimento mobile, consultoria e SaaS para pequenas e médias empresas no Brasil.",
             "foundingDate": "2024-10-01",
             "sameAs": [
@@ -71,13 +71,13 @@ export default function SchemaMarkupScript() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Nossos Serviços",
-                "item": "https://www.asuna.com.br/services"
+                "item": "https://asuna.com.br/servicos"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Nosso Blog",
-                "item": "https://www.asuna.com.br/blog"
+                "item": "https://asuna.com.br/blog"
               },
             ]
           },

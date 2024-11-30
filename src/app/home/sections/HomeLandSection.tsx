@@ -39,7 +39,7 @@ export default function HomeLandSection() {
           <span className="font-semibold">impulsionamos</span> a sua empresa 💙
         </h2>
 
-        <BudgetServicesButtons onClickSecondaryButton={() => useRouterConfig.push('/services')} />
+        <BudgetServicesButtons onClickSecondaryButton={() => useRouterConfig.push('/servicos')} />
       </section>
 
       <div className="hidden md:flex"> <RightStar /> </div>
