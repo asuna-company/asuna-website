@@ -18,7 +18,7 @@ function getButtonTextClasses() {
 }
 
 function getButtonBackgroundClasses(isDarkMode: boolean) {
-  const backgroundColor = isDarkMode ? "bg-[#333]" : "bg-[var(--foreground)]";
+  const backgroundColor = isDarkMode ? "bg-white/5" : "bg-[var(--foreground)]";
   const outlineColor = isDarkMode ? "outline-[#666]" : "outline-[#ADADAD]";
   return `${backgroundColor} rounded-lg outline outline-1 ${outlineColor}`;
 }

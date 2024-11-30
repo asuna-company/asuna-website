@@ -24,7 +24,7 @@ export default function PrimaryText({
 
   return (
     <h1
-      className={`font-heading xs:text-[54px] text-[36px] ${fontWeight} ${textColor} ${alignLeft ? "text-left" : "md:text-center"} mx-auto xs:leading-[72px]  pb-4 pt-4`} style={{ maxWidth: `${maxWidth}px` }}>
+      className={`font-heading xs:text-[54px] text-[36px] ${fontWeight} ${textColor} ${alignLeft ? "text-left" : "md:text-center"} mx-auto xs:leading-[72px] pb-4 pt-4`} style={{ maxWidth: `${maxWidth}px` }}>
       {titleFirstPart} {""}
       <span className={secondaryStyle}>{titleSecondPart}</span>
     </h1>

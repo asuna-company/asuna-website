@@ -17,7 +17,7 @@ function getPrimaryButtonTextClasses() {
 }
 
 function getPrimaryButtonBackgroundClasses() {
-  return "bg-primary-500 rounded-lg outline outline-[5px] outline-primary-100";
+  return "bg-primary-500 rounded-lg outline outline-[5px] outline-secondary-400/20";
 }
 
 function getPrimaryButtonHoverClasses() {

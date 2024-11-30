@@ -4,38 +4,41 @@ import { useIsMobile } from '@/app/core/constants/mediaQueryConstants';
 import React from 'react';
 import EmojiBadge from '../components/EmojiBadge';
 import AbstractSection from '@/app/core/components/sections/AbstractSection';
+import TextBadge from '@/app/core/components/badges/TextBadge';
+
 
 export default function ServicesLandSection({ scrollToSolutions }: { scrollToSolutions: () => void }) {
-  const textAlign = useIsMobile() ? 'text-left' : 'text-center';
+  const titleFirstPart = useIsMobile() ? 'Serviços que irão revolucionar': 'Serviços que irão revolucionar toda a sua'
+  const titleSecondPart = useIsMobile() ? 'toda a operação de vez!' : 'operação de vez!'
+
+  const desktopSubtitle = 'A Asuna é uma software house especializada em serviços digitais que impulsionam o crescimento do seu negócio. Nossa missão é simplificar processos e entregar soluções sob medida, combinando tecnologia de ponta com agilidade e eficiência.'
+  const mobileSubtitle = ' A Asuna é uma software house especializada em serviços digitais que impulsionam o crescimento do seu negócio. Nossa missão é simplificar processos e entregar soluções sob medida.'
+  const subtitle = useIsMobile() ? mobileSubtitle : desktopSubtitle
 
   return (
-<AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-0" dataBg="dark"> 
-  <section className="w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-start justify-center bg-neutral-700">
-    <EllipseGradient />
-    <CircleLines />
+    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-12" dataBg="dark"> 
+      <section className="w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-start justify-center bg-neutral-700">
+        <EllipseGradient />
+        <CircleLines />
 
-    <div className="relative z-10 pb-12 xs:pb-18 flex flex-col items-start">
-      <div className={`flex items-center space-x-2 pb-2 text-left w-full`}>
-        <span className="text-[20px]">👋</span>
-        <span className="text-gray-300 text-[18px]">Bem-vindos!</span>
-      </div>
+        <div className="relative z-10  flex flex-col items-start">
+          <div className='pb-4'>
+            <div className='pb-4 space-x-2 flex'>
+              <TextBadge title="Impulsionamos negócios" textColor="text-secondary-400" />
+              <div className='hidden xs:flex'><TextBadge title="Serviços digitais" textColor="text-secondary-400" /></div>
+            </div>
 
-      <PrimaryText maxWidth={900} titleFirstPart="Serviços que podem revolucionar a sua operação!" isDarkMode={true} alignLeft={true}/>
+            <PrimaryText maxWidth={900} titleFirstPart={titleFirstPart} titleSecondPart={titleSecondPart} isDarkMode={true} alignLeft={true}/>
+          </div>
 
-      <h2 className={`text-p1 text-gray-300 text-left mb-2 mt-1 xs:mt-0 max-w-[600px] opacity-90 font-inter`}>
-        A Asuna é sua parceira em serviços de software que elevam seu negócio,
-        viemos para simplificar processos e trazer as melhores soluções do mercado.
-      </h2>
+          <h2 className={`text-p1 text-gray-300 text-left mb-8 mt-1 xs:mt-0 max-w-[700px] opacity-90 font-inter`}> {subtitle} </h2>
 
-      <p className='text-p2 text-gray-400 '>"Trabalhar com o time da Asuna"</p>
+          <div className=' pb-12 xs:pb-0 flex w-full'><BudgetServicesButtons onClickSecondaryButton={scrollToSolutions} isDarkMode={true}/></div>
+        </div>
+      </section>
 
-      <BudgetServicesButtons onClickSecondaryButton={scrollToSolutions} isDarkMode={true}/>
-    </div>
-  </section>
-
-  <div className='hidden xs:block'><RightBadges/></div>
-</AbstractSection>
-
+      <div className='hidden xs:block'><RightBadges/></div>
+    </AbstractSection>
   );
 } 
 
