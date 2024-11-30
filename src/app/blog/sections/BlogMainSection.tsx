@@ -52,12 +52,8 @@ function FigmaStar({left}: {left: string}) {
   return (
     <div className={`flex justify-start relative ${left}`}>
       <Image
-        src="/svg/figma-4-stars.svg"
-        alt="Star"
-        className="opacity-90"
-        width={128}
-        height={128}
-        priority
+        src="https://cdn.asuna.com.br/svg/figma-4-stars.svg" alt="Estrela do Figma"
+        className="opacity-90" width={128} height={128} priority
       />
     </div>
   );

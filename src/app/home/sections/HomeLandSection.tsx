@@ -42,9 +42,7 @@ export default function HomeLandSection() {
         <BudgetServicesButtons onClickSecondaryButton={() => useRouterConfig.push('/services')} />
       </section>
 
-      <div className="hidden md:flex">
-        <RightStar />
-      </div>
+      <div className="hidden md:flex"> <RightStar /> </div>
     </AbstractSection>
   );
 }
@@ -52,13 +50,8 @@ export default function HomeLandSection() {
 function LeftStar() {
   return (
     <div className="flex justify-start mt-[-12rem]">
-      <Image
-        src="/svg/figma-4-stars.svg"
-        alt="Star"
-        className="left-16 max-medium:left-16 opacity-90"
-        width={128}
-        height={128}
-        priority
+      <Image src="https://cdn.asuna.com.br/svg/figma-4-stars.svg" alt="Estrela da Esquerda"
+        className="left-16 max-medium:left-16 opacity-90" width={128} height={128} priority
       />
     </div>
   );
@@ -67,13 +60,8 @@ function LeftStar() {
 function RightStar() {
   return (
     <div className="flex justify-start mt-[12rem]">
-      <Image
-        src="/svg/figma-4-stars.svg"
-        alt="Star"
-        className="top-[28rem] left-16 max-medium:left-16 opacity-90"
-        width={128}
-        height={128}
-        priority
+      <Image src="https://cdn.asuna.com.br/svg/figma-4-stars.svg" alt="Estrela da Direita"
+       className="top-[28rem] left-16 max-medium:left-16 opacity-90" width={128} height={128} priority
       />
     </div>
   );

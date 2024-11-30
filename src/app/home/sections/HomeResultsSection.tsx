@@ -45,7 +45,7 @@ export default function HomeResultsSection() {
 
       <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8 pr-0 xs:pr-4">
         <Image
-          src="/images/creative-001.webp"
+          src="https://cdn.asuna.com.br/images/creative-001.webp"
           alt="Pessoas Sorrindo"
           width={500}
           height={500}

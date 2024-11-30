@@ -12,8 +12,8 @@ export default function CheckText({ title, mobileTitle = title }: CheckTextProps
     <div className="flex items-start p-0 m-0">
       <div className="bg-primary-500 bg-opacity-10 rounded-full p-[6px] mr-3 w-6 h-6 flex items-center justify-center">
         <Image
-          src="/svg/check_icon.svg"
-          alt="Check Mark"
+          src="https://cdn.asuna.com.br/svg/check_icon.svg"
+          alt="Simbolo de Checagem"
           width={24}
           height={24}
           className="w-full h-full object-contain"

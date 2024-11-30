@@ -21,11 +21,11 @@ export default function SlugMainSection({markdownHead}: {markdownHead: MarkdownH
           <PrimaryText titleFirstPart={markdownHead.title ?? ''} maxWidth={1440} alignLeft={true} fontWeight="font-semibold"  />
           <div className="flex flex-row space-x-8 pt-4">
             <div className="flex space-x-2">
-              <Image src="/svg/user.svg" alt="Author Icon" width={20} height={20} />
+              <Image src="https://cdn.asuna.com.br/svg/user.svg" alt="Author Icon" width={20} height={20} />
               <p className="text-[16px]">{markdownHead.author}</p>
             </div>
             <div className="flex space-x-2">
-            <Image src="/svg/clock-circle.svg" alt="Clock" width={20} height={20} />
+            <Image src="https://cdn.asuna.com.br/svg/clock-circle.svg" alt="Clock" width={20} height={20} />
               <p className="text-[16px]">{markdownHead.readingTime}</p>
             </div>
           </div>

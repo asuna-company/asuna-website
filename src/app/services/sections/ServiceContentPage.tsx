@@ -1,20 +1,20 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Navbar from "../core/sections/Navbar";
-import ServicesMethodologySection from "./sections/ServicesMethodologySection";
-import ServicesLandSection from "./sections/ServicesLandSection";
+import Navbar from "../../core/sections/Navbar";
+import ServicesMethodologySection from "./ServicesMethodologySection";
+import ServicesLandSection from "./ServicesLandSection";
 import { useRef } from "react";
-import useScrollToTop from "../core/hooks/useScrollTop";
+import useScrollToTop from "../../core/hooks/useScrollTop";
 
-const SolutionsSectionDynamic = dynamic(() => import('./sections/ServicesSolutionsSection'), { ssr: false });
-const FeedbackSectionDynamic = dynamic(() => import('../core/sections/FeedbackSection'), { ssr: false });
-const PostsSectionDynamic = dynamic(() => import('../core/sections/PostsSection'), { ssr: false });
-const FaqSectionDynamic = dynamic(() => import('../core/sections/FaqSection'), { ssr: false });
-const FooterSectionDynamic = dynamic(() => import('../core/sections/FooterSection'), { ssr: false });
+const SolutionsSectionDynamic = dynamic(() => import('./ServicesSolutionsSection'), { ssr: false });
+const FeedbackSectionDynamic = dynamic(() => import('../../core/sections/FeedbackSection'), { ssr: false });
+const PostsSectionDynamic = dynamic(() => import('../../core/sections/PostsSection'), { ssr: false });
+const FaqSectionDynamic = dynamic(() => import('../../core/sections/FaqSection'), { ssr: false });
+const FooterSectionDynamic = dynamic(() => import('../../core/sections/FooterSection'), { ssr: false });
 
 
-export default function ContentServicesPage() {
+export default function ServiceContentPage() {
   const solutionsRef = useRef<HTMLDivElement>(null);
 
   const scrollToSolutions = () => {

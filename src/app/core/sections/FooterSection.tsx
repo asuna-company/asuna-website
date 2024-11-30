@@ -58,7 +58,7 @@ export default function FooterSection() {
           <p className="font-heading text-p2 text-center pt-2 opacity-80">Entre em contato conosco </p>
           <div className="flex space-x-4 pt-8 items-center">
             <a href="https://www.linkedin.com/company/asuna/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80">
-              <Image src="/svg/linkedin_solid.svg" alt="LinkedIn" width={24} height={24}/>
+              <Image src="https://cdn.asuna.com.br/svg/linkedin_solid.svg" alt="LinkedIn" width={24} height={24}/>
             </a>
             <a
               /* TODO: rever icon */
@@ -68,10 +68,10 @@ export default function FooterSection() {
               aria-label="WhatsApp"
               className="hover:opacity-80"
             >
-              <Image src="/svg/square_whatsapp_solid.svg" alt="WhatsApp" width={24} height={24}/>
+              <Image src="https://cdn.asuna.com.br/svg/square_whatsapp_solid.svg" alt="WhatsApp" width={24} height={24}/>
             </a>
             <a href="mailto:contato@asuna.com.br" target="_blank" rel="noopener noreferrer" aria-label="Email" className="hover:opacity-80">
-              <Image src="/svg/envelope_solid.svg" alt="Email" width={24} height={24}/>
+              <Image src="https://cdn.asuna.com.br/svg/envelope_solid.svg" alt="Email" width={24} height={24}/>
             </a>
           </div>
         </div>

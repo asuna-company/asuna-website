@@ -1,7 +1,7 @@
-import ContentServicesPage from "./ContentPage";
+import ServiceContentPage from "./sections/ServiceContentPage";
 
 export default function Services() {
-  return (<ContentServicesPage/> );
+  return (<ServiceContentPage/> );
 }
 
 export function generateMetadata() {
