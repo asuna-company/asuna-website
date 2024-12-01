@@ -46,8 +46,8 @@ export default function Navbar({ isDark }: NavbarProps) {
   }, []);
 
   const logoImage = isDarkSection ? "/svg/logo_with_text_white_blue.svg" : "/svg/logo_with_text.svg";
-  const defaultBackgrounds = isDarkSection ? "bg-transparent" : 'bg-background';
-  const navbarBackground = isDarkAndScrolled ? "bg-[#222328]" : defaultBackgrounds;
+  const defaultBackgrounds = isDarkSection ? "bg-transparent " : 'bg-background/80 backdrop-blur-lg';
+  const navbarBackground = isDarkAndScrolled ? "bg-[#222328]/80 backdrop-blur-lg" : defaultBackgrounds;
   const borderColor = isDarkSection ? "border-b border-neutral-300" : "border-b border-gray-300";
   const borderNavbar = hasScrolled ? borderColor : "border-b border-transparent";
   const navbarClasses = `sticky top-0 z-50 transition-all duration-300 ${borderNavbar} ${navbarBackground}`;

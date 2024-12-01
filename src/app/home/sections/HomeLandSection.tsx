@@ -19,7 +19,7 @@ export default function HomeLandSection() {
 
   return (
     <AbstractSection>
-      <div className="hidden md:flex"> <LeftStar /> </div>
+      <div className="hidden medium-small:flex"> <LeftStar /> </div>
 
       <section className="flex flex-col items-center justify-center w-full xs:pt-20 bg-cover bg-no-repeat bg-center" style={getBackgroundStyle()}>
         <div className="flex w-full xs:w-auto space-x-3 mb-2 xs:mb-4">
@@ -42,7 +42,7 @@ export default function HomeLandSection() {
         <BudgetServicesButtons onClickSecondaryButton={() => useRouterConfig.push('/servicos')} />
       </section>
 
-      <div className="hidden md:flex"> <RightStar /> </div>
+      <div className="hidden medium-small:flex"> <RightStar /> </div>
     </AbstractSection>
   );
 }

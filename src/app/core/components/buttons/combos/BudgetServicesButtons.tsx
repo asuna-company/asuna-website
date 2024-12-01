@@ -9,7 +9,7 @@ interface BudgetServicesButtonsProps {
 
 export default function BudgetServicesButtons({ hideServicesButton = false, onClickSecondaryButton, isDarkMode = false }: BudgetServicesButtonsProps) {
   return (
-    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4 w-full md:w-auto max-w-md md:max-w-full md:items-center">
+    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4 w-full md:w-auto md:items-center">
       <PrimaryButton
         title="Solicite um Orçamento"
         fullWidth={true}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import testimonials from "../../../../../public/data/testimonals.json";
-import { useIsMobile } from "../../constants/mediaQueryConstants";
+import { useIsLaptop } from "../../constants/mediaQueryConstants";
 
 import Image from 'next/image'
 import { blurDataUrl } from "../../constants/imageConstants";
@@ -28,8 +28,8 @@ export default function TestimonialCard() {
         <Image
           src="https://cdn.asuna.com.br/svg/quote.svg"
           alt="Simbolo de Citação"
-          width={useIsMobile() ? 28 : 32}
-          height={useIsMobile() ? 28 : 32}
+          width={useIsLaptop() ? 28 : 32}
+          height={useIsLaptop() ? 28 : 32}
           className="text-primary-500/90"
           placeholder="blur"
           loading="lazy"

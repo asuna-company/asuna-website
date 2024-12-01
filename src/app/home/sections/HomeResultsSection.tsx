@@ -5,6 +5,7 @@ import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
 import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 
 export default function HomeResultsSection() {
   const useRouterConfig = useRouter();
@@ -33,17 +34,14 @@ export default function HomeResultsSection() {
 
         <div className="flex pt-4 pb-6">
           <NumberInfoCard number={50} numberSuffix="K+" tile="Pessoas impactadas" />
-          <NumberInfoCard number={35} tile="Projetos entregues" showDivider />
+          <NumberInfoCard number={35} tile="Projetos entregues" showDivider={!useIsMobile()} />
           <div className="hidden md:block"><NumberInfoCard number={10} tile="Colaboradores ativos" showDivider={false}/></div> 
         </div>
 
-        <BudgetServicesButtons
-          onClickSecondaryButton={() => useRouterConfig.push("/services")}
-          hideServicesButton={false}
-        />
+        <BudgetServicesButtons onClickSecondaryButton={() => useRouterConfig.push("/servicos")} hideServicesButton={false}/>
       </div>
 
-      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8 pr-0 xs:pr-4">
+      <div className="flex justify-center md:justify-end mt-8 md:mt-0 md:ml-8 pr-0 xs:pr-4 items-center mx-auto xs:mx-0">
         <Image
           src="https://cdn.asuna.com.br/images/creative-001.webp"
           alt="Pessoas Sorrindo"
@@ -51,12 +49,10 @@ export default function HomeResultsSection() {
           height={500}
           decoding="async"
           priority
-          placeholder="blur"
-          blurDataURL="/images/creative-001-placeholder.webp"
-          sizes="(max-width: 500px) 256px, (max-width: 768px) 500px, (max-width: 1024px) 790px, 1000px"
           className="rounded-lg"
         />
       </div>
+
     </AbstractSection>
   );
 }

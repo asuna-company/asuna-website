@@ -16,12 +16,12 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
   const subtitle = useIsMobile() ? mobileSubtitle : desktopSubtitle
 
   return (
-    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-12" dataBg="dark"> 
-      <section className="w-full min-h-full pb-0 xs:pb-8 xs:h-screen flex flex-col items-start justify-center bg-neutral-700">
+    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-20" dataBg="dark"> 
+      <section className="w-full min-h-full pb-0 xs:pb-16 pt-0 xs:pt-32 flex flex-col items-start justify-center bg-neutral-700">
         <EllipseGradient />
         <CircleLines />
 
-        <div className="relative z-10  flex flex-col items-start">
+        <div className="relative z-10 flex flex-col items-start">
           <div className='pb-4'>
             <div className='pb-4 space-x-2 flex'>
               <TextBadge title="Impulsionamos negócios" textColor="text-secondary-400" />
@@ -37,19 +37,19 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
         </div>
       </section>
 
-      <div className='hidden xs:block'><RightBadges/></div>
+      <div className='hidden medium-small:block'><RightBadges/></div>
     </AbstractSection>
   );
 } 
 
 function RightBadges() {
   return (
-    <div className="flex flex-col items-start space-y-36 w-fit">
-      <div className="animate-bounce-slow">
-        <EmojiBadge emoji="📱" title="Desenvolvimento Mobile" />
+    <div className="flex flex-col items-start space-y-28 w-fit">
+      <div className="pl-8 animate-bounce-slow">
+        <EmojiBadge emoji="🎨" title="UI/UX Design" />
       </div>
-      <div className="pl-32 animate-float">
-        <EmojiBadge emoji="🚀" title="Soluções para SaaS" />
+      <div className="pl-40 animate-float">
+        <EmojiBadge emoji="📱" title="Desenvolvimento Mobile" />
       </div>
       <div className="pl-32 animate-bounce-slow">
         <EmojiBadge emoji="🌐" title="Desenvolvimento Web" />
