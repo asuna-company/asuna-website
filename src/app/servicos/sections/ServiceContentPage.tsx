@@ -29,14 +29,16 @@ export default function ServiceContentPage() {
   return (
     <div className="min-h-screen flex flex-col max-w-full relative">
         <div className="absolute inset-0"><Navbar isDark={true} /></div>
-        <div className="relative overflow-x-hidden space-y-0 xs:space-y-8">
+        <div className="relative overflow-x-hidden">
           <ServicesLandSection scrollToSolutions={scrollToSolutions} />        
           <ServicesMethodologySection />
-          <div ref={solutionsRef}> <SolutionsSectionDynamic /></div>
-          <FeedbackSectionDynamic />
-          <PostsSectionDynamic />
-          <FaqSectionDynamic />
-          <FooterSectionDynamic />
+          <div className="space-y-0 xs:space-y-8">
+            <div ref={solutionsRef}> <SolutionsSectionDynamic /></div>
+            <FeedbackSectionDynamic />
+            <PostsSectionDynamic />
+            <FaqSectionDynamic />
+            <FooterSectionDynamic />
+          </div>
         </div>
     </div>
   );

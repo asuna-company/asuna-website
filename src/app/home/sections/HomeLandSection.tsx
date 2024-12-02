@@ -32,6 +32,7 @@ export default function HomeLandSection() {
           titleFirstPart="A software house ideal para fazer"
           titleSecondPart="sua empresa crescer!"
         />
+        
 
         <h2 className="text-p1 text-gray-600 text-left md:text-center mt-1 mb-2 xs:mt-0 max-w-[600px] mx-auto opacity-90">
           Somos a Asuna, uma <span className="font-semibold">software house B2B</span>{" "}

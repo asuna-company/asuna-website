@@ -8,6 +8,7 @@ import AppsSolutionsInternalSection from "./internals/AppsSolutionsInternalSecti
 import ConsultingSolutionsInternalSection from "./internals/ConsultingSolutionsInternalSection";
 import DesignSolutionsInternalSection from "./internals/DesignSolutionsInternalSection";
 import WebsitesSolutionsInternalSection from "./internals/WebsitesSolutionsInternalSection";
+
 const SERVICES = [
   { id: "websites", label: "Websites" },
   { id: "apps", label: "Apps" },

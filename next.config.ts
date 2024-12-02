@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   staticPageGenerationTimeout: 60,
   crossOrigin: "anonymous",
   images: {
-    domains: ['www.asuna.com.br'],
+    domains: ['asuna.com.br'],
     unoptimized: true,
   },
   compiler: {

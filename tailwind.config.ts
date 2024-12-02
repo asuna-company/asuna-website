@@ -78,6 +78,7 @@ export default {
   		},
   		screens: {
   			medium: '1480px',
+				laptop: '1270px',
 				'medium-1290': '1290px',
   			'medium-small': '1120px',
 				'small-1080': '1080px',
@@ -117,8 +118,5 @@ export default {
   		}
   	}
   },
-  plugins: [
-		require("tailwindcss-animate"),
-		require("@tailwindcss/typography"),
-	]
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")]
 } satisfies Config;

@@ -1,9 +1,10 @@
 import TextBadge from "@/app/core/components/badges/TextBadge";
 import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsExtraMobile, useIsLaptop, useIsMobile } from "@/app/core/constants/mediaQueryConstants";
 import AbstractSection from "@/app/core/components/sections/AbstractSection";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import MethodologyCard from "../components/MethodologyCard";
 
 const cards = [
   {
@@ -39,7 +40,10 @@ const cards = [
 export default function ServicesMethodologySection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+
+  const isLaptop = useIsLaptop();
   const isMobile = useIsMobile();
+  const isExtraMobile = useIsExtraMobile();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -58,74 +62,62 @@ export default function ServicesMethodologySection() {
   };
 
   return (
-    <AbstractSection>
-      <div className="flex flex-col items-start space-y-6">
-        <TextBadge title="Nossa Metodologia" />
-        <SecondaryTitle
-          firstPart={isMobile ? "Nós proporcionamos" : "Nós proporcionamos novas"}
-          secondPart={isMobile ? "novas oportunidades": "oportunidades de crescimento"}
-        />
+    <div className="relative">
+      <DottedBackground/>
+      <AbstractSection>
+        <div className="flex flex-col items-start space-y-6 pb-0 xs:pb-8">
+          <TextBadge title="Nossa Metodologia" />
+          <SecondaryTitle
+            firstPart={isExtraMobile ? "Nós proporcionamos" : "Nós proporcionamos novas"}
+            secondPart={isExtraMobile ? "novas oportunidades" : "oportunidades de crescimento"}
+          />
 
-        <div className={`flex ${isMobile ? "flex-col-reverse space-y-0 xs:space-y-6" : "justify-between items-center space-x-8"} w-full`}>
-          <div className="flex flex-col items-start space-y-6 pt-8 xs:pt-0">
-            {cards.map((card, index) => (
-              <Card
-                key={index}
-                title={`${index + 1}. ${card.title}`}
-                body={isMobile ? card.mobileBody : card.body}
-                progress={index === activeIndex ? progress : 0}
-                isSelected={index === activeIndex}
-                onClick={() => handleCardClick(index)}
-              />
-            ))}
-          </div>
+          <div className={`flex ${isLaptop ? "flex-col-reverse space-y-0 xs:space-y-6" : "justify-between items-center space-x-8"} w-full`}>
+            <div className="flex flex-col items-start space-y-6 pt-8 xs:pt-0">
+              {cards.map((card, index) => (
+                <MethodologyCard
+                  key={index}
+                  title={`${index + 1}. ${card.title}`}
+                  body={isMobile ? card.mobileBody : card.body}
+                  progress={index === activeIndex ? progress : 0}
+                  isSelected={index === activeIndex}
+                  onClick={() => handleCardClick(index)}
+                />
+              ))}
+            </div>
 
-          <div className={`w-full ${isMobile ? "mb-4" : "md:w-1/2 pl-32"}`}>
-            <Image
-              src={cards[activeIndex].image}
-              alt={cards[activeIndex].title}
-              width={700}
-              height={700}
-              className="rounded-lg"
-              unoptimized
-            />
-          </div>
-        </div>
-      </div>
-    </AbstractSection>
-  );
-}
-
-interface CardProps {
-  title: string;
-  body: string;
-  progress?: number;
-  isSelected?: boolean;
-  onClick?: () => void;
-}
-
-function Card({ title, body, progress, onClick, isSelected }: CardProps) {
-  return (
-    <button
-      onClick={onClick}
-      className={`flex w-full items-center font-poppins rounded-full transition ${isSelected ? "text-neutral-200" : "text-[#919497]"} py-0 xs:py-2`}
-    >
-      <div className="flex w-full xs:w-[650px] flex-col items-start">
-        <h1 className="font-heading font-bold text-left text-[22px] xs:text-[30px]">
-          {title}
-        </h1>
-        {isSelected && (
-          <>
-            <h2 className="text-p1 text-start mt-2 xs:mt-4 opacity-90 pb-2">{body}</h2>
-            <div className="relative w-full xs:w-[650px] h-1 rounded-full bg-slate-200">
-              <div
-                className="absolute top-0 left-0 h-full bg-primary-500 rounded-full transition-all"
-                style={{ width: `${progress}%` }}
+            <div className={`pb-8 medium:pb-0 ${isLaptop ? 'pl-0' : 'pl-[8rem]'} justify-center mx-auto`}> 
+              <Image
+                src={cards[activeIndex].image}
+                alt={cards[activeIndex].title}
+                width={isLaptop ? 700: 1200}
+                height={1000}
+                className="rounded-lg"
+                unoptimized
               />
             </div>
-          </>
-        )}
-      </div>
-    </button>
+          </div>
+        </div>
+      </AbstractSection>
+    </div>
   );
+}
+
+
+function DottedBackground() {
+  return (
+    <div className="absolute inset-0 flex justify-end -z-10">
+      {[...Array(4)].map((_, i) => (
+        <div
+          key={i}
+          className={`h-full w-px bg-gray-300/70`}
+          style={{
+            backgroundImage: 'linear-gradient(to bottom, #ffffff 33%, transparent 33%)',
+            backgroundSize: '1px 15px',
+            marginRight: i === 3 ? '9rem' : '16rem',
+          }}
+        />
+      ))}
+    </div>
+  )
 }

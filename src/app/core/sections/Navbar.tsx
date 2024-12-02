@@ -79,7 +79,7 @@ export default function Navbar({ isDark }: NavbarProps) {
             paddingY="6px"
           />
           <button className="text-gray-700" onClick={toggleMenu}aria-label="Toggle Menu">
-            <MenuIcon isOpen={isOpen} isDark={isDarkSection && hasScrolled} />
+            <MenuIcon isOpen={isOpen} isDark={isDarkSection} />
           </button>
         </div>
       </div>
