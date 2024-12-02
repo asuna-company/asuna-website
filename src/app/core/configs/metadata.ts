@@ -45,3 +45,20 @@ export const metadata: Metadata = {
     apple: '/images/logo.webp',
   }, 
 };
+
+export function createMetadata(newMetadata: Partial<Metadata>): Metadata {
+  return {
+    metadataBase: newMetadata.metadataBase || metadata.metadataBase ,
+    title:  newMetadata.title || metadata.title,
+    description: newMetadata.description || metadata.description,
+    keywords: newMetadata.keywords || metadata.keywords,
+    openGraph: newMetadata.openGraph || metadata.openGraph,
+    twitter: newMetadata.twitter || metadata.twitter,
+    alternates: newMetadata.alternates || metadata.alternates,
+    manifest: '/favicon/site.webmanifest', 
+    icons: {
+      shortcut: '/favicon/favicon.ico',
+      apple: '/images/logo.webp',
+    }, 
+  }
+}

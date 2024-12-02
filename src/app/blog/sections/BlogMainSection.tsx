@@ -31,10 +31,10 @@ export default function BlogMainSection() {
               maxWidth={850} 
               alignLeft={true}  
             />
-            <h3 className="mt-2 pl-1 leading-relaxed text-neutral-500"> 
+            <h2 className="mt-2 pl-1 leading-relaxed text-neutral-500"> 
               Bem-vindo ao blog da Asuna, onde tecnologia e mercado digital se encontram.
               Explore artigos feitos para quem busca compreender o futuro do desenvolvimento de software e dos negócios digitais. 💙
-            </h3>
+            </h2>
           </div>
         </div>
 

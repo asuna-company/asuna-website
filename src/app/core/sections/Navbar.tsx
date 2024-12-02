@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PrimaryButton from "../components/buttons/PrimaryButton";
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   isDark: boolean;
@@ -15,6 +16,8 @@ export default function Navbar({ isDark }: NavbarProps) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDarkAndScrolled, setIsDarkAndScrolled] = useState(false);
   const toggleMenu = () => setIsOpen((prev) => !prev);
+
+  const useRouterConfig = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +70,7 @@ export default function Navbar({ isDark }: NavbarProps) {
           {/* <NavbarLink href="/about" isDark={isDarkSection}>Sobre a Asuna</NavbarLink> */}
           <PrimaryButton
             title="Entre em Contato"
-            onClick={() => alert("Button clicked!")}
+            onClick={() => useRouterConfig.push('/contato')}
             paddingY="10px"
           />
         </ul>
@@ -75,7 +78,7 @@ export default function Navbar({ isDark }: NavbarProps) {
         <div className="md:hidden flex items-center space-x-4">
           <PrimaryButton
             title="Contato"
-            onClick={() => alert("Button clicked!")}
+            onClick={() => useRouterConfig.push('/contato')}
             paddingY="6px"
           />
           <button className="text-gray-700" onClick={toggleMenu}aria-label="Toggle Menu">
@@ -96,7 +99,7 @@ export default function Navbar({ isDark }: NavbarProps) {
 }
 
 const NavbarLink = ({ isDark, href, children }: { isDark: boolean; href: string; children: React.ReactNode }) => (
-  <li> <Link href={href} className={getLinkClasses(isDark)}> {children} </Link> </li>
+  <Link href={href} className={getLinkClasses(isDark)}> {children} </Link>
 );
 
 function getLinkClasses(isDark: boolean) {
