@@ -4,7 +4,7 @@ import ContactContentSection from "./sections/ContactContentSection";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex flex-col max-w-full overflow-x-auto">
+    <div className="flex flex-col max-w-full">
       <Navbar isDark={false} />
       <div className="space-y-0 xs:space-y-8">
         <ContactContentSection/>

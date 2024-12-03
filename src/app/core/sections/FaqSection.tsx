@@ -4,8 +4,12 @@ import SecondaryTitle from "../components/texts/SecondaryTitle";
 import ExpansionTile from "../components/tiles/ExpansionTile";
 import { useIsMobile } from "../constants/mediaQueryConstants";
 import AbstractSection from "../components/sections/AbstractSection";
+import { Phone } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function FaqSection() {
+  const router = useRouter();
+
   return (
     <AbstractSection align="items-start">
       <div className="flex flex-col items-start">
@@ -19,19 +23,16 @@ export default function FaqSection() {
           <span className='font-semibold'> decolar em tempo recorde</span>, com <span className='font-semibold'>soluções ágeis</span> e <span className="font-semibold">escaláveis</span> para o seu negócio.
            Veja a seguir as <span className="font-semibold">perguntas mais comuns que recebemos!</span>
         </p>
-        <div className="flex flex-row items-center pt-8 space-x-8 w-full xs:w-fit">
-          <PrimaryButton
-            title="Tenho uma dúvida"
-            onClick={() => alert("Button clicked!")}
-            fullWidth={useIsMobile()}
-          />
-          <div className="flex-row space-x-8 hidden xs:flex">
+        <div className="flex flex-row items-center pt-8 space-x-8 w-full">
+          <PrimaryButton title="Tenho uma dúvida" onClick={() => router.push('/contato')} fullWidth={true}
+/>
+          {/* <div className="flex-row space-x-8 hidden xs:flex">
             <div className="h-14 w-px bg-gray-300"></div>
             <div className="flex flex-col justify-center">
               <p className="text-neutral-600 font-medium text-[16px]">Respondemos em até 2 horas! 🚀</p>
               <p className="text-[14px] text-neutral-600">+100 empresas respondidas pelo nosso time</p> 
             </div>
-          </div>
+          </div> */}
         </div>
 
       </div>
