@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import HomeLandSection from "./home/sections/HomeLandSection";
 import HomeResultsSection from "./home/sections/HomeResultsSection";
+import RecruitmentBanner from "./core/components/banners/RecruitmentBanner";
 
 const ServicesSectionDynamic = dynamic(() => import('./home/sections/HomeServicesSection'), { ssr: false });
 const FeedbackSectionDynamic = dynamic(() => import('./core/sections/FeedbackSection'), { ssr: false });
@@ -25,6 +26,7 @@ export default function Home() {
         <ServicesSectionDynamic />
         <FeedbackSectionDynamic />
         <PostsSectionDynamic />
+        <RecruitmentBanner/>
         <FaqSectionDynamic />
         <FooterSectionDynamic />
       </div>

@@ -7,6 +7,8 @@ import ContactForm from "../internals/ContactForm";
 
 import { useIsLaptop } from "@/app/core/constants/mediaQueryConstants";
 
+import Image from 'next/image'
+
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
   backgroundSize: "80rem",

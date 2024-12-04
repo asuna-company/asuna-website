@@ -6,6 +6,7 @@ import { useIsMobile } from "../constants/mediaQueryConstants";
 import AbstractSection from "../components/sections/AbstractSection";
 import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function FaqSection() {
   const router = useRouter();
@@ -14,26 +15,12 @@ export default function FaqSection() {
     <AbstractSection align="items-start">
       <div className="flex flex-col items-start">
         <TextBadge title="FAQ" />
-        <SecondaryTitle
-          firstPart="Perguntas e respostas"
-          secondPart={useIsMobile() ? "frequentes sobre nós": "mais frequentes sobre a Asuna"}
-        />
-        <p className="text-p1 text-gray-600 text-start mt-4 max-w-[600px] opacity-90">
-          Entenda como toda a nossa equipe de especialistas pode ajudar o seu projeto a 
-          <span className='font-semibold'> decolar em tempo recorde</span>, com <span className='font-semibold'>soluções ágeis</span> e <span className="font-semibold">escaláveis</span> para o seu negócio.
-           Veja a seguir as <span className="font-semibold">perguntas mais comuns que recebemos!</span>
+        <SecondaryTitle firstPart="Perguntas e respostas" secondPart={useIsMobile() ? "frequentes sobre nós": "mais frequentes sobre a Asuna"}/>
+        <p className="text-base text-gray-700 leading-relaxed max-w-[600px] mt-6">
+            Tire suas dúvidas sobre a Asuna descubra como podemos contribuir para o sucesso do seu negócio. Veja a seguir algumas dúvidas frequentes!
         </p>
-        <div className="flex flex-row items-center pt-8 space-x-8 w-full">
-          <PrimaryButton title="Tenho uma dúvida" onClick={() => router.push('/contato')} fullWidth={true}
-/>
-          {/* <div className="flex-row space-x-8 hidden xs:flex">
-            <div className="h-14 w-px bg-gray-300"></div>
-            <div className="flex flex-col justify-center">
-              <p className="text-neutral-600 font-medium text-[16px]">Respondemos em até 2 horas! 🚀</p>
-              <p className="text-[14px] text-neutral-600">+100 empresas respondidas pelo nosso time</p> 
-            </div>
-          </div> */}
-        </div>
+
+        <HelpSection/>
 
       </div>
 
@@ -61,4 +48,33 @@ export default function FaqSection() {
       </div>
     </AbstractSection>
   );
+}
+
+function HelpSection() {
+  return (
+    <div className="py-4">
+      <p className="text-sm text-muted-foreground">
+        Você tem alguma dúvida que não foi respondida aqui?{" "}
+        <Link 
+          href="/contato" 
+          className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+        >
+          Entre em contato
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <path d="M15 3h6v6" />
+            <path d="M10 14L21 3" />
+          </svg>
+        </Link>
+      </p>
+    </div>
+  )
 }
