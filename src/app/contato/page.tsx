@@ -15,9 +15,8 @@ export default function ContactPage() {
   )
 }
 
-
 export function generateMetadata() {
-  const title = "Contato - Asuna";
+  const title = "Entre em Contato - Asuna";
   const canonicalUrl = "https://asuna.com.br/contato";
   const description = "Entre em contato com a Asuna e descubra como podemos ajudar sua empresa com soluções de software sob medida.";
   const ogDescription = "Fale conosco! Estamos prontos para atender suas necessidades de software e ajudar sua empresa a crescer.";
@@ -38,4 +37,3 @@ export function generateMetadata() {
     },
   };
 }
-
