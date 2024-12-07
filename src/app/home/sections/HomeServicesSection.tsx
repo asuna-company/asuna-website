@@ -47,10 +47,10 @@ function ImageServiceSteps() {
   return (
     <div className="flex justify-center md:justify-center mt-8 md:mt-0 w-full md:w-auto pt-16 pl-0 medium:pl-32 xs:pl-4">
       <Image
-        src="https://cdn.asuna.com.br/svg/details_section.svg"
+        src="https://cdn.asuna.com.br/images/section_details.png"
         alt="Etapas de Desenvolvimento da Asuna"
-        width={640}
-        height={380}
+        width={550}
+        height={500}
         className="rounded-lg"
       />
     </div>

@@ -8,6 +8,7 @@ import ContactForm from "../internals/ContactForm";
 import { useIsLaptop } from "@/app/core/constants/mediaQueryConstants";
 
 import Image from 'next/image'
+import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",
@@ -22,17 +23,17 @@ export default function ContactContentSection() {
   return (
     <div style={getBackgroundStyle()} className="w-full text-left">
       <AbstractSection align="items-start" flex={`${isLaptop ? 'flex-col': 'flex-row'}`}>
-        <div className="w-fit pt-4 xs:pt-24 text-left">
-          <div className="space-x-3 mb-4">
-            <TextBadge title="Contato" />
-            <TextBadge title="Respondemos em até 24 horas!" />
-          </div>
+        <div className="w-fit pt-4 xs:pt-24 text-left"> <div className="space-x-3 mb-4"> <TextBadge title="Contato" /> </div>
           <div className="max-w-full xs:max-w-[800px]">
             <PrimaryText titleFirstPart="Entre diretamente em" titleSecondPart="contato com o nosso time!" maxWidth={800} alignLeft={true} />
             <h2 className="mt-2 pl-1 leading-relaxed text-neutral-500">
-              <p>Fale com a Asuna e dê o primeiro passo para transformar suas ideias em projetos reais. Nossa equipe está pronta para entender suas necessidades e criar a melhor solução. 💙</p>
-              <p className="mt-4">Conte com a gente para transformar suas ideias em algo concreto e impactante. Na Asuna, estamos aqui para ouvir você, entender cada detalhe e construir algo que realmente faça a diferença para o seu negócio.</p>
+              Fale com a Asuna e dê o primeiro passo para transformar suas ideias em projetos reais. Nossa equipe está pronta para entender suas necessidades e criar a melhor solução. 💙
             </h2>
+            {/* <div className="flex pt-8">
+              <NumberInfoCard number={2} numberSuffix=" horas" tile="Tempo de resposta"/>
+              <h3></h3>
+            </div> */}
+            <p className=" leading-relaxed text-neutral-500">"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"</p>
           </div>
         </div>
 

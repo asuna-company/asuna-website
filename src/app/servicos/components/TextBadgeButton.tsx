@@ -23,7 +23,7 @@ export default function TextBadgeButton({
   return (
     <button
       onClick={onClick}
-      className={`flex items-center px-4 text-[16px] font-poppins font-semibold rounded-full border-[0.5px] transition ${
+      className={`flex items-center px-4 text-[15px] font-poppins font-semibold rounded-full border-[0.5px] transition ${
         isSelected ? buttonSelected : buttonUnselected
       }`}
       style={{

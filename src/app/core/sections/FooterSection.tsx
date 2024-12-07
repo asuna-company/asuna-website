@@ -22,7 +22,7 @@ export default function FooterSection() {
           </div>
 
           <div className="space-y-4 pl-0 xs:pl-16 laptop:pl-32 pt-8 xs:pt-0">
-            <h3 className="text-lg font-semibold">Mapa do site</h3>
+            <h3 className="text-lg font-semibold">Site</h3>
             <ul className="space-y-2">
               <ItemLink title='Blog' path='/blog'/>
               <ItemLink title='Contato' path='/contato'/>

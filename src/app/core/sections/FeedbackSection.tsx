@@ -14,16 +14,12 @@ export default function FeedbackSection() {
           <TextBadge title="Último Semestre" />
         </div>
         <div className="max-w-[600px] mx-auto pt-2">
-          <SecondaryTitle
-            firstPart="Veja o que as pessoas"
-            secondPart={`${useIsMobile() ? 'têm a dizer sobre nós': 'têm a dizer sobre a Asuna'}`}
-          />
+          <SecondaryTitle firstPart="Veja o que as pessoas" secondPart={`${useIsMobile() ? 'têm a dizer sobre nós': 'têm a dizer sobre a Asuna'}`}/>
 
           <p className="text-p1 text-gray-600 text-start mt-4 max-w-[590px] opacity-90 pb-2">
             O{" "} <span className="font-semibold">feedback dos nossos clientes</span>{" "}é muito importante para nós. É através dessas parcerias que ajustamos o rumo e{" "}
             <span className="font-semibold"> garantimos entregas cada vez melhores </span>. Veja a seguir alguns feedbacks 💙
           </p>
-
 
           <div className="flex pt-4">
             <NumberInfoCard number={4.9} isDecimal={true} tile="Avaliação média"/>
@@ -37,6 +33,7 @@ export default function FeedbackSection() {
     </AbstractSection>
   );
 }
+
 
 
 

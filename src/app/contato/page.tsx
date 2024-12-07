@@ -1,6 +1,5 @@
 import FooterSection from "../core/sections/FooterSection";
 import Navbar from "../core/sections/Navbar";
-import RecruitmentBanner from "../core/components/banners/RecruitmentBanner";
 import ContactContentSection from "./sections/ContactContentSection";
 
 
@@ -15,3 +14,28 @@ export default function ContactPage() {
     </div>
   )
 }
+
+
+export function generateMetadata() {
+  const title = "Contato - Asuna";
+  const canonicalUrl = "https://asuna.com.br/contato";
+  const description = "Entre em contato com a Asuna e descubra como podemos ajudar sua empresa com soluções de software sob medida.";
+  const ogDescription = "Fale conosco! Estamos prontos para atender suas necessidades de software e ajudar sua empresa a crescer.";
+  const ogTitle = title;
+  const ogUrl = canonicalUrl;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { 
+      title: ogTitle, 
+      description: ogDescription, 
+      url: ogUrl, 
+      type: "website", 
+      siteName: "Asuna", 
+      locale: "pt_BR" 
+    },
+  };
+}
+

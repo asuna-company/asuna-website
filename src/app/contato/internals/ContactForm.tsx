@@ -20,7 +20,7 @@ export default function ContactForm() {
         <input
           type="email"
           id="email"
-          placeholder="E-mail corporativo"
+          placeholder="seu@email.com"
           className="mt-1 p-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
           required
         />

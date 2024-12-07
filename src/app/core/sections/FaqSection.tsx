@@ -1,15 +1,11 @@
 import TextBadge from "../components/badges/TextBadge";
-import PrimaryButton from "../components/buttons/PrimaryButton";
 import SecondaryTitle from "../components/texts/SecondaryTitle";
 import ExpansionTile from "../components/tiles/ExpansionTile";
 import { useIsMobile } from "../constants/mediaQueryConstants";
 import AbstractSection from "../components/sections/AbstractSection";
-import { Phone } from "lucide-react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function FaqSection() {
-  const router = useRouter();
 
   return (
     <AbstractSection align="items-start">
@@ -19,9 +15,7 @@ export default function FaqSection() {
         <p className="text-base text-gray-700 leading-relaxed max-w-[600px] mt-6">
             Tire suas dúvidas sobre a Asuna descubra como podemos contribuir para o sucesso do seu negócio. Veja a seguir algumas dúvidas frequentes!
         </p>
-
         <HelpSection/>
-
       </div>
 
       <div className="w-full md:w-[47%] mt-8 md:mt-0 md:pl-8 pt-0 xs:pt-12">
@@ -52,29 +46,27 @@ export default function FaqSection() {
 
 function HelpSection() {
   return (
-    <div className="py-4">
-      <p className="text-sm text-muted-foreground">
-        Você tem alguma dúvida que não foi respondida aqui?{" "}
-        <Link 
-          href="/contato" 
-          className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+    <p className="text-base text-muted-foreground py-4">
+    Você tem alguma dúvida que não foi respondida aqui?{" "}
+      <Link 
+        href="/contato" 
+        className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+      >
+        Entre em contato
+        <svg
+          className="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
         >
-          Entre em contato
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            <path d="M15 3h6v6" />
-            <path d="M10 14L21 3" />
-          </svg>
-        </Link>
-      </p>
-    </div>
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <path d="M15 3h6v6" />
+          <path d="M10 14L21 3" />
+        </svg>
+      </Link>
+    </p>
   )
 }
