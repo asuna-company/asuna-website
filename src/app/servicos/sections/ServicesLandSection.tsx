@@ -1,10 +1,10 @@
-import BudgetServicesButtons from '@/app/core/components/buttons/combos/BudgetServicesButtons';
-import PrimaryText from '@/app/core/components/texts/PrimaryTitle';
-import { useIsMobile } from '@/app/core/constants/mediaQueryConstants';
+import BudgetServicesButtons from '@/app/shared/components/buttons/combos/BudgetServicesButtons';
+import PrimaryText from '@/app/shared/components/texts/PrimaryTitle';
+import { useIsMobile } from '@/app/shared/constants/mediaQueryConstants';
 import React from 'react';
 import EmojiBadge from '../components/EmojiBadge';
-import AbstractSection from '@/app/core/components/sections/AbstractSection';
-import TextBadge from '@/app/core/components/badges/TextBadge';
+import AbstractSection from '@/app/shared/components/sections/AbstractSection';
+import TextBadge from '@/app/shared/components/badges/TextBadge';
 
 
 export default function ServicesLandSection({ scrollToSolutions }: { scrollToSolutions: () => void }) {

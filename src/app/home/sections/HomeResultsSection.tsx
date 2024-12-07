@@ -1,11 +1,13 @@
-import TextBadge from "@/app/core/components/badges/TextBadge";
-import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
-import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
-import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
+import BudgetServicesButtons from "@/app/shared/components/buttons/combos/BudgetServicesButtons";
+import NumberInfoCard from "@/app/shared/components/cards/NumberInfoCard";
+import SecondaryTitle from "@/app/shared/components/texts/SecondaryTitle";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
+import { useIsMobile } from "@/app/shared/constants/mediaQueryConstants";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+
 
 export default function HomeResultsSection() {
   const useRouterConfig = useRouter();

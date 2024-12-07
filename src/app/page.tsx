@@ -5,14 +5,14 @@ import HomeLandSection from "./home/sections/HomeLandSection";
 import HomeResultsSection from "./home/sections/HomeResultsSection";
 
 const ServicesSectionDynamic = dynamic(() => import('./home/sections/HomeServicesSection'), { ssr: false });
-const FeedbackSectionDynamic = dynamic(() => import('./core/sections/FeedbackSection'), { ssr: false });
-const PostsSectionDynamic = dynamic(() => import('./core/sections/PostsSection'), { ssr: false });
-const FaqSectionDynamic = dynamic(() => import('./core/sections/FaqSection'), { ssr: false });
-const FooterSectionDynamic = dynamic(() => import('./core/sections/FooterSection'), { ssr: false });
+const FeedbackSectionDynamic = dynamic(() => import('./shared/sections/FeedbackSection'), { ssr: false });
+const PostsSectionDynamic = dynamic(() => import('./shared/sections/PostsSection'), { ssr: false });
+const FaqSectionDynamic = dynamic(() => import('./shared/sections/FaqSection'), { ssr: false });
+const FooterSectionDynamic = dynamic(() => import('./shared/sections/FooterSection'), { ssr: false });
 
 
 
-const Navbar = dynamic(() => import('./core/sections/Navbar'), { ssr: true });
+const Navbar = dynamic(() => import('./shared/sections/Navbar'), { ssr: true });
 
 
 export default function Home() {

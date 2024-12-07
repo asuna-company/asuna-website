@@ -1,8 +1,8 @@
-import TextBadge from "@/app/core/components/badges/TextBadge";
-import CheckText from "@/app/core/components/check_text/CheckText";
-import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
-import { useIsExtraMobile, useIsMobile } from "@/app/core/constants/mediaQueryConstants";
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
+import CheckText from "@/app/shared/components/check_text/CheckText";
+import SecondaryTitle from "@/app/shared/components/texts/SecondaryTitle";
+import { useIsExtraMobile, useIsMobile } from "@/app/shared/constants/mediaQueryConstants";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 import Image from "next/image";
 
 export default function HomeServicesSection() {

@@ -1,5 +1,5 @@
-import FooterSection from "../core/sections/FooterSection";
-import Navbar from "../core/sections/Navbar";
+import FooterSection from "../shared/sections/FooterSection";
+import Navbar from "../shared/sections/Navbar";
 import ContactContentSection from "./sections/ContactContentSection";
 
 

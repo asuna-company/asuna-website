@@ -1,14 +1,11 @@
 "use client"
 
-import TextBadge from "@/app/core/components/badges/TextBadge";
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
-import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
+import PrimaryText from "@/app/shared/components/texts/PrimaryTitle";
 import ContactForm from "../internals/ContactForm";
 
-import { useIsLaptop } from "@/app/core/constants/mediaQueryConstants";
-
-import Image from 'next/image'
-import NumberInfoCard from "@/app/core/components/cards/NumberInfoCard";
+import { useIsLaptop } from "@/app/shared/constants/mediaQueryConstants";
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",

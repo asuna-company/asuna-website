@@ -1,6 +1,6 @@
-import TextBadge from "@/app/core/components/badges/TextBadge";
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
-import SecondaryTitle from "@/app/core/components/texts/SecondaryTitle";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
+import SecondaryTitle from "@/app/shared/components/texts/SecondaryTitle";
 import TextBadgeButton from "../components/TextBadgeButton";
 
 import { useState } from "react";
@@ -42,7 +42,6 @@ export default function ServicesSolutionsSection() {
         return null;
     }
   };
-
 
   return (
     <div className="relative">
