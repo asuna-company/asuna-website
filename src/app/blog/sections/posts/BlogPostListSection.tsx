@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Post } from "../../infrastructure/types/PostType";
-import BlogCard from "@/app/core/components/cards/BlogCard";
+import BlogCard from "@/app/shared/components/cards/BlogCard";
 
 export default function BlogPostListSection({ posts }: { posts: Post[] }) {
   const [currentPage, setCurrentPage] = useState(1);

@@ -10,10 +10,7 @@ const PostsSectionDynamic = dynamic(() => import('./shared/sections/PostsSection
 const FaqSectionDynamic = dynamic(() => import('./shared/sections/FaqSection'), { ssr: false });
 const FooterSectionDynamic = dynamic(() => import('./shared/sections/FooterSection'), { ssr: false });
 
-
-
 const Navbar = dynamic(() => import('./shared/sections/Navbar'), { ssr: true });
-
 
 export default function Home() {
   return (
@@ -21,7 +18,7 @@ export default function Home() {
       <Navbar isDark={false}  />
       <div className="space-y-0 xs:space-y-20 overflow-x-hidden">
         <HomeLandSection />
-        <div className="pt-0 xs:pt-8"><HomeResultsSection /></div>
+        <div className="pt-0 xs:pt-24"><HomeResultsSection /></div>
         <ServicesSectionDynamic />
         <FeedbackSectionDynamic />
         <PostsSectionDynamic />

@@ -1,4 +1,4 @@
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsMobile } from "@/app/shared/constants/mediaQueryConstants";
 import { text } from "stream/consumers";
 
 interface PrimaryButtonProps {

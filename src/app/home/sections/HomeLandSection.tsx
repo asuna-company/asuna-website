@@ -1,8 +1,8 @@
-import TextBadge from "@/app/core/components/badges/TextBadge";
-import BudgetServicesButtons from "@/app/core/components/buttons/combos/BudgetServicesButtons";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
+import BudgetServicesButtons from "@/app/shared/components/buttons/combos/BudgetServicesButtons";
 
-import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import PrimaryText from "@/app/shared/components/texts/PrimaryTitle";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";

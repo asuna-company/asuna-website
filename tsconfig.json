@@ -38,12 +38,12 @@
     "./types/**/*.d.ts",
     ".next/types/**/*.ts",
     ".vscode/build/types/**/*.ts",
-    "core/configs/**/*.ts",
+    "shared/configs/**/*.ts",
     "dist/types/**/*.ts",
     "next-env.d.ts",
     "next-sitemap.config.js",
     "build/types/**/*.ts",
-    "src/app/core/components/animations/NumberTicker"
+    "src/app/shared/components/animations/NumberTicker"
   ],
   "exclude": [
     "node_modules"

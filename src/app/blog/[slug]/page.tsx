@@ -1,7 +1,7 @@
-import Navbar from "@/app/core/sections/Navbar";
+import Navbar from "@/app/shared/sections/Navbar";
 import SlugContentSection from "./sections/SlugContentSection";
 import { notFound } from "next/navigation";
-import FooterSection from "@/app/core/sections/FooterSection";
+import FooterSection from "@/app/shared/sections/FooterSection";
 import { getMarkdownContent, getMarkdownContentFormatted, getMarkdownHead } from "./infrastructure/utils/markdownUtils";
 import SlugMainSection from "./sections/SlugMainSection";
 

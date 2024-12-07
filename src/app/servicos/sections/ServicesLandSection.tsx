@@ -16,12 +16,12 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
   const subtitle = useIsMobile() ? mobileSubtitle : desktopSubtitle
 
   return (
-    <AbstractSection bgColor="bg-neutral-700" paddingVertical="pt-24 xs:py-20" dataBg="dark"> 
-      <section className="w-full min-h-full pb-0 xs:pb-16 pt-0 xs:pt-32 flex flex-col items-start justify-center bg-neutral-700">
+    <AbstractSection bgColor="bg-neutral-700"  dataBg="dark" paddingVertical='p-0'> 
+      <section className="w-full min-h-fit xs:h-screen flex flex-col items-start justify-center bg-neutral-700">
         <EllipseGradient />
         <CircleLines />
 
-        <div className="relative z-10 flex flex-col items-start">
+        <div className="relative z-10 flex pt-16 xs:pt-0 flex-col items-start">
           <div className='pb-4'>
             <div className='pb-4 space-x-2 flex'>
               <TextBadge title="Impulsionamos negócios" textColor="text-secondary-400" />

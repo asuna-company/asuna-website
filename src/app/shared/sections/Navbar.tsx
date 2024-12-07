@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import { useRouter } from "next/navigation";
+import { useIsMobile } from "../constants/mediaQueryConstants";
 
 interface NavbarProps {
   isDark: boolean;
@@ -15,6 +16,7 @@ export default function Navbar({ isDark }: NavbarProps) {
   const [isDarkSection, setIsDarkSection] = useState(isDark);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDarkAndScrolled, setIsDarkAndScrolled] = useState(false);
+  const isMobile = useIsMobile()
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const useRouterConfig = useRouter();
@@ -50,7 +52,7 @@ export default function Navbar({ isDark }: NavbarProps) {
 
   const logoImage = isDarkSection ? "/svg/logo_with_text_white_blue.svg" : "/svg/logo_with_text.svg";
   const defaultBackgrounds = isDarkSection ? "bg-transparent " : 'bg-background/80 backdrop-blur-lg';
-  const navbarBackground = isDarkAndScrolled ? "bg-[#222328]/80 backdrop-blur-lg" : defaultBackgrounds;
+  const navbarBackground = isDarkAndScrolled || isDark && isOpen && isMobile ? "bg-[#222328]/80 backdrop-blur-lg" : defaultBackgrounds;
   const borderColor = isDarkSection ? "border-b border-neutral-300" : "border-b border-gray-300";
   const borderNavbar = hasScrolled ? borderColor : "border-b border-transparent";
   const navbarClasses = `sticky top-0 z-50 transition-all duration-300 ${borderNavbar} ${navbarBackground}`;
@@ -67,7 +69,6 @@ export default function Navbar({ isDark }: NavbarProps) {
           <NavbarLink href="/" isDark={isDarkSection}>Home</NavbarLink>
           <NavbarLink href="/blog" isDark={isDarkSection}>Nosso Blog</NavbarLink>
           <NavbarLink href="/servicos" isDark={isDarkSection}>Nossos Serviços</NavbarLink>
-          {/* <NavbarLink href="/about" isDark={isDarkSection}>Sobre a Asuna</NavbarLink> */}
           <PrimaryButton
             title="Entre em Contato"
             onClick={() => useRouterConfig.push('/contato')}
@@ -90,7 +91,7 @@ export default function Navbar({ isDark }: NavbarProps) {
       {isOpen && (
         <div className="md:hidden flex flex-col items-center space-y-4 py-4">
           {menuItems.map(({ href, label }) => (
-            <Link key={href} href={href} className="text-gray-700 hover:text-primary-500 transition-colors"> {label} </Link>
+            <Link key={href} href={href} className={`${isDarkSection ? 'text-white': 'text-gray-700'} hover:text-primary-500 transition-colors`}> {label} </Link>
           ))}
         </div>
       )}

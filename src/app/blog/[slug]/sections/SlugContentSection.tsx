@@ -1,6 +1,6 @@
 "use client";
 
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 

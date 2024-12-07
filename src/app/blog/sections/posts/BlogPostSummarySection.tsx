@@ -1,6 +1,6 @@
 "use client";
 
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 import { usePosts } from "../../infrastructure/hooks/usePostHook";
 import BlogPostListSection from "./BlogPostListSection";
 import Link from "next/link";

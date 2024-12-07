@@ -18,7 +18,7 @@ export default function FaqSection() {
         <HelpSection/>
       </div>
 
-      <div className="w-full md:w-[47%] mt-8 md:mt-0 md:pl-8 pt-0 xs:pt-12">
+      <div className="w-full md:w-[47%] mt-8 md:mt-0 md:pl-8 pt-0 xs:pt-12 space-y-6">
         <ExpansionTile
           title="Quais tipos de software a Asuna desenvolve?"
           content="Nós desenvolvemos sistemas sob demanda, incluindo aplicativos mobile, sites, e soluções backend, tudo adaptado às necessidades de empresas de pequeno e médio porte."

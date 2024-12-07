@@ -1,6 +1,6 @@
 {
   "extends": [
-    "next/core-web-vitals",
+    "next/shared-web-vitals",
     "next/typescript"
   ],
   "rules": {

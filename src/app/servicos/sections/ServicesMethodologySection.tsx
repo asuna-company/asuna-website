@@ -5,6 +5,7 @@ import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import MethodologyCard from "../components/MethodologyCard";
+import DottedBackground from "@/app/shared/components/backgrounds/DottedBackground";
 
 const cards = [
   {
@@ -12,28 +13,28 @@ const cards = [
     title: "Análise de Requisitos",
     body: "Alinhamos com o cliente as necessidades e objetivos, mapeando os requisitos essenciais para garantir que a solução atenda ao esperado, sem surpresas.",
     mobileBody: "Mapeamos objetivos e necessidades para garantir todos os resultados esperados.",
-    image: "https://via.placeholder.com/500x300?text=Análise de Requisitos",
+    image: "/images/art-requisits.png",
   },
   {
     id: "design",
     title: "UI/UX Design",
-    body: "Desenhamos protótipos interativos e validamos com o você e toda sua equipe, criando interfaces bonitas e intuitivas, ajustada para ser usada da melhor forma.",
+    body: "Desenhamos protótipos interativos e validamos com o você e toda sua equipe, criando interfaces bonitas e intuitivas, ajustadas conforme a necessidade.",
     mobileBody: "Criamos protótipos e interfaces bonitas e funcionais que dão o match perfeito.",
-    image: "https://via.placeholder.com/500x300?text=Design",
+    image: "/images/art-requisits.png",
   },
   {
     id: "development",
     title: "Desenvolvimento",
-    body: "Criamos o software com checkpoints regulares para validar cada etapa com você e garantir que o resultado final atenda às suas expectativas.",
+    body: "Criamos o software com checkpoints regulares para validar cada etapa com você e garantir que o resultado final atenda às suas expectativas do seu time.",
     mobileBody: "Desenvolvemos com etapas validadas para atender suas expectativas.",
-    image: "https://via.placeholder.com/500x300?text=Desenvolvimento",
+    image: "/images/art-requisits.png",
   },
   {
     id: "publication",
     title: "Publicação",
     body: "Lançamos o produto com todo o suporte necessário, garantindo uma transição suave e acompanhando os primeiros passos do seu projeto de software no ar.",
     mobileBody: "Lançamos o software com todo o suporte para que você tenha uma transição suave.",
-    image: "https://via.placeholder.com/500x300?text=Publicação",
+    image: "/images/art-requisits.png",
   },
 ];
 
@@ -66,14 +67,11 @@ export default function ServicesMethodologySection() {
       <DottedBackground/>
       <AbstractSection>
         <div className="flex flex-col items-start space-y-6 pb-0 xs:pb-8">
-          <TextBadge title="Nossa Metodologia" />
-          <SecondaryTitle
-            firstPart={isExtraMobile ? "Nós proporcionamos" : "Nós proporcionamos novas"}
-            secondPart={isExtraMobile ? "novas oportunidades" : "oportunidades de crescimento"}
-          />
+          {isLaptop && <TitleWithBadge isExtraMobile={isExtraMobile}  />}
+          <div className={`flex ${isLaptop ? "flex-col-reverse space-y-0 xs:space-y-6" : "justify-between items-end space-x-8"} w-full`}>
+            <div className="flex flex-col items-start space-y-6 pt-8 xs:pt-0 max-w-[650px]">
+              {!isLaptop && <TitleWithBadge isExtraMobile={isExtraMobile}  />}
 
-          <div className={`flex ${isLaptop ? "flex-col-reverse space-y-0 xs:space-y-6" : "justify-between items-center space-x-8"} w-full`}>
-            <div className="flex flex-col items-start space-y-6 pt-8 xs:pt-0">
               {cards.map((card, index) => (
                 <MethodologyCard
                   key={index}
@@ -86,11 +84,11 @@ export default function ServicesMethodologySection() {
               ))}
             </div>
 
-            <div className={`pb-8 medium:pb-0 ${isLaptop ? 'pl-0' : 'pl-[8rem]'} justify-center mx-auto`}> 
+            <div className={`pb-8 medium:pb-0 ${isLaptop ? 'pl-0' : 'pl-[12rem]'} justify-center mx-auto`}> 
               <Image
                 src={cards[activeIndex].image}
                 alt={cards[activeIndex].title}
-                width={isLaptop ? 700: 1200}
+                width={isLaptop ? 550: 550}
                 height={1000}
                 className="rounded-lg"
                 unoptimized
@@ -104,20 +102,15 @@ export default function ServicesMethodologySection() {
 }
 
 
-function DottedBackground() {
+function TitleWithBadge({isExtraMobile}: {isExtraMobile: boolean}) {
   return (
-    <div className="absolute inset-0 flex justify-end -z-10">
-      {[...Array(4)].map((_, i) => (
-        <div
-          key={i}
-          className={`h-full w-px bg-gray-300/70`}
-          style={{
-            backgroundImage: 'linear-gradient(to bottom, #ffffff 33%, transparent 33%)',
-            backgroundSize: '1px 15px',
-            marginRight: i === 3 ? '9rem' : '16rem',
-          }}
-        />
-      ))}
+    <div>
+      <TextBadge title="Nossa Metodologia" />
+      <SecondaryTitle
+        firstPart={isExtraMobile ? "Nós proporcionamos" : "Nós proporcionamos novas"}
+        secondPart={isExtraMobile ? "novas oportunidades" : "oportunidades de crescimento"}
+      />
     </div>
   )
 }
+

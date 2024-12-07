@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
-import TextBadge from "@/app/core/components/badges/TextBadge";
-import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
+import PrimaryText from "@/app/shared/components/texts/PrimaryTitle";
 
-import { useIsMobile } from "@/app/core/constants/mediaQueryConstants";
+import { useIsMobile } from "@/app/shared/constants/mediaQueryConstants";
 
 const getBackgroundStyle = () => ({
   backgroundImage: "url('svg/lines.svg')",

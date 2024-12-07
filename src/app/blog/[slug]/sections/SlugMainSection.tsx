@@ -1,7 +1,7 @@
-import AbstractSection from "@/app/core/components/sections/AbstractSection";
+import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 import { MarkdownHead } from "../infrastructure/types/markdownHead";
-import PrimaryText from "@/app/core/components/texts/PrimaryTitle";
-import TextBadge from "@/app/core/components/badges/TextBadge";
+import PrimaryText from "@/app/shared/components/texts/PrimaryTitle";
+import TextBadge from "@/app/shared/components/badges/TextBadge";
 
 import Image from 'next/image'
 

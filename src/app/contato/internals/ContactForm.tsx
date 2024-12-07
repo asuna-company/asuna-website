@@ -1,4 +1,4 @@
-import PrimaryButton from "@/app/core/components/buttons/PrimaryButton";
+import PrimaryButton from "@/app/shared/components/buttons/PrimaryButton";
 import MaskedInput from "react-text-mask";
 
 export default function ContactForm() {
