@@ -66,7 +66,7 @@ export default function ServicesMethodologySection() {
     <div className="relative">
       <DottedBackground/>
       <AbstractSection>
-        <div className="flex flex-col items-start space-y-6 pb-0 xs:pb-8">
+        <div className="flex flex-col items-start space-y-6 py-16">
           {isLaptop && <TitleWithBadge isExtraMobile={isExtraMobile}  />}
           <div className={`flex ${isLaptop ? "flex-col-reverse space-y-0 xs:space-y-6" : "justify-between items-end space-x-8"} w-full`}>
             <div className="flex flex-col items-start space-y-6 pt-8 xs:pt-0 max-w-[650px]">

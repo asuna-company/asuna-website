@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Phone, MessageCircle } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 export default function FooterSection() {
@@ -51,7 +51,7 @@ export default function FooterSection() {
                 
                 <button
                   className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-500 transition-colors"
-                  onClick={() => window.open('https://wa.me/47992847889', '_blank')}
+                  onClick={() => window.open('https://wa.me/47992847889?text=Olá,%20gostaria%20de%20realizar%20um%20orçamento%20de%20um%20projeto%20com%20vocês!', '_blank')}
                 >
                   <Image src={"https://cdn.asuna.com.br/svg/whatsapp.svg"} alt='Símbolo do Whatsapp' width={24} height={24}/>
                   <span>Enviar mensagem</span>
@@ -67,7 +67,6 @@ export default function FooterSection() {
     </footer>
   )
 }
-
 
 function ItemLink({title, path}: {title: string, path: string}) {
   return (

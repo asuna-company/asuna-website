@@ -8,6 +8,7 @@ interface PrimaryButtonProps {
   onClick: () => void;
   paddingY?: string;
   textClass?: string;
+  withoutOutline?: boolean;
 }
 
 function getPrimaryButtonSizeClasses(fullWidth: boolean) {
@@ -18,8 +19,11 @@ function getPrimaryButtonTextClasses(textClass: string) {
   return `text-center text-white font-poppins font-medium ${textClass}`;
 }
 
-function getPrimaryButtonBackgroundClasses() {
-  return "bg-primary-500 rounded-lg outline outline-[5px] outline-secondary-400/20";
+function getPrimaryButtonBackgroundClasses(withoutOutline: boolean) {
+  const defaultBackground = "bg-primary-500 rounded-lg";
+  const outlineWithBackground = "bg-primary-500 rounded-lg outline outline-[5px] outline-secondary-400/20";
+
+  return withoutOutline ? defaultBackground : outlineWithBackground;
 }
 
 function getPrimaryButtonHoverClasses() {
@@ -30,11 +34,11 @@ function getPrimaryButtonTransitionClasses() {
   return "transition-all duration-200 transform-origin-center " ;
 }
 
-function getPrimaryButtonClasses(fullWidth: boolean, textClass: string) {
+function getPrimaryButtonClasses(fullWidth: boolean, textClass: string, withoutOutline: boolean) {
   return [
     getPrimaryButtonSizeClasses(fullWidth),
     getPrimaryButtonTextClasses(textClass),
-    getPrimaryButtonBackgroundClasses(),
+    getPrimaryButtonBackgroundClasses(withoutOutline),
     getPrimaryButtonHoverClasses(),
     getPrimaryButtonTransitionClasses(),
   ].join(" ");
@@ -46,10 +50,12 @@ export default function PrimaryButton({
   fullWidth = false,
   onClick,
   paddingY = "12.5px",
-  textClass = 'text-p2'
+  textClass = 'text-p2',
+  withoutOutline = false,
 }: PrimaryButtonProps) {
   return (
-    <button className={getPrimaryButtonClasses(fullWidth, textClass)} style={{ paddingTop: paddingY, paddingBottom: paddingY }} onClick={onClick}>
+    <button className={getPrimaryButtonClasses(fullWidth, textClass, withoutOutline)}
+       style={{ paddingTop: paddingY, paddingBottom: paddingY }} onClick={onClick}>
       {useIsMobile() ? mobileTitle : title}
     </button>
   );

@@ -92,3 +92,37 @@ body {
 .animate-circle-rotate-reverse {
   animation: rotate-reverse 25s linear infinite;
 }
+
+@keyframes float-small {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, -7px);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-7px, -12px);
+  }
+}
+
+.animate-float-small {
+  animation: float-small 3s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-small 3.75s ease-in-out infinite;
+}
+
+.animate-float-large {
+  animation: float-medium 4s ease-in-out infinite;
+}
+
+.animate-float-extra-large {
+  animation: float-medium 4.5s ease-in-out infinite;
+}

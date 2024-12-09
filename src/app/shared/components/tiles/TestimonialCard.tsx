@@ -23,7 +23,7 @@ export default function TestimonialCard() {
   const { text, author, company } = testimonials[currentTestimonialIndex];
 
   return (
-    <div className="max-w-[680px] mx-auto p-0 xs:p-6 pt-12 xs:pt-0">
+    <div className="max-w-[620px] mx-auto pt-12 xs:pt-0">
       <div className="mb-4 bg-primary-50 p-2 rounded-md max-w-max">
         <Image
           src="https://cdn.asuna.com.br/svg/quote.svg"

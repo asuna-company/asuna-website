@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   metadataBase: new URL('https://asuna.com.br'),
   title: 'Asuna | Soluções de Software Para Pequenas e Médias Empresas',
-  description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
+  description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas. Nossa missão é simplificar processos e entregar soluções sob medida, combinando tecnologia de ponta com agilidade e eficiência.',
   keywords: [
     "asuna", "assuna", "azuna", "asunna", "asuma", "asum", 
     "asuna software house", "assuna software house", "azuna software house", 
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     "assuma consultoria", "azuna consultoria", "asana", "asana software"
   ],
   openGraph: {
-    title: 'Asuna | Software House',
-    description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas, conduzindo todo o ciclo de desenvolvimento.',
+    title: 'Asuna | Soluções de Software Para Pequenas e Médias Empresas',
+    description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas. Nossa missão é simplificar processos e entregar soluções sob medida, combinando tecnologia de ponta com agilidade e eficiência.',
     url: 'https://asuna.com.br/',
     siteName: 'Asuna',
     locale: 'pt_BR',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Asuna | Software House',
+    title: 'Asuna | Soluções de Software Para Pequenas e Médias Empresas',
     description: 'A Asuna é uma software house B2B focada em pequenas e médias empresas.',
     images: ['https://cdn.asuna.com.br/images/metadata-banner.jpg'],
   },

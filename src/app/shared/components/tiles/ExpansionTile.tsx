@@ -12,7 +12,7 @@ export default function ExpansionTile({ title, content }: ExpansionTileProps) {
   return (
     <div className="border-b border-gray-300">
       <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center w-full py-4 text-left">
-        <h3 className="text-p1 text-neutral-800 font-bold">{title}</h3>
+        <h3 className="text-p1 text-neutral-800 font-bold pb-1">{title}</h3>
         <ArrowSvg isOpen={isOpen}/> 
       </button>
       <div

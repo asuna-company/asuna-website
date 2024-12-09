@@ -1,6 +1,6 @@
 import BudgetServicesButtons from '@/app/shared/components/buttons/combos/BudgetServicesButtons';
 import PrimaryText from '@/app/shared/components/texts/PrimaryTitle';
-import { useIsMobile } from '@/app/shared/constants/mediaQueryConstants';
+import { useIsMediumLarge, useIsMobile } from '@/app/shared/constants/mediaQueryConstants';
 import React from 'react';
 import EmojiBadge from '../components/EmojiBadge';
 import AbstractSection from '@/app/shared/components/sections/AbstractSection';
@@ -8,16 +8,21 @@ import TextBadge from '@/app/shared/components/badges/TextBadge';
 
 
 export default function ServicesLandSection({ scrollToSolutions }: { scrollToSolutions: () => void }) {
-  const titleFirstPart = useIsMobile() ? 'Serviços que irão revolucionar': 'Serviços que irão revolucionar toda a sua'
-  const titleSecondPart = useIsMobile() ? 'toda a operação de vez!' : 'operação de vez!'
+  const isMobile = useIsMobile();
+  const isMediumLarge = useIsMediumLarge();
+
+  const titleFirstPart =isMobile ? 'Serviços que irão revolucionar': 'Serviços que irão revolucionar toda a sua'
+  const titleSecondPart = isMobile ? 'toda a operação de vez!' : 'operação de vez!'
 
   const desktopSubtitle = 'A Asuna é uma software house especializada em serviços digitais que impulsionam o crescimento do seu negócio. Nossa missão é simplificar processos e entregar soluções sob medida, combinando tecnologia de ponta com agilidade e eficiência.'
   const mobileSubtitle = ' A Asuna é uma software house especializada em serviços digitais que impulsionam o crescimento do seu negócio. Nossa missão é simplificar processos e entregar soluções sob medida.'
-  const subtitle = useIsMobile() ? mobileSubtitle : desktopSubtitle
+  const subtitle = isMobile ? mobileSubtitle : desktopSubtitle
+
+  const verticalPadding = isMobile ? 'py-8' : isMediumLarge ? 'py-24' : 'py-0'
 
   return (
-    <AbstractSection bgColor="bg-neutral-700"  dataBg="dark" paddingVertical='p-0'> 
-      <section className="w-full min-h-fit xs:h-screen flex flex-col items-start justify-center bg-neutral-700">
+    <AbstractSection bgColor="bg-neutral-700"  dataBg="dark" paddingVertical={verticalPadding}> 
+      <section className="w-full min-h-fit medium-small:h-screen flex flex-col items-start justify-center bg-neutral-700">
         <EllipseGradient />
         <CircleLines />
 
@@ -28,11 +33,10 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
               <div className='hidden xs:flex'><TextBadge title="Serviços digitais" textColor="text-secondary-400" /></div>
             </div>
 
-            <PrimaryText maxWidth={900} titleFirstPart={titleFirstPart} titleSecondPart={titleSecondPart} isDarkMode={true} alignLeft={true}/>
+            <PrimaryText maxWidth={isMobile ? 600 : 900} titleFirstPart={titleFirstPart} titleSecondPart={titleSecondPart} isDarkMode={true} alignLeft={true}/>
           </div>
 
           <h2 className={`text-p1 text-gray-300 text-left mb-8 mt-1 xs:mt-0 max-w-[700px] opacity-90 font-inter`}> {subtitle} </h2>
-
           <div className=' pb-12 xs:pb-0 flex w-full'><BudgetServicesButtons onClickSecondaryButton={scrollToSolutions} isDarkMode={true}/></div>
         </div>
       </section>
@@ -45,20 +49,20 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
 function RightBadges() {
   return (
     <div className="flex flex-col items-start space-y-28 w-fit">
-      <div className="pl-8 animate-bounce-slow">
+      <div className="pl-8 animate-float-small">
         <EmojiBadge emoji="🎨" title="UI/UX Design" />
       </div>
-      <div className="pl-40 animate-float">
+      <div className="pl-40 animate-float-extra-large">
         <EmojiBadge emoji="📱" title="Desenvolvimento Mobile" />
       </div>
-      <div className="pl-32 animate-bounce-slow">
-        <EmojiBadge emoji="🌐" title="Desenvolvimento Web" />
+      <div className="pl-32 animate-float-large">
+        <EmojiBadge emoji="💻" title="Desenvolvimento Web" />
       </div>
-      <div className="animate-bounce-slow">
+      <div className="animate-float-medium">
         <EmojiBadge emoji="🎉" title="Consultoria de Software" />
       </div>
     </div>
-  )
+  );
 }
 
 function EllipseGradient() {
