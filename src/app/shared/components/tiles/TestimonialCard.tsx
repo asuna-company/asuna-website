@@ -4,6 +4,8 @@ import { useIsLaptop } from "../../constants/mediaQueryConstants";
 
 import Image from 'next/image'
 import { blurDataUrl } from "../../constants/imageConstants";
+import LeftArrowImage from "../images/arrows/LeftArrowImage";
+import RightArrowImage from "../images/arrows/RightArrowImage";
 
 export default function TestimonialCard() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -46,10 +48,10 @@ export default function TestimonialCard() {
           </span>
           <div className="flex gap-4">
             <button onClick={handlePrevClick} className="text-blue-600 font-bold bg-primary-50 px-4 py-2 rounded-full">
-              <LeftArrow/>
+              <LeftArrowImage/>
             </button>
             <button onClick={handleNextClick} className="text-blue-600 font-bold bg-primary-50 px-4 py-2 rounded-full">
-              <RightArrow/>
+              <RightArrowImage/>
             </button>
           </div>
         </div>
@@ -57,38 +59,3 @@ export default function TestimonialCard() {
     </div>
   );
 };
-
-
-function LeftArrow() {
-  return <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-4 h-4"
-    >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15.75 19.5L8.25 12l7.5-7.5"
-    />
-  </svg>
-}
-
-function RightArrow() {
-  return <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-4 h-4"
-    >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M8.25 4.5L15.75 12l-7.5 7.5"
-    />
-  </svg>
-}

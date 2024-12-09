@@ -9,7 +9,7 @@ import useScrollToTop from "../../shared/hooks/useScrollTop";
 
 const SolutionsSectionDynamic = dynamic(() => import('./ServicesSolutionsSection'), { ssr: false });
 const FeedbackSectionDynamic = dynamic(() => import('../../shared/sections/FeedbackSection'), { ssr: false });
-const PostsSectionDynamic = dynamic(() => import('../../shared/sections/PostsSection'), { ssr: false });
+const PostsSectionDynamic = dynamic(() => import('../../shared/sections/posts/PostsSection'), { ssr: false });
 const FaqSectionDynamic = dynamic(() => import('../../shared/sections/FaqSection'), { ssr: false });
 const FooterSectionDynamic = dynamic(() => import('../../shared/sections/FooterSection'), { ssr: false });
 

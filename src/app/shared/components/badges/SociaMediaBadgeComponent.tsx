@@ -15,5 +15,3 @@ export const SocialMediaBadgeComponent: React.FC<SocialMediaProps> = ({ type }) 
     </a>
   );
 };
-
-

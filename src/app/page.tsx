@@ -6,7 +6,7 @@ import HomeResultsSection from "./home/sections/HomeResultsSection";
 
 const ServicesSectionDynamic = dynamic(() => import('./home/sections/HomeServicesSection'), { ssr: false });
 const FeedbackSectionDynamic = dynamic(() => import('./shared/sections/FeedbackSection'), { ssr: false });
-const PostsSectionDynamic = dynamic(() => import('./shared/sections/PostsSection'), { ssr: false });
+const PostsSectionDynamic = dynamic(() => import('./shared/sections/posts/PostsSection'), { ssr: false });
 const FaqSectionDynamic = dynamic(() => import('./shared/sections/FaqSection'), { ssr: false });
 const FooterSectionDynamic = dynamic(() => import('./shared/sections/FooterSection'), { ssr: false });
 

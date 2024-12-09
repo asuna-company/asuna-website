@@ -67,13 +67,9 @@ export default function Navbar({ isDark }: NavbarProps) {
 
         <ul className="hidden md:flex space-x-8 items-center">
           <NavbarLink href="/" isDark={isDarkSection}>Home</NavbarLink>
-          <NavbarLink href="/blog" isDark={isDarkSection}>Nosso Blog</NavbarLink>
-          <NavbarLink href="/servicos" isDark={isDarkSection}>Nossos Serviços</NavbarLink>
-          <PrimaryButton
-            title="Entre em Contato"
-            onClick={() => useRouterConfig.push('/contato')}
-            paddingY="10px"
-          />
+          <NavbarLink href="/servicos" isDark={isDarkSection}>Serviços</NavbarLink>
+          <NavbarLink href="/blog" isDark={isDarkSection}>Blog</NavbarLink>
+          <PrimaryButton title="Entre em Contato" onClick={() => useRouterConfig.push('/contato')} paddingY="10px"/>
         </ul>
 
         <div className="md:hidden flex items-center space-x-4">
@@ -120,7 +116,6 @@ const MenuIcon = ({ isOpen, isDark }: { isOpen: boolean; isDark: boolean }) => (
 
 const menuItems = [
   { href: "/", label: "Home" },
-  { href: "/blog", label: "Nosso Blog" },
-  { href: "/servicos", label: "Nossos Serviços" },
-  // { href: "/about", label: "Sobre a Asuna" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/blog", label: "Blog" },
 ];
