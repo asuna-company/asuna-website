@@ -1,7 +1,7 @@
 import PrimaryButton from "@/app/shared/components/buttons/PrimaryButton";
 import MaskedInput from "react-text-mask";
 
-export default function ContactForm() {
+export default function ContactFormComponent() {
   return (
     <form className="bg-gray-50/80 p-6 rounded-lg space-y-4 max-w-7xl mx-auto border border-gray-200">    
       <NameInput/>

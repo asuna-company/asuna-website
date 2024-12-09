@@ -14,16 +14,16 @@ export default function BlogPage() {
         <FooterSection />
       </div>
     </div>
-  );
-}
+  );}
 
 export function generateMetadata() {
-  const title = "Conheça o Nosso Blog - Asuna";
+  const title = "Conheça o Nosso Blog | Asuna";
   const canonicalUrl = "https://asuna.com.br/blog";
   const description = "Conheça o blog da Asuna e fique por dentro de tudo sobre soluções de software para pequenas e médias empresas.";
   const ogDescription = "Confira nossos artigos sobre soluções de software, tecnologia e muito mais para pequenas e médias empresas.";
   const ogTitle = title;
   const ogUrl = canonicalUrl;
+
 
   return {
     title,

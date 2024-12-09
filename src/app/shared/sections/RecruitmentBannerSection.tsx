@@ -1,4 +1,4 @@
-export default function RecruitmentBanner() {
+export default function RecruitmentBannerSection() {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full justify-center bg-neutral-900">

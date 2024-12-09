@@ -35,6 +35,7 @@ export default function FooterSection() {
             <ul className="space-y-2">
               <ItemLink title='LinkedIn' path='https://www.linkedin.com/company/asuna' />
               <ItemLink title='Instagram' path='https://www.instagram.com/asuna.brasil'/>
+              <ItemLink title='Medium' path='https://medium.com/@asunabrasil'/>
             </ul>
           </div>
 
@@ -62,7 +63,7 @@ export default function FooterSection() {
       </div>
 
       <div className="mt-16 pt-8 border-t border-gray-400/10">
-          <p className="text-center text-gray-400">© Asuna 2024 - Todos os direitos reservados</p>
+          <p className="text-center text-gray-400">© Asuna 2024 - Todos os direitos reservados - CNPJ: 57.841.370/0001-79</p>
       </div>
     </footer>
   )
