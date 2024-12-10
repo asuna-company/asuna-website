@@ -1,6 +1,7 @@
-import { Post } from "@/app/blog/infrastructure/types/PostType";
 import Image from "next/image";
 import Link from "next/link";
+
+import { Post } from "@/app/blog/infrastructure/types/PostType";
 
 export default function BlogCard({ post }: { post: Post }) {
   return (
@@ -13,7 +14,7 @@ export default function BlogCard({ post }: { post: Post }) {
         <p className="text-p2 text-primary-500 text-[12.5px] xs:text-[14px]"> {post.tag} </p>
 
         <div className="flex">
-          <div className="flex items-center">
+          <div className="hidden xs:flex items-center">
             <Image src="https://cdn.asuna.com.br/svg/clock-circle.svg" alt="Símbolo de Relógio" width={18} height={18}/>
             <span className="ml-2 text-[13px]">{post.readingTime}</span>
           </div>

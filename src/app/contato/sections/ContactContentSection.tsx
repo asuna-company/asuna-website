@@ -23,9 +23,9 @@ export default function ContactContentSection() {
   return (
     <div style={getBackgroundStyle()} className="w-full text-left">
       <AbstractSection align="items-start" flex={`${isLaptop ? 'flex-col': 'flex-row'}`}>
-        <div className="w-fit pt-4 xs:pt-24 text-left"> 
+        <div className="w-full xs:w-fit pt-4 xs:pt-24 text-left"> 
           <div className="space-x-3 mb-4"> <TextBadge title="Contato" /> </div>
-          <div className="max-w-full xs:max-w-[800px]">
+          <div className="w-full max-w-full xs:max-w-[800px]">
             <PrimaryText titleFirstPart="Entre diretamente em" titleSecondPart="contato com o nosso time!" maxWidth={800} alignLeft={true} />
             <h2 className="mt-2 pl-1 leading-relaxed text-neutral-500">
               Fale com a Asuna e dê o primeiro passo para transformar suas ideias em projetos reais. Nossa equipe está pronta para entender suas necessidades e criar a melhor solução. 💙
@@ -33,7 +33,6 @@ export default function ContactContentSection() {
             <ContactInfoInternalSection/>
           </div>
         </div>
-
         <div className="mt-8 w-full laptop:w-1/2 p-0 laptop:pl-32"> <ContactFormComponent/> </div>
       </AbstractSection>
     </div>
@@ -42,19 +41,19 @@ export default function ContactContentSection() {
 
 function ContactInfoInternalSection() {
   return (
-    <div className="flex flex-row space-x-32 pt-10">
+    <div className="flex flex-col xs:flex-row space-x-0 xs:space-x-32 pt-10">
       <div className="flex flex-col">
         <div className="flex flex-col space-y-4">
           <CardInfoComponent label="E-mail" value="contato@asuna.com.br" type="email"/>
           <CardInfoComponent label="WhatsApp" value="+55 47 99284-7889" type="phone"/>
         </div>
-        <div className="flex flex-row pt-6 space-x-3">
+        <div className="flex flex-row pt-6 space-x-3 pl-2 xs:pl-0">
           <SocialMediaBadgeComponent type="linkedin"/>
           <SocialMediaBadgeComponent type="instagram"/>
           <SocialMediaBadgeComponent type="medium"/>
         </div>
       </div>
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 pl-4 xs:pl-0 pt-8 xs:pt-0">
         <p className="text-lg font-medium">Endereço</p>
         <p className="text-[15px] max-w-72 ">Avenida Paulista, 1106 - Bela Vista, São Paulo - SP, 01310-914</p>
       </div>

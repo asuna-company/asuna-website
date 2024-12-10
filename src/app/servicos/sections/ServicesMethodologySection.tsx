@@ -13,28 +13,28 @@ const cards = [
     title: "Análise de Requisitos",
     body: "Alinhamos com o cliente as necessidades e objetivos, mapeando os requisitos essenciais para garantir que a solução atenda ao esperado, sem surpresas.",
     mobileBody: "Mapeamos objetivos e necessidades para garantir todos os resultados esperados.",
-    image: "/images/art-requisits.png",
+    image: "https://cdn.asuna.com.br/images/methodology_image.webp",
   },
   {
     id: "design",
     title: "UI/UX Design",
     body: "Desenhamos protótipos interativos e validamos com o você e toda sua equipe, criando interfaces bonitas e intuitivas, ajustadas conforme a necessidade.",
     mobileBody: "Criamos protótipos e interfaces bonitas e funcionais que dão o match perfeito.",
-    image: "/images/art-requisits.png",
+    image: "https://cdn.asuna.com.br/images/methodology_image.webp",
   },
   {
     id: "development",
     title: "Desenvolvimento",
     body: "Criamos o software com checkpoints regulares para validar cada etapa com você e garantir que o resultado final atenda às suas expectativas do seu time.",
     mobileBody: "Desenvolvemos com etapas validadas para atender suas expectativas.",
-    image: "/images/art-requisits.png",
+    image: "https://cdn.asuna.com.br/images/methodology_image.webp",
   },
   {
     id: "publication",
     title: "Publicação",
     body: "Lançamos o produto com todo o suporte necessário, garantindo uma transição suave e acompanhando os primeiros passos do seu projeto de software no ar.",
     mobileBody: "Lançamos o software com todo o suporte para que você tenha uma transição suave.",
-    image: "/images/art-requisits.png",
+    image: "https://cdn.asuna.com.br/images/methodology_image.webp",
   },
 ];
 
@@ -88,10 +88,9 @@ export default function ServicesMethodologySection() {
               <Image
                 src={cards[activeIndex].image}
                 alt={cards[activeIndex].title}
-                width={isLaptop ? 550: 550}
+                width={isLaptop ? 550: 700}
                 height={1000}
                 className="rounded-lg"
-                unoptimized
               />
             </div>
           </div>

@@ -2,12 +2,12 @@
 
 import AbstractSection from "@/app/shared/components/sections/AbstractSection";
 
+import { useEffect, useRef, useState } from "react";
 import { usePosts } from "@/app/blog/infrastructure/hooks/usePostHook";
+import { useIsExtraMobile, useIsMedium } from "../../constants/mediaQueryConstants";
 import { Post } from "@/app/blog/infrastructure/types/PostType";
 
-import { useEffect, useRef, useState } from "react";
 import TextBadge from "../../components/badges/TextBadge";
-import { useIsExtraMobile, useIsMedium } from "../../constants/mediaQueryConstants";
 import SecondaryTitle from "../../components/texts/SecondaryTitle";
 import BlogCard from "../../components/cards/BlogCard";
 import ScrollButtonComponent from "./internals/ScrollButtonComponent";
@@ -19,13 +19,9 @@ export default function PostsSection() {
   const recentPosts = posts.slice(0, 2);
 
   return (
-    <AbstractSection
-      align="items-start"
-      flex="flex-col"
-      paddingVertical="pb-12 xs:py-12"
-    >
+    <AbstractSection align="items-start" flex="flex-col" paddingVertical="pb-12 xs:py-12">
       <section className="w-full flex flex-col md:flex-row justify-between">
-        <div className="flex flex-col items-start w-full max-w-[900px]">
+        <div className="flex flex-col items-start w-full">
           <TextBadge title="Blog" />
           <div className="pt-2">
             <SecondaryTitle firstPart="Publicações Recentes" secondPart={isExtraMobile ? "no blog da Asuna" : "no blog de especialistas da Asuna"}/>
@@ -41,7 +37,6 @@ export default function PostsSection() {
   );
 }
 
-
 function PostsContainer({ recentPosts }: { recentPosts: Post[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -54,9 +49,7 @@ function PostsContainer({ recentPosts }: { recentPosts: Post[] }) {
     if (!container) return;
 
     setCanScrollLeft(container.scrollLeft > 0);
-    setCanScrollRight(
-      container.scrollWidth > container.offsetWidth + container.scrollLeft
-    );
+    setCanScrollRight(container.scrollWidth > container.offsetWidth + container.scrollLeft);
   };
 
   useEffect(() => {

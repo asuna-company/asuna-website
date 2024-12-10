@@ -50,7 +50,7 @@ function InvestmentSelector() {
   return (
     <div className="flex flex-col">
       <label htmlFor="investment" className="text-sm font-medium text-gray-700">
-        Quanto você pretende investir no projeto? *
+        Quanto você quer investir nesse projeto? *
       </label>
       <div className="relative mt-1">
         <select

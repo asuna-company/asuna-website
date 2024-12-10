@@ -11,8 +11,8 @@ export default function ServicesLandSection({ scrollToSolutions }: { scrollToSol
   const isMobile = useIsMobile();
   const isMediumLarge = useIsMediumLarge();
 
-  const titleFirstPart =isMobile ? 'Serviços que irão revolucionar': 'Serviços que irão revolucionar toda a sua'
-  const titleSecondPart = isMobile ? 'toda a operação de vez!' : 'operação de vez!'
+  const titleFirstPart =isMobile ? 'Serviços que irão revolucionar': 'Serviços que irão revolucionar'
+  const titleSecondPart = isMobile ? 'toda a operação de vez!' : 'toda a sua operação de vez!'
 
   const desktopSubtitle = 'A Asuna é uma software house especializada em serviços digitais que impulsionam o crescimento do seu negócio. Nossa missão é simplificar processos e entregar soluções sob medida, combinando tecnologia de ponta com agilidade e eficiência.'
   const mobileSubtitle = ' A Asuna é uma software house especializada em serviços digitais que impulsionam o crescimento do seu negócio. Nossa missão é simplificar processos e entregar soluções sob medida.'
